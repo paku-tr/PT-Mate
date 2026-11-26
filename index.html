@@ -1,9 +1,19 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
     <title>PT Mate Pro — Personal Training & Workout Log</title>
+    <!-- PWA: iOS & Android Full-Screen Standalone App Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="PT Mate">
+    <meta name="application-name" content="PT Mate">
+    <meta name="theme-color" content="#0f172a">
+    <link id="pwa-favicon" rel="icon" type="image/png" href="">
+    <link id="pwa-apple-icon" rel="apple-touch-icon" sizes="180x180" href="">
+    <link id="pwa-manifest" rel="manifest" href="">
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Chart.js CDN -->
@@ -54,27 +64,84 @@
     <!-- ================================================================== -->
     <!-- 1. AUTHENTICATION / LANDING SCREEN (Role Selection & Sign-Up)      -->
     <!-- ================================================================== -->
-    <div id="auth-screen" class="min-h-screen flex flex-col justify-between bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white px-4 py-6 sm:py-10">
-        <!-- Top Bar -->
-        <div class="w-full max-w-md mx-auto flex items-center justify-between">
+    <div id="auth-screen" class="min-h-screen flex flex-col justify-between bg-gradient-to-br from-slate-950 via-slate-900 to-blue-950 text-white px-4 sm:px-6 lg:px-10 py-6 sm:py-8">
+        <!-- Top Bar (Full-Width on Desktop) -->
+        <div class="w-full max-w-7xl mx-auto flex items-center justify-between">
             <div class="flex items-center gap-2.5">
-                <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-blue-500 to-emerald-400 flex items-center justify-center text-white shadow-lg shadow-blue-500/25">
+                <div class="w-9 h-9 lg:w-10 lg:h-10 rounded-xl bg-gradient-to-br from-blue-500 to-emerald-400 flex items-center justify-center text-white shadow-lg shadow-blue-500/25">
                     <i data-lucide="dumbbell" class="w-5 h-5"></i>
                 </div>
                 <div>
-                    <span class="font-extrabold text-lg tracking-tight leading-none">PT Mate</span>
+                    <span class="font-extrabold text-lg lg:text-xl tracking-tight leading-none">PT Mate</span>
                     <span class="ml-1 px-1.5 py-0.5 rounded-md bg-blue-500/20 text-blue-300 text-[10px] font-extrabold uppercase">PRO</span>
                 </div>
             </div>
             <!-- Bilingual Switcher -->
             <div class="flex bg-white/10 p-1 rounded-xl border border-white/15">
-                <button type="button" onclick="setGlobalLang('ko')" class="lang-btn-ko-dark px-2.5 py-1.5 rounded-lg text-xs font-bold transition">한국어</button>
-                <button type="button" onclick="setGlobalLang('ja')" class="lang-btn-ja-dark px-2.5 py-1.5 rounded-lg text-xs font-bold transition">日本語</button>
+                <button type="button" onclick="setGlobalLang('ja')" class="lang-btn-ja-dark px-3 py-1.5 rounded-lg text-xs font-bold transition">日本語</button>
+                <button type="button" onclick="setGlobalLang('ko')" class="lang-btn-ko-dark px-3 py-1.5 rounded-lg text-xs font-bold transition">한국어</button>
             </div>
         </div>
 
-        <!-- Main Auth Card -->
-        <div class="w-full max-w-md mx-auto my-6 bg-white text-slate-900 rounded-3xl shadow-2xl overflow-hidden border border-slate-200/80">
+        <!-- Center Content: Full Desktop 2-Column Split / Compact Mobile Single Column -->
+        <div class="w-full max-w-7xl mx-auto flex-1 flex items-center py-6 lg:py-10">
+            <div class="w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+
+                <!-- LEFT COLUMN (Desktop Only): Rich SaaS Hero & Feature Showcase -->
+                <div class="hidden lg:flex lg:col-span-7 flex-col justify-center space-y-8 pr-4">
+                    <div class="space-y-4">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/15 border border-blue-400/25 text-blue-300 text-xs font-bold">
+                            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                            <span data-i18n="heroBadge">PC · 모바일 완벽 대응 올인원 PT 관리 플랫폼</span>
+                        </div>
+                        <h1 class="text-4xl xl:text-5xl font-extrabold tracking-tight leading-[1.2] text-white whitespace-pre-line" data-i18n="heroTitle">번거로운 LINE 문진부터
+회원 운동 일지까지 한눈에</h1>
+                        <p class="text-base xl:text-lg text-slate-300 leading-relaxed max-w-2xl" data-i18n="heroSubtitle">트레이너는 모든 회원의 잔여 횟수, 예약 스케줄, 체성분 변화를 한곳에서 관리하고, 회원은 56개 시각화 종목 가이드와 자동 휴식 타이머로 매일의 성장을 기록합니다.</p>
+                    </div>
+
+                    <!-- 2x2 Feature Cards Grid -->
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="p-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-xs space-y-2 hover:bg-white/[0.08] transition">
+                            <div class="w-9 h-9 rounded-xl bg-blue-500/20 text-blue-300 flex items-center justify-center">
+                                <i data-lucide="clipboard-check" class="w-5 h-5"></i>
+                            </div>
+                            <h3 class="text-sm font-extrabold text-white" data-i18n="heroFeat1Title">사전 문진 & 회원 통합 CRM</h3>
+                            <p class="text-xs text-slate-400 leading-relaxed" data-i18n="heroFeat1Desc">신체 스펙·통증 부위·잔여 횟수·갱신 알림을 대시보드에서 실시간 확인</p>
+                        </div>
+                        <div class="p-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-xs space-y-2 hover:bg-white/[0.08] transition">
+                            <div class="w-9 h-9 rounded-xl bg-emerald-500/20 text-emerald-300 flex items-center justify-center">
+                                <i data-lucide="calendar-check" class="w-5 h-5"></i>
+                            </div>
+                            <h3 class="text-sm font-extrabold text-white" data-i18n="heroFeat2Title">프라이버시 공유 PT 예약</h3>
+                            <p class="text-xs text-slate-400 leading-relaxed" data-i18n="heroFeat2Desc">타 회원 정보는 비공개 처리하면서 빈 시간만 간편하게 예약·관리</p>
+                        </div>
+                        <div class="p-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-xs space-y-2 hover:bg-white/[0.08] transition">
+                            <div class="w-9 h-9 rounded-xl bg-amber-500/20 text-amber-300 flex items-center justify-center">
+                                <i data-lucide="dumbbell" class="w-5 h-5"></i>
+                            </div>
+                            <h3 class="text-sm font-extrabold text-white" data-i18n="heroFeat3Title">FLEEK 스타일 시각화 운동 일지</h3>
+                            <p class="text-xs text-slate-400 leading-relaxed" data-i18n="heroFeat3Desc">8개 부위 56종목 일러스트 가이드 + 세트 DONE 자동 휴식 타이머·알람음</p>
+                        </div>
+                        <div class="p-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-xs space-y-2 hover:bg-white/[0.08] transition">
+                            <div class="w-9 h-9 rounded-xl bg-indigo-500/20 text-indigo-300 flex items-center justify-center">
+                                <i data-lucide="languages" class="w-5 h-5"></i>
+                            </div>
+                            <h3 class="text-sm font-extrabold text-white" data-i18n="heroFeat4Title">한·일 자동 번역 & LINE 요약</h3>
+                            <p class="text-xs text-slate-400 leading-relaxed" data-i18n="heroFeat4Desc">맞춤 루틴·식단 한↔일 자동 번역과 수업 후 LINE 리포트 1클릭 복사</p>
+                        </div>
+                    </div>
+
+                    <!-- Highlights Strip -->
+                    <div class="flex items-center gap-6 pt-2 text-xs font-semibold text-slate-400">
+                        <span class="inline-flex items-center gap-1.5"><i data-lucide="smartphone" class="w-4 h-4 text-emerald-400"></i><span>PWA App Ready</span></span>
+                        <span class="inline-flex items-center gap-1.5"><i data-lucide="globe" class="w-4 h-4 text-blue-400"></i><span>Korean / Japanese</span></span>
+                        <span class="inline-flex items-center gap-1.5"><i data-lucide="shield-check" class="w-4 h-4 text-amber-400"></i><span>Role-Based Access</span></span>
+                    </div>
+                </div>
+
+                <!-- RIGHT COLUMN: Main Auth Card -->
+                <div class="lg:col-span-5 w-full max-w-md lg:max-w-lg mx-auto">
+                    <div class="w-full bg-white text-slate-900 rounded-3xl shadow-2xl overflow-hidden border border-slate-200/80">
             <!-- Auth Tabs -->
             <div class="grid grid-cols-3 bg-slate-100 p-1.5 gap-1">
                 <button type="button" id="auth-tab-member" onclick="switchAuthTab('member')" class="tap-target rounded-2xl text-xs sm:text-sm font-bold transition" data-i18n="authTabMember">회원 로그인</button>
@@ -188,7 +255,7 @@
             <!-- PANEL 3: TRAINER ADMIN LOGIN -->
             <form id="auth-panel-trainer" onsubmit="handleTrainerLogin(event)" class="hidden p-6 space-y-4">
                 <div class="space-y-1">
-                    <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-50 text-amber-800 border border-amber-200 text-[11px] font-bold mb-1">
+                    <div id="trainer-demo-pin-badge" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-50 text-amber-800 border border-amber-200 text-[11px] font-bold mb-1">
                         <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
                         <span>Demo PIN: 1234</span>
                     </div>
@@ -203,7 +270,7 @@
             </form>
 
             <!-- Portfolio Demo Quick-Access Strip -->
-            <div class="px-6 py-4 bg-slate-50 border-t border-slate-100 space-y-2.5">
+            <div id="demo-quick-strip" class="px-6 py-4 bg-slate-50 border-t border-slate-100 space-y-2.5">
                 <p class="text-[11px] font-bold text-slate-400 uppercase tracking-wider text-center" data-i18n="demoQuickTitle">포트폴리오 1클릭 데모 체험</p>
                 <div class="grid grid-cols-2 gap-2">
                     <button type="button" onclick="quickDemoLogin('member')" class="tap-target px-3 py-2.5 rounded-xl bg-white hover:bg-blue-50 border border-blue-200 text-blue-700 text-xs font-bold transition flex items-center justify-center gap-1.5 shadow-xs">
@@ -216,9 +283,19 @@
                     </button>
                 </div>
             </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <p class="text-center text-[11px] text-slate-400">PT Mate Pro · Mobile-First Bilingual Fitness CRM</p>
+        <!-- Bottom Bar: PWA Install Trigger + Copyright (Full-Width on Desktop) -->
+        <div class="w-full max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 pt-4 border-t border-white/10">
+            <p class="text-center sm:text-left text-xs text-slate-400">PT Mate Pro · Mobile & Desktop Bilingual Fitness CRM</p>
+            <button type="button" id="pwa-install-auth-btn" onclick="triggerPwaInstall()" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-white/10 hover:bg-white/20 border border-white/15 text-xs font-bold text-blue-200 transition">
+                <i data-lucide="smartphone" class="w-3.5 h-3.5 text-emerald-400"></i>
+                <span data-i18n="btnInstallApp">홈 화면에 앱으로 설치하기</span>
+            </button>
+        </div>
     </div>
 
     <!-- ================================================================== -->
@@ -228,7 +305,7 @@
 
         <!-- Sticky Top Bar -->
         <header class="sticky top-0 z-30 bg-white/95 backdrop-blur border-b border-slate-200/80">
-            <div class="max-w-5xl mx-auto px-4 h-14 sm:h-16 flex items-center justify-between gap-2">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 h-14 sm:h-16 flex items-center justify-between gap-2">
                 <!-- Left: Brand + Role Badge -->
                 <div class="flex items-center gap-2 min-w-0">
                     <div class="w-8 h-8 rounded-xl bg-gradient-to-br from-blue-600 to-emerald-500 flex items-center justify-center text-white shrink-0 shadow-xs">
@@ -248,8 +325,8 @@
                 <!-- Right: Lang Switch + Logout -->
                 <div class="flex items-center gap-1.5 shrink-0">
                     <div class="flex bg-slate-100 p-0.5 rounded-xl border border-slate-200/70">
-                        <button type="button" onclick="setGlobalLang('ko')" class="lang-btn-ko px-2 py-1 rounded-lg text-[11px] font-bold transition">KO</button>
                         <button type="button" onclick="setGlobalLang('ja')" class="lang-btn-ja px-2 py-1 rounded-lg text-[11px] font-bold transition">JP</button>
+                        <button type="button" onclick="setGlobalLang('ko')" class="lang-btn-ko px-2 py-1 rounded-lg text-[11px] font-bold transition">KO</button>
                     </div>
                     <button type="button" onclick="handleLogout()" class="p-2 rounded-xl bg-slate-100 hover:bg-rose-50 text-slate-600 hover:text-rose-600 transition" title="Logout">
                         <i data-lucide="log-out" class="w-4 h-4"></i>
@@ -259,7 +336,7 @@
         </header>
 
         <!-- Main Scrollable Viewport (pb-28 on mobile for fixed bottom nav + LINE bar safety) -->
-        <main class="flex-1 w-full max-w-5xl mx-auto px-4 py-5 pb-28 md:pb-10">
+        <main class="flex-1 w-full max-w-7xl mx-auto px-4 sm:px-6 py-5 pb-28 md:pb-10">
 
             <!-- ========================================================== -->
             <!-- ROLE 1: MEMBER PORTAL VIEWS                                -->
@@ -585,9 +662,12 @@
             <!-- TRAINER TAB 4: SETTINGS -->
             <section id="view-t-settings" class="hidden space-y-5 max-w-xl mx-auto">
                 <div class="bg-white rounded-3xl p-5 border border-slate-200/80 shadow-xs space-y-4">
-                    <div>
-                        <h2 class="text-lg font-extrabold text-slate-900" data-i18n="settingsTitle">트레이너 환경 설정</h2>
-                        <p class="text-xs text-slate-500" data-i18n="settingsSub">예약 가능 시간대, 관리자 PIN, 회원 공유 링크를 관리합니다.</p>
+                    <div class="flex items-start justify-between gap-2 flex-wrap">
+                        <div>
+                            <h2 class="text-lg font-extrabold text-slate-900" data-i18n="settingsTitle">트레이너 환경 설정</h2>
+                            <p class="text-xs text-slate-500" data-i18n="settingsSub">예약 가능 시간대, 관리자 PIN, 회원 공유 링크를 관리합니다.</p>
+                        </div>
+                        <span id="settings-mode-badge" class="px-2.5 py-1 rounded-xl text-[11px] font-extrabold bg-slate-100 text-slate-700">DEMO</span>
                     </div>
                     <form onsubmit="handleSaveTrainerSettings(event)" class="space-y-4">
                         <div class="grid grid-cols-2 gap-3">
@@ -618,6 +698,22 @@
                     <button type="button" onclick="copyAppShareLink()" class="tap-target w-full py-3 rounded-2xl bg-blue-600 hover:bg-blue-700 text-white text-sm font-bold shadow-sm transition flex items-center justify-center gap-2">
                         <i data-lucide="copy" class="w-4 h-4"></i>
                         <span data-i18n="btnCopyShareLink">회원 앱 링크 복사하기</span>
+                    </button>
+                </div>
+
+                <!-- PWA App Install Card -->
+                <div class="bg-slate-900 text-white rounded-3xl p-5 border border-slate-800 space-y-3">
+                    <div class="flex items-center justify-between gap-2">
+                        <h3 class="text-sm font-extrabold flex items-center gap-2">
+                            <i data-lucide="smartphone" class="w-4 h-4 text-emerald-400"></i>
+                            <span data-i18n="pwaCardTitle">스마트폰 앱으로 설치 (PWA)</span>
+                        </h3>
+                        <span id="pwa-status-badge" class="px-2 py-0.5 rounded-md bg-white/10 text-emerald-300 text-[10px] font-extrabold">WEB</span>
+                    </div>
+                    <p class="text-xs text-slate-300 leading-relaxed" data-i18n="pwaCardDesc">홈 화면에 추가하면 앱스토어 설치 없이 주소창 없는 전체화면 앱으로 1초 만에 실행할 수 있습니다.</p>
+                    <button type="button" onclick="triggerPwaInstall()" class="tap-target w-full py-3 rounded-2xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-sm font-extrabold transition flex items-center justify-center gap-2">
+                        <i data-lucide="download" class="w-4 h-4"></i>
+                        <span data-i18n="btnInstallApp">홈 화면에 앱으로 설치하기</span>
                     </button>
                 </div>
             </section>
@@ -958,43 +1054,63 @@
         import { getFirestore, doc, getDoc, setDoc, updateDoc, deleteDoc, onSnapshot, collection, addDoc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
         // ==========================================
+        // ★ 배포 모드 설정 (포트폴리오용 vs 실제 실무용)
+        // ==========================================
+        // 1) 포트폴리오용 배포: 아래 설정 그대로 index.html로 배포하세요.
+        // 2) 실제 실무용 배포: mode를 'production'으로 바꾸고,
+        //    본인의 initialTrainerPin과 Firebase 설정값을 입력하세요.
+        const DEPLOY_CONFIG = {
+            mode: 'demo', // 'demo' (포트폴리오용) | 'production' (실제 실무용)
+            initialTrainerPin: '1234',
+            firebaseConfig: {
+                apiKey: "",
+                authDomain: "",
+                projectId: "",
+                storageBucket: "",
+                messagingSenderId: "",
+                appId: ""
+            }
+        };
+
+        // ==========================================
         // STATE & FIREBASE CONFIG
         // ==========================================
-        const appId = typeof __app_id !== 'undefined' ? __app_id : 'pt-mate-pro-v2';
-        const hasFirebaseConfig = typeof __firebase_config !== 'undefined' && __firebase_config;
+        const isProdMode = DEPLOY_CONFIG.mode === 'production';
+        const appId = typeof __app_id !== 'undefined' ? __app_id : (isProdMode ? 'pt-mate-live' : 'pt-mate-pro-v2');
+        const hasCustomFirebase = Boolean(DEPLOY_CONFIG.firebaseConfig && DEPLOY_CONFIG.firebaseConfig.apiKey);
+        const hasEnvFirebase = typeof __firebase_config !== 'undefined' && __firebase_config;
 
         let db = null, auth = null, currentUser = null;
         let useMemoryFallback = false;
+        let isCloudConnected = false;
         let seedChecked = false;
 
         // Data Stores
         let members = [];
         let bookings = [];
         let workouts = [];
-        let appConfig = { trainerPin: '1234', openHour: 9, closeHour: 21 };
+        let appConfig = { trainerPin: DEPLOY_CONFIG.initialTrainerPin || '1234', openHour: 9, closeHour: 21 };
 
-        // Session State
-        let lang = 'ko'; // 'ko' | 'ja'
-        let currentRole = null; // 'member' | 'trainer' | null
+        // UI & Session State
+        let lang = 'ja';
+        let currentRole = null;
         let loggedInMemberId = null;
-        let activeTab = '';
+        let activeTab = null;
         let selectedMemberId = null;
         let activeDetailTab = 'info';
         let trainerGoalFilter = 'all';
 
-        // Date Helper
-        function toDateStr(d) {
-            const yr = d.getFullYear();
-            const mo = String(d.getMonth() + 1).padStart(2, '0');
-            const da = String(d.getDate()).padStart(2, '0');
-            return `${yr}-${mo}-${da}`;
-        }
-
         // Calendar State
+        function toDateStr(d) {
+            return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+        }
         const now = new Date();
         let calYear = now.getFullYear();
         let calMonth = now.getMonth();
         let selectedCalDate = toDateStr(now);
+
+        // PWA Install Prompt State
+        let deferredPwaPrompt = null;
 
         // FLEEK Workout Builder State
         let activeWorkoutExercises = [];
@@ -1023,6 +1139,17 @@
         // ==========================================
         const DICT = {
             ko: {
+                heroBadge: 'PC · 모바일 완벽 대응 올인원 PT 관리 플랫폼',
+                heroTitle: '번거로운 LINE 문진부터\n회원 운동 일지까지 한눈에',
+                heroSubtitle: '트레이너는 모든 회원의 잔여 횟수, 예약 스케줄, 체성분 변화를 한곳에서 관리하고, 회원은 56개 시각화 종목 가이드와 자동 휴식 타이머로 매일의 성장을 기록합니다.',
+                heroFeat1Title: '사전 문진 & 회원 통합 CRM',
+                heroFeat1Desc: '신체 스펙·통증 부위·잔여 횟수·갱신 알림을 대시보드에서 실시간 확인',
+                heroFeat2Title: '프라이버시 공유 PT 예약',
+                heroFeat2Desc: '타 회원 정보는 비공개 처리하면서 빈 시간만 간편하게 예약·관리',
+                heroFeat3Title: 'FLEEK 스타일 시각화 운동 일지',
+                heroFeat3Desc: '8개 부위 56종목 일러스트 가이드 + 세트 DONE 자동 휴식 타이머·알람음',
+                heroFeat4Title: '한·일 자동 번역 & LINE 요약',
+                heroFeat4Desc: '맞춤 루틴·식단 한↔일 자동 번역과 수업 후 LINE 리포트 1클릭 복사',
                 authTabMember: '회원 로그인', authTabSignup: '신규 회원가입', authTabTrainer: '트레이너',
                 memberLoginTitle: '회원 전용 로그인', memberLoginDesc: 'PT 예약 캘린더와 나만의 운동 일지를 관리하세요.',
                 lblPhone: '전화번호', lblPin4: '4자리 비밀번호 (PIN)', btnLogin: '로그인하기',
@@ -1064,6 +1191,9 @@
                 shareTitle: '회원용 앱 링크 공유 (LINE 전송용)',
                 shareDesc: '신규 회원님께 아래 링크를 보내 회원가입, 사전 문진표 작성, PT 예약 및 운동 일지 기록을 안내하세요.',
                 btnCopyShareLink: '회원 앱 링크 복사하기', btnRenewPackage: '패키지 연장',
+                btnInstallApp: '홈 화면에 앱으로 설치하기',
+                pwaCardTitle: '스마트폰 앱으로 설치 (PWA)',
+                pwaCardDesc: '홈 화면에 추가하면 앱스토어 설치 없이 주소창 없는 전체화면 앱으로 1초 만에 실행할 수 있습니다.',
                 dtabInfo: '기본·문진', dtabWorkouts: '운동 기록 (FLEEK)', dtabMetrics: '체성분 그래프', dtabPlan: '루틴·식단',
                 lblTrainerPrivateMemo: '트레이너 전용 메모', tQuickLogPt: 'PT 수업 빠른 기록 & LINE 요약 생성',
                 exNamePh: '종목 (예: 스쿼트)', phFeedback: '오늘의 피드백 / 다음 예약 안내', btnSaveSession: 'PT 기록 저장 (+1회)',
@@ -1082,6 +1212,17 @@
                 equips: { all: '전체', machine: '머신', dumbbell: '덤벨', barbell: '바벨', cable: '케이블', bodyweight: '맨몸' }
             },
             ja: {
+                heroBadge: 'PC・スマホ完全対応 オールインワンPT管理プラットフォーム',
+                heroTitle: '煩雑なLINE問診から\n会員の運動ログまで一元管理',
+                heroSubtitle: 'トレーナーは全会員の残回数・予約スケジュール・体組成の推移をまとめて管理し、会員は56種目の図解ガイドと自動休憩タイマーで日々の成長を記録できます。',
+                heroFeat1Title: '事前カウンセリング & 会員CRM',
+                heroFeat1Desc: '身体データ・痛み部位・残回数・更新アラートをダッシュボードで即確認',
+                heroFeat2Title: 'プライバシー保護 共有予約カレンダー',
+                heroFeat2Desc: '他会員の情報は非公開のまま、空き枠だけをシンプルに予約・調整',
+                heroFeat3Title: 'FLEEK風 56種目図解ワークアウトログ',
+                heroFeat3Desc: '8部位56種目の筋肉イラストガイド＋DONE自動休憩タイマー＆アラーム音',
+                heroFeat4Title: '韓日自動翻訳 & LINEレポート作成',
+                heroFeat4Desc: 'カスタムメニュー・食事の韓日自動翻訳とレッスン後LINE要約1クリックコピー',
                 authTabMember: '会員ログイン', authTabSignup: '新規会員登録', authTabTrainer: 'トレーナー',
                 memberLoginTitle: '会員専用ログイン', memberLoginDesc: 'PT予約カレンダーとトレーニング記録を管理できます。',
                 lblPhone: '電話番号', lblPin4: '4桁パスコード (PIN)', btnLogin: 'ログイン',
@@ -1123,6 +1264,9 @@
                 shareTitle: '会員用アプリリンク共有 (LINE送信用)',
                 shareDesc: '新規会員様へ下記リンクを送り、会員登録・事前問診・予約・運動記録をご案内ください。',
                 btnCopyShareLink: '会員アプリリンクをコピー', btnRenewPackage: '回数延長',
+                btnInstallApp: 'ホーム画面にアプリとして追加',
+                pwaCardTitle: 'スマホアプリとしてインストール (PWA)',
+                pwaCardDesc: 'ホーム画面に追加すると、ストア不要でアドレスバーのない全画面アプリとして起動できます。',
                 dtabInfo: '基本・問診', dtabWorkouts: '運動記録 (FLEEK)', dtabMetrics: '体組成グラフ', dtabPlan: 'プラン・食事',
                 lblTrainerPrivateMemo: 'トレーナー専用メモ', tQuickLogPt: 'PTクイック記録 & LINE要約作成',
                 exNamePh: '種目（例：スクワット）', phFeedback: '今日のフィードバック / 次回予約案内', btnSaveSession: 'PT記録保存 (+1回)',
@@ -1387,10 +1531,16 @@
                     return;
                 }
             } catch (e) { /* ignore parse errors */ }
-            const { seedMembers, seedBookings, seedWorkouts } = buildSeedData();
-            members = seedMembers;
-            bookings = seedBookings;
-            workouts = seedWorkouts;
+            if (isProdMode) {
+                members = [];
+                bookings = [];
+                workouts = [];
+            } else {
+                const { seedMembers, seedBookings, seedWorkouts } = buildSeedData();
+                members = seedMembers;
+                bookings = seedBookings;
+                workouts = seedWorkouts;
+            }
             saveLocalFallback();
         }
 
@@ -1441,24 +1591,38 @@
         }
 
         async function initApp() {
+            initPwaSupport();
             applyTranslations();
             switchAuthTab('member');
             const wlDate = document.getElementById('wl-date');
             if (wlDate) wlDate.value = toDateStr(new Date());
             updateDefaultRestPillsUI();
 
-            if (hasFirebaseConfig) {
+            // Production mode UI cleanup: hide demo quick-login & demo PIN hints
+            if (isProdMode) {
+                const demoStrip = document.getElementById('demo-quick-strip');
+                const pinBadge = document.getElementById('trainer-demo-pin-badge');
+                const pinInput = document.getElementById('login-trainer-pin');
+                if (demoStrip) demoStrip.classList.add('hidden');
+                if (pinBadge) pinBadge.classList.add('hidden');
+                if (pinInput) pinInput.placeholder = '••••';
+            }
+
+            if (hasCustomFirebase || hasEnvFirebase) {
                 try {
-                    const firebaseConfig = JSON.parse(__firebase_config);
+                    const firebaseConfig = hasCustomFirebase
+                        ? DEPLOY_CONFIG.firebaseConfig
+                        : JSON.parse(__firebase_config);
                     const app = initializeApp(firebaseConfig);
                     auth = getAuth(app);
                     db = getFirestore(app);
-                    if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
+                    if (!hasCustomFirebase && typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
                         await signInWithCustomToken(auth, __initial_auth_token);
                     } else {
                         await signInAnonymously(auth);
                     }
                     currentUser = auth.currentUser;
+                    isCloudConnected = true;
                     subscribeFirestore();
                 } catch (err) {
                     console.warn('Firebase init fallback:', err);
@@ -1474,9 +1638,12 @@
         }
 
         function subscribeFirestore() {
+            if (!currentUser) return;
+            const onErr = (err) => console.warn('Firestore snapshot error:', err);
+
             onSnapshot(collection(db, 'artifacts', appId, 'public', 'data', 'pt_members'), async (snap) => {
                 members = snap.docs.map(d => ({ id: d.id, ...d.data() })).sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0));
-                if (!seedChecked && members.length === 0) {
+                if (!isProdMode && !seedChecked && members.length === 0) {
                     seedChecked = true;
                     const { seedMembers, seedBookings, seedWorkouts } = buildSeedData();
                     for (const m of seedMembers) await dbSet('pt_members', m.id, m);
@@ -1484,19 +1651,170 @@
                     for (const w of seedWorkouts) await dbSet('pt_workouts', w.id, w);
                 }
                 renderCurrentView();
-            });
+            }, onErr);
+
             onSnapshot(collection(db, 'artifacts', appId, 'public', 'data', 'pt_bookings'), (snap) => {
                 bookings = snap.docs.map(d => ({ id: d.id, ...d.data() }));
                 renderCurrentView();
-            });
+            }, onErr);
+
             onSnapshot(collection(db, 'artifacts', appId, 'public', 'data', 'pt_workouts'), (snap) => {
                 workouts = snap.docs.map(d => ({ id: d.id, ...d.data() })).sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0));
                 renderCurrentView();
-            });
+            }, onErr);
+
             onSnapshot(doc(db, 'artifacts', appId, 'public', 'data', 'pt_config', 'main'), (snap) => {
                 if (snap.exists()) appConfig = { ...appConfig, ...snap.data() };
-            });
+            }, onErr);
         }
+
+        // ==========================================
+        // PWA: DYNAMIC APP ICON, MANIFEST & INSTALL GUIDE
+        // ==========================================
+        function isStandalonePwa() {
+            return window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+        }
+
+        function initPwaSupport() {
+            // 1) Generate crisp 512x512 PNG app icon on canvas (used for iOS Home Screen, Favicon, and Web Manifest)
+            try {
+                const canvas = document.createElement('canvas');
+                canvas.width = 512;
+                canvas.height = 512;
+                const ctx = canvas.getContext('2d');
+
+                // Rounded gradient background
+                const grad = ctx.createLinearGradient(0, 0, 512, 512);
+                grad.addColorStop(0, '#0f172a');
+                grad.addColorStop(0.55, '#1d4ed8');
+                grad.addColorStop(1, '#10b981');
+                ctx.fillStyle = grad;
+                ctx.beginPath();
+                ctx.roundRect(0, 0, 512, 512, 112);
+                ctx.fill();
+
+                // Minimal white dumbbell silhouette
+                ctx.fillStyle = '#ffffff';
+                ctx.beginPath();
+                ctx.roundRect(96, 176, 46, 160, 18);
+                ctx.roundRect(148, 204, 34, 104, 14);
+                ctx.roundRect(182, 236, 148, 40, 12);
+                ctx.roundRect(330, 204, 34, 104, 14);
+                ctx.roundRect(370, 176, 46, 160, 18);
+                ctx.fill();
+
+                // Subtitle badge
+                ctx.fillStyle = 'rgba(255,255,255,0.92)';
+                ctx.font = '800 54px Inter, sans-serif';
+                ctx.textAlign = 'center';
+                ctx.fillText('PT MATE', 256, 428);
+
+                canvas.toBlob((blob) => {
+                    if (!blob) return;
+                    const iconUrl = URL.createObjectURL(blob);
+                    const fav = document.getElementById('pwa-favicon');
+                    const apple = document.getElementById('pwa-apple-icon');
+                    if (fav) fav.href = iconUrl;
+                    if (apple) apple.href = iconUrl;
+
+                    const manifest = {
+                        name: 'PT Mate Pro',
+                        short_name: 'PT Mate',
+                        description: 'Personal Training CRM & FLEEK-style Workout Logger',
+                        start_url: window.location.href.split('#')[0],
+                        display: 'standalone',
+                        orientation: 'portrait',
+                        background_color: '#0f172a',
+                        theme_color: '#0f172a',
+                        icons: [
+                            { src: iconUrl, sizes: '192x192', type: 'image/png', purpose: 'any maskable' },
+                            { src: iconUrl, sizes: '512x512', type: 'image/png', purpose: 'any maskable' }
+                        ]
+                    };
+                    const mBlob = new Blob([JSON.stringify(manifest)], { type: 'application/manifest+json' });
+                    const mLink = document.getElementById('pwa-manifest');
+                    if (mLink) mLink.href = URL.createObjectURL(mBlob);
+                }, 'image/png');
+            } catch (e) {
+                console.warn('PWA icon generation skipped:', e);
+            }
+
+            // 2) Capture Android Chrome native install prompt
+            window.addEventListener('beforeinstallprompt', (e) => {
+                e.preventDefault();
+                deferredPwaPrompt = e;
+            });
+
+            // 3) Hide auth install button if already running as installed app
+            if (isStandalonePwa()) {
+                const authBtn = document.getElementById('pwa-install-auth-btn');
+                if (authBtn) authBtn.classList.add('hidden');
+            }
+        }
+
+        window.triggerPwaInstall = async function() {
+            if (isStandalonePwa()) {
+                showToast(lang === 'ja' ? 'すでにアプリとして起動中です！' : '이미 앱 모드로 실행 중입니다!');
+                return;
+            }
+            if (deferredPwaPrompt) {
+                deferredPwaPrompt.prompt();
+                const { outcome } = await deferredPwaPrompt.userChoice;
+                deferredPwaPrompt = null;
+                if (outcome === 'accepted') {
+                    showToast(lang === 'ja' ? 'ホーム画面に追加されました！' : '홈 화면에 앱이 설치되었습니다!');
+                }
+                return;
+            }
+
+            const ua = navigator.userAgent || '';
+            const isLine = /Line\//i.test(ua);
+            const isIos = /iPhone|iPad|iPod/i.test(ua);
+
+            let guideHtml = '';
+            if (lang === 'ja') {
+                guideHtml = `
+                    <div class="space-y-2.5 text-xs text-slate-700">
+                        ${isLine ? `<div class="p-3 rounded-xl bg-amber-50 border border-amber-200 text-amber-900 font-bold">⚠️ LINE内ブラウザでは追加できません。右下の「︙」または共有ボタンから「Safari / Chromeで開く」を押してください。</div>` : ''}
+                        <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+                            <p class="font-extrabold text-slate-900">🍎 iPhone (Safari)</p>
+                            <p>1. 画面下の <strong>共有ボタン (□↑)</strong> をタップ</p>
+                            <p>2. 下へスクロールして <strong>「ホーム画面に追加」</strong> を選択</p>
+                            <p>3. 右上の <strong>「追加」</strong> をタップして完了！</p>
+                        </div>
+                        <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+                            <p class="font-extrabold text-slate-900">🤖 Android (Chrome)</p>
+                            <p>1. 右上の <strong>メニュー (⋮)</strong> をタップ</p>
+                            <p>2. <strong>「アプリをインストール」</strong> または <strong>「ホーム画面に追加」</strong> を選択</p>
+                        </div>
+                    </div>
+                `;
+            } else {
+                guideHtml = `
+                    <div class="space-y-2.5 text-xs text-slate-700">
+                        ${isLine ? `<div class="p-3 rounded-xl bg-amber-50 border border-amber-200 text-amber-900 font-bold">⚠️ LINE 인앱 브라우저에서는 설치가 제한됩니다. 우측 하단 메뉴에서 [Safari / Chrome으로 열기]를 먼저 눌러주세요.</div>` : ''}
+                        <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 space-y-1 ${isIos ? 'ring-2 ring-blue-500/30 border-blue-300' : ''}">
+                            <p class="font-extrabold text-slate-900">🍎 아이폰 (Safari)</p>
+                            <p>1. 화면 하단의 <strong>공유 버튼 (□↑)</strong> 터치</p>
+                            <p>2. 아래로 내려서 <strong>「홈 화면에 추가」</strong> 선택</p>
+                            <p>3. 우측 상단 <strong>「추가」</strong>를 누르면 앱 아이콘 완성!</p>
+                        </div>
+                        <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 space-y-1 ${!isIos ? 'ring-2 ring-blue-500/30 border-blue-300' : ''}">
+                            <p class="font-extrabold text-slate-900">🤖 안드로이드 (Chrome)</p>
+                            <p>1. 우측 상단의 <strong>메뉴 버튼 (⋮)</strong> 터치</p>
+                            <p>2. <strong>「앱 설치」</strong> 또는 <strong>「홈 화면에 추가」</strong> 선택</p>
+                        </div>
+                    </div>
+                `;
+            }
+
+            openActionModal(
+                lang === 'ja' ? 'ホーム画面にアプリとして追加' : '홈 화면에 앱으로 설치하기',
+                lang === 'ja' ? '以下の手順で全画面アプリとして使えます。' : '아래 방법대로 추가하면 주소창 없는 진짜 앱처럼 바로 실행됩니다.',
+                guideHtml,
+                null
+            );
+        };
 
         // ==========================================
         // AUTH & ROLE ROUTING
@@ -2896,6 +3214,23 @@
 
         // Trainer Settings
         function renderTrainerSettings() {
+            const pwaBadge = document.getElementById('pwa-status-badge');
+            if (pwaBadge) {
+                pwaBadge.textContent = isStandalonePwa() ? 'APP MODE' : 'BROWSER';
+            }
+            const badge = document.getElementById('settings-mode-badge');
+            if (badge) {
+                if (isProdMode && isCloudConnected) {
+                    badge.textContent = lang === 'ja' ? '本番運用中 (クラウド連携)' : '실무 운영 중 (클라우드 연동)';
+                    badge.className = 'px-2.5 py-1 rounded-xl text-[11px] font-extrabold bg-emerald-100 text-emerald-700';
+                } else if (isProdMode) {
+                    badge.textContent = lang === 'ja' ? '本番モード (DB未接続)' : '실무 모드 (클라우드 미연결)';
+                    badge.className = 'px-2.5 py-1 rounded-xl text-[11px] font-extrabold bg-amber-100 text-amber-800';
+                } else {
+                    badge.textContent = lang === 'ja' ? 'ポートフォリオ・デモ' : '포트폴리오 데모';
+                    badge.className = 'px-2.5 py-1 rounded-xl text-[11px] font-extrabold bg-blue-100 text-blue-700';
+                }
+            }
             const openEl = document.getElementById('set-open-hour');
             const closeEl = document.getElementById('set-close-hour');
             const hrs = Array.from({ length: 18 }, (_, i) => i + 6);
@@ -3055,6 +3390,7 @@
         // ==========================================
         window.setGlobalLang = function(l) {
             lang = l;
+            document.documentElement.lang = l;
             applyTranslations();
             if (currentRole) {
                 buildNavigation(currentRole);
