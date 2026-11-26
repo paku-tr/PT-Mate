@@ -119,7 +119,7 @@
                             <div class="w-9 h-9 rounded-xl bg-amber-500/20 text-amber-300 flex items-center justify-center">
                                 <i data-lucide="dumbbell" class="w-5 h-5"></i>
                             </div>
-                            <h3 class="text-sm font-extrabold text-white" data-i18n="heroFeat3Title">FLEEK 스타일 시각화 운동 일지</h3>
+                            <h3 class="text-sm font-extrabold text-white" data-i18n="heroFeat3Title">시각화 트레이닝 기록</h3>
                             <p class="text-xs text-slate-400 leading-relaxed" data-i18n="heroFeat3Desc">8개 부위 56종목 일러스트 가이드 + 세트 DONE 자동 휴식 타이머·알람음</p>
                         </div>
                         <div class="p-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-xs space-y-2 hover:bg-white/[0.08] transition">
@@ -157,7 +157,7 @@
                 </div>
                 <div>
                     <label class="block text-xs font-bold text-slate-600 mb-1.5" data-i18n="lblPhone">전화번호 (숫자만 또는 하이픈 포함)</label>
-                    <input type="tel" id="login-member-phone" required placeholder="010-1234-5678" class="tap-target w-full px-4 py-3 rounded-2xl border border-slate-200 bg-slate-50 focus:bg-white focus:border-blue-500 outline-none transition">
+                    <input type="tel" id="login-member-phone" required data-i18n-placeholder="phPhoneLogin" placeholder="（例）090-1234-5678" class="tap-target w-full px-4 py-3 rounded-2xl border border-slate-200 bg-slate-50 focus:bg-white focus:border-blue-500 outline-none transition">
                 </div>
                 <div>
                     <label class="block text-xs font-bold text-slate-600 mb-1.5" data-i18n="lblPin4">4자리 비밀번호 (PIN)</label>
@@ -179,29 +179,29 @@
                 <!-- Step 1: Account Info -->
                 <div id="signup-step-1" class="space-y-3.5">
                     <div>
-                        <label class="block text-xs font-bold text-slate-600 mb-1" data-i18n="lblName">이름 (성함) *</label>
-                        <input type="text" name="name" id="su-name" required placeholder="홍길동" class="tap-target w-full px-3.5 py-2.5 rounded-2xl border border-slate-200 bg-slate-50 focus:bg-white outline-none">
+                        <label class="block text-xs font-bold text-slate-600 mb-1" data-i18n="lblName">お名前 *</label>
+                        <input type="text" name="name" id="su-name" required data-i18n-placeholder="phName" placeholder="（例）山田 太郎" class="tap-target w-full px-3.5 py-2.5 rounded-2xl border border-slate-200 bg-slate-50 focus:bg-white outline-none">
                     </div>
                     <div class="grid grid-cols-2 gap-3">
                         <div>
-                            <label class="block text-xs font-bold text-slate-600 mb-1" data-i18n="lblAge">나이 *</label>
+                            <label class="block text-xs font-bold text-slate-600 mb-1" data-i18n="lblAge">年齢 *</label>
                             <input type="number" name="age" id="su-age" required min="12" max="99" placeholder="28" class="tap-target w-full px-3.5 py-2.5 rounded-2xl border border-slate-200 bg-slate-50 focus:bg-white outline-none">
                         </div>
                         <div>
-                            <label class="block text-xs font-bold text-slate-600 mb-1" data-i18n="lblGender">성별 *</label>
+                            <label class="block text-xs font-bold text-slate-600 mb-1" data-i18n="lblGender">性別 *</label>
                             <select name="gender" id="su-gender" class="tap-target w-full px-3 py-2.5 rounded-2xl border border-slate-200 bg-slate-50 focus:bg-white outline-none"></select>
                         </div>
                     </div>
                     <div>
-                        <label class="block text-xs font-bold text-slate-600 mb-1" data-i18n="lblPhone">전화번호 (로그인 ID로 사용) *</label>
-                        <input type="tel" name="phone" id="su-phone" required placeholder="010-9876-5432" class="tap-target w-full px-3.5 py-2.5 rounded-2xl border border-slate-200 bg-slate-50 focus:bg-white outline-none">
+                        <label class="block text-xs font-bold text-slate-600 mb-1" data-i18n="lblPhoneSignup">電話番号（ログインID） *</label>
+                        <input type="tel" name="phone" id="su-phone" required data-i18n-placeholder="phPhoneSignup" placeholder="（例）090-9876-5432" class="tap-target w-full px-3.5 py-2.5 rounded-2xl border border-slate-200 bg-slate-50 focus:bg-white outline-none">
                     </div>
                     <div>
-                        <label class="block text-xs font-bold text-slate-600 mb-1" data-i18n="lblPin4Set">로그인용 4자리 숫자 PIN *</label>
+                        <label class="block text-xs font-bold text-slate-600 mb-1" data-i18n="lblPin4Set">ログイン用4桁数字PIN *</label>
                         <input type="password" inputmode="numeric" maxlength="4" pattern="\d{4}" name="pin" id="su-pin" required placeholder="1234" class="tap-target w-full px-3.5 py-2.5 rounded-2xl border border-slate-200 bg-slate-50 focus:bg-white outline-none tracking-widest">
                     </div>
                     <button type="button" onclick="goSignupStep(2)" class="tap-target w-full py-3.5 rounded-2xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-sm transition flex items-center justify-center gap-1.5">
-                        <span data-i18n="btnNextStep">다음: 신체 정보 및 목표 입력</span>
+                        <span data-i18n="btnNextStep">次へ：身体情報・目標入力</span>
                         <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </button>
                 </div>
@@ -361,10 +361,10 @@
                     <!-- PT Remaining Bar -->
                     <div class="bg-white/10 rounded-2xl p-4 space-y-2 border border-white/10">
                         <div class="flex items-center justify-between text-xs sm:text-sm">
-                            <span class="font-semibold text-slate-200" data-i18n="lblPtProgress">PT 잔여 횟수</span>
+                            <span id="mp-sessions-label" class="font-semibold text-slate-200" data-i18n="lblPtProgress">PT 잔여 횟수</span>
                             <span id="mp-sessions-text" class="font-extrabold text-white">0 / 10회</span>
                         </div>
-                        <div class="w-full h-2.5 bg-slate-950/60 rounded-full overflow-hidden">
+                        <div id="mp-sessions-bar-wrap" class="w-full h-2.5 bg-slate-950/60 rounded-full overflow-hidden">
                             <div id="mp-sessions-bar" class="h-full bg-emerald-400 rounded-full transition-all" style="width: 0%"></div>
                         </div>
                         <div id="mp-renewal-alert" class="hidden pt-1 flex items-center gap-1.5 text-amber-300 text-xs font-bold">
@@ -485,13 +485,13 @@
                 </div>
             </section>
 
-            <!-- MEMBER TAB 3: FLEEK-STYLE WORKOUT LOGGER -->
+            <!-- MEMBER TAB 3: WORKOUT LOGGER -->
             <section id="view-m-workout" class="hidden space-y-5">
                 <!-- Header + Live Volume & Default Rest Timer Controls -->
                 <div class="bg-slate-900 text-white rounded-3xl p-5 shadow-lg space-y-4">
                     <div class="flex items-center justify-between flex-wrap gap-2">
                         <div>
-                            <span class="px-2 py-0.5 rounded-md bg-emerald-500/20 text-emerald-300 text-[10px] font-extrabold uppercase tracking-wider">FLEEK STYLE LOG</span>
+                            <span class="px-2 py-0.5 rounded-md bg-emerald-500/20 text-emerald-300 text-[10px] font-extrabold uppercase tracking-wider">WORKOUT LOG</span>
                             <h2 class="text-xl font-extrabold mt-1" data-i18n="wlTitle">오늘의 운동 일지</h2>
                         </div>
                         <div class="text-right">
@@ -809,7 +809,7 @@
         <!-- 4 Detail Tabs -->
         <div class="px-4 border-b border-slate-200 flex gap-4 overflow-x-auto no-scrollbar bg-white shrink-0">
             <button id="tdtab-info" onclick="switchDetailTab('info')" class="py-3 text-xs sm:text-sm font-bold border-b-2 whitespace-nowrap" data-i18n="dtabInfo">기본·문진</button>
-            <button id="tdtab-workouts" onclick="switchDetailTab('workouts')" class="py-3 text-xs sm:text-sm font-bold border-b-2 whitespace-nowrap" data-i18n="dtabWorkouts">운동 기록 (FLEEK)</button>
+            <button id="tdtab-workouts" onclick="switchDetailTab('workouts')" class="py-3 text-xs sm:text-sm font-bold border-b-2 whitespace-nowrap" data-i18n="dtabWorkouts">트레이닝 기록</button>
             <button id="tdtab-metrics" onclick="switchDetailTab('metrics')" class="py-3 text-xs sm:text-sm font-bold border-b-2 whitespace-nowrap" data-i18n="dtabMetrics">체성분 그래프</button>
             <button id="tdtab-plan" onclick="switchDetailTab('plan')" class="py-3 text-xs sm:text-sm font-bold border-b-2 whitespace-nowrap" data-i18n="dtabPlan">루틴·식단</button>
         </div>
@@ -835,11 +835,11 @@
                         <span data-i18n="tQuickLogPt">PT 수업 빠른 기록 & LINE 요약 생성</span>
                     </h3>
                     <div class="grid grid-cols-2 gap-2">
-                        <input type="text" id="tpt-ex-name" oninput="lookupTrainerPrevEx()" list="ex-datalist" data-i18n-placeholder="exNamePh" placeholder="종목 (예: 스쿼트)" class="px-3 py-2 rounded-xl border border-slate-200 bg-slate-50 outline-none">
+                        <input type="text" id="tpt-ex-name" oninput="lookupTrainerPrevEx()" list="ex-datalist" data-i18n-placeholder="exNamePh" placeholder="種目（例：スクワット）" class="px-3 py-2 rounded-xl border border-slate-200 bg-slate-50 outline-none">
                         <div class="grid grid-cols-3 gap-1">
                             <input type="number" id="tpt-ex-w" placeholder="kg" class="px-2 py-2 rounded-xl border border-slate-200 bg-slate-50 outline-none">
-                            <input type="number" id="tpt-ex-r" placeholder="회" class="px-2 py-2 rounded-xl border border-slate-200 bg-slate-50 outline-none">
-                            <input type="number" id="tpt-ex-s" placeholder="세트" class="px-2 py-2 rounded-xl border border-slate-200 bg-slate-50 outline-none">
+                            <input type="number" id="tpt-ex-r" data-i18n-placeholder="phRepsShort" placeholder="回" class="px-2 py-2 rounded-xl border border-slate-200 bg-slate-50 outline-none">
+                            <input type="number" id="tpt-ex-s" data-i18n-placeholder="phSetsShort" placeholder="セット" class="px-2 py-2 rounded-xl border border-slate-200 bg-slate-50 outline-none">
                         </div>
                     </div>
                     <div id="tpt-prev-hint" class="hidden text-xs font-bold text-blue-700 bg-blue-50 px-3 py-1.5 rounded-xl"></div>
@@ -911,12 +911,12 @@
                             </button>
                         </div>
                         <div>
-                            <label class="block text-[11px] font-bold text-indigo-700 mb-1" data-i18n="lblWorkoutPlanJa">운동 루틴 (日本語)</label>
-                            <textarea id="td-workout-plan-ja" rows="3" placeholder="비워두면 회원이 JP 모드 전환 시 자동 번역됩니다." class="w-full p-2.5 rounded-xl border border-indigo-200 bg-white outline-none text-sm"></textarea>
+                            <label class="block text-[11px] font-bold text-indigo-700 mb-1" data-i18n="lblWorkoutPlanJa">トレーニングメニュー (日本語)</label>
+                            <textarea id="td-workout-plan-ja" rows="3" data-i18n-placeholder="phAutoTransHint" placeholder="空欄の場合、会員がJPモードに切り替えると自動翻訳されます。" class="w-full p-2.5 rounded-xl border border-indigo-200 bg-white outline-none text-sm"></textarea>
                         </div>
                         <div>
-                            <label class="block text-[11px] font-bold text-indigo-700 mb-1" data-i18n="lblDietPlanJa">식단 가이드 (日本語)</label>
-                            <textarea id="td-diet-plan-ja" rows="3" placeholder="비워두면 회원이 JP 모드 전환 시 자동 번역됩니다." class="w-full p-2.5 rounded-xl border border-indigo-200 bg-white outline-none text-sm"></textarea>
+                            <label class="block text-[11px] font-bold text-indigo-700 mb-1" data-i18n="lblDietPlanJa">食事ガイド (日本語)</label>
+                            <textarea id="td-diet-plan-ja" rows="3" data-i18n-placeholder="phAutoTransHint" placeholder="空欄の場合、会員がJPモードに切り替えると自動翻訳されます。" class="w-full p-2.5 rounded-xl border border-indigo-200 bg-white outline-none text-sm"></textarea>
                         </div>
                     </div>
 
@@ -929,71 +929,157 @@
         </div>
     </aside>
 
-    <!-- Datalist for Exercise Names -->
-    <datalist id="ex-datalist">
-        <option value="스쿼트 (Squat)">
-        <option value="벤치프레스 (Bench Press)">
-        <option value="데드리프트 (Deadlift)">
-        <option value="랫풀다운 (Lat Pulldown)">
-        <option value="숄더프레스 (Shoulder Press)">
-        <option value="레그프레스 (Leg Press)">
-        <option value="힙 쓰러스트 (Hip Thrust)">
-        <option value="시티드 로우 (Seated Row)">
-    </datalist>
+    <!-- Datalist for Exercise Names (Populated dynamically per language) -->
+    <datalist id="ex-datalist"></datalist>
 
     <!-- ================================================================== -->
-    <!-- 4. MODALS (ACTION SHEET, RENEWAL, PROFILE EDIT, EXERCISE PICKER)   -->
-    <!-- ================================================================== -->
-
-    <!-- Action Sheet / Confirm Modal (NO alert/confirm) -->
-    <div id="action-modal" class="hidden fixed inset-0 z-[60] flex items-end sm:items-center justify-center p-0 sm:p-4 bg-slate-900/50 backdrop-blur-xs">
-        <div class="bg-white w-full sm:max-w-md rounded-t-3xl sm:rounded-3xl p-6 space-y-4 shadow-2xl safe-bottom-nav">
-            <h3 id="am-title" class="text-lg font-extrabold text-slate-900">-</h3>
-            <p id="am-desc" class="text-sm text-slate-600 leading-relaxed">-</p>
-            <div id="am-extra" class="hidden"></div>
-            <div class="flex gap-2 pt-2">
-                <button type="button" onclick="closeActionModal()" class="tap-target flex-1 py-3 rounded-2xl border border-slate-200 text-slate-600 text-sm font-bold" data-i18n="btnCancel">취소</button>
-                <button type="button" id="am-confirm-btn" class="tap-target flex-1 py-3 rounded-2xl bg-blue-600 text-white text-sm font-bold">확인</button>
-            </div>
-        </div>
-    </div>
-
     <!-- Member Profile Edit Modal -->
     <div id="profile-modal" class="hidden fixed inset-0 z-[60] flex items-end sm:items-center justify-center p-0 sm:p-4 bg-slate-900/50 backdrop-blur-xs">
-        <form onsubmit="handleSaveMemberProfile(event)" class="bg-white w-full sm:max-w-md rounded-t-3xl sm:rounded-3xl p-6 space-y-4 shadow-2xl safe-bottom-nav">
-            <h3 class="text-lg font-extrabold text-slate-900" data-i18n="btnEditProfile">내 정보 수정</h3>
-            <div>
-                <label class="block text-xs font-bold text-slate-600 mb-1" data-i18n="lblTargetWeightShort">목표 체중 (kg)</label>
-                <input type="number" step="0.1" id="pm-target-w" class="tap-target w-full px-3.5 py-2.5 rounded-2xl border border-slate-200 bg-slate-50 outline-none">
+        <form onsubmit="handleSaveMemberProfile(event)" class="bg-white w-full sm:max-w-md rounded-t-3xl sm:rounded-3xl p-5 sm:p-6 space-y-4 shadow-2xl safe-bottom-nav">
+            <div class="flex items-center justify-between">
+                <h3 class="text-lg font-extrabold text-slate-900" data-i18n="pmTitle">プロフィール編集</h3>
+                <button type="button" onclick="closeMemberProfileModal()" class="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-600">
+                    <i data-lucide="x" class="w-4 h-4"></i>
+                </button>
+            </div>
+            <div class="grid grid-cols-2 gap-3">
+                <div>
+                    <label class="block text-xs font-bold text-slate-600 mb-1" data-i18n="lblTargetWeightShort">目標(kg)</label>
+                    <input type="number" step="0.1" id="pm-target-w" class="tap-target w-full px-3.5 py-2.5 rounded-2xl border border-slate-200 bg-slate-50 focus:bg-white outline-none">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-600 mb-1" data-i18n="thGoal">主な目標</label>
+                    <select id="pm-goal" class="tap-target w-full px-3 py-2.5 rounded-2xl border border-slate-200 bg-slate-50 focus:bg-white outline-none"></select>
+                </div>
             </div>
             <div>
-                <label class="block text-xs font-bold text-slate-600 mb-1" data-i18n="thGoal">핵심 목표</label>
-                <select id="pm-goal" class="tap-target w-full px-3.5 py-2.5 rounded-2xl border border-slate-200 bg-slate-50 outline-none"></select>
+                <label class="block text-xs font-bold text-slate-600 mb-1" data-i18n="lblInjuryDetail">特記事項 / アレルギー / 食習慣</label>
+                <textarea id="pm-injury" rows="3" class="w-full px-3.5 py-2.5 rounded-2xl border border-slate-200 bg-slate-50 focus:bg-white outline-none"></textarea>
             </div>
-            <div>
-                <label class="block text-xs font-bold text-slate-600 mb-1" data-i18n="lblInjuryDetail">특이사항 / 통증 메모</label>
-                <textarea id="pm-injury" rows="2" class="w-full px-3.5 py-2.5 rounded-2xl border border-slate-200 bg-slate-50 outline-none"></textarea>
-            </div>
-            <div class="flex gap-2 pt-2">
-                <button type="button" onclick="closeMemberProfileModal()" class="tap-target flex-1 py-3 rounded-2xl border border-slate-200 text-slate-600 text-sm font-bold" data-i18n="btnCancel">취소</button>
-                <button type="submit" class="tap-target flex-1 py-3 rounded-2xl bg-blue-600 text-white text-sm font-bold" data-i18n="btnSave">저장</button>
+            <div class="flex gap-2">
+                <button type="button" onclick="closeMemberProfileModal()" class="tap-target flex-1 py-3 rounded-2xl border border-slate-200 text-slate-600 text-sm font-bold" data-i18n="btnCancel">キャンセル</button>
+                <button type="submit" class="tap-target flex-1 py-3 rounded-2xl bg-blue-600 hover:bg-blue-700 text-white text-sm font-extrabold transition" data-i18n="btnSave">保存</button>
             </div>
         </form>
     </div>
 
-    <!-- Trainer Package Renewal Modal -->
-    <div id="renew-modal" class="hidden fixed inset-0 z-[60] flex items-end sm:items-center justify-center p-0 sm:p-4 bg-slate-900/50 backdrop-blur-xs">
-        <div class="bg-white w-full sm:max-w-md rounded-t-3xl sm:rounded-3xl p-6 space-y-4 shadow-2xl safe-bottom-nav">
-            <h3 class="text-lg font-extrabold text-slate-900" data-i18n="btnRenewPackage">PT 횟수 연장</h3>
-            <div class="grid grid-cols-2 gap-2.5">
-                <button type="button" onclick="applyRenew(10)" class="tap-target py-3.5 rounded-2xl bg-blue-50 hover:bg-blue-600 text-blue-700 hover:text-white font-extrabold text-sm transition">+10회 추가</button>
-                <button type="button" onclick="applyRenew(20)" class="tap-target py-3.5 rounded-2xl bg-emerald-50 hover:bg-emerald-600 text-emerald-700 hover:text-white font-extrabold text-sm transition">+20회 추가</button>
+    <!-- Generic Confirmation & Guide Action Modal -->
+    <div id="action-modal" class="hidden fixed inset-0 z-[65] flex items-end sm:items-center justify-center p-0 sm:p-4 bg-slate-900/50 backdrop-blur-xs">
+        <div class="bg-white w-full sm:max-w-md rounded-t-3xl sm:rounded-3xl p-5 sm:p-6 space-y-4 shadow-2xl safe-bottom-nav">
+            <div class="space-y-1">
+                <h3 id="am-title" class="text-lg font-extrabold text-slate-900">-</h3>
+                <p id="am-desc" class="text-xs text-slate-500 leading-relaxed">-</p>
             </div>
-            <form onsubmit="handleCustomRenew(event)" class="flex gap-2">
-                <input type="number" min="1" max="100" id="renew-custom-val" placeholder="직접 입력 (예: 30)" class="tap-target flex-1 px-3.5 py-2.5 rounded-2xl border border-slate-200 bg-slate-50 outline-none">
-                <button type="submit" class="tap-target px-5 rounded-2xl bg-slate-900 text-white text-sm font-bold" data-i18n="btnAdd">추가</button>
-            </form>
-            <button type="button" onclick="closeRenewModal()" class="tap-target w-full py-3 rounded-2xl border border-slate-200 text-slate-600 text-sm font-bold" data-i18n="btnCancel">취소</button>
+            <div id="am-extra" class="hidden"></div>
+            <div class="flex gap-2 pt-1">
+                <button type="button" onclick="closeActionModal()" class="tap-target flex-1 py-3 rounded-2xl border border-slate-200 text-slate-600 text-sm font-bold" data-i18n="btnCancel">キャンセル</button>
+                <button type="button" id="am-confirm-btn" class="tap-target flex-1 py-3 rounded-2xl bg-blue-600 hover:bg-blue-700 text-white text-sm font-extrabold transition" data-i18n="btnConfirm">確認</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Trainer PT Session & Contract Manager Modal -->
+    <div id="renew-modal" class="hidden fixed inset-0 z-[60] flex items-end sm:items-center justify-center p-0 sm:p-4 bg-slate-900/50 backdrop-blur-xs">
+        <div class="bg-white w-full sm:max-w-md rounded-t-3xl sm:rounded-3xl p-5 sm:p-6 space-y-4 shadow-2xl safe-bottom-nav max-h-[90vh] overflow-y-auto">
+            <!-- Header -->
+            <div class="flex items-start justify-between gap-2">
+                <div>
+                    <h3 class="text-lg font-extrabold text-slate-900" data-i18n="ptMgrTitle">PT回数・契約管理</h3>
+                    <p id="rm-member-name" class="text-xs font-bold text-blue-600 mt-0.5">-</p>
+                </div>
+                <button type="button" onclick="closeRenewModal()" class="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-600 transition">
+                    <i data-lucide="x" class="w-4 h-4"></i>
+                </button>
+            </div>
+
+            <!-- Contract Type Segmented Selector -->
+            <div class="space-y-1.5">
+                <label class="block text-xs font-bold text-slate-500" data-i18n="lblContractType">契約タイプ</label>
+                <div class="grid grid-cols-2 gap-1.5 bg-slate-100 p-1 rounded-2xl">
+                    <button type="button" id="rm-type-package" onclick="setRenewContractType('package')" class="tap-target rounded-xl text-xs font-extrabold transition" data-i18n="contractPackage">回数券（コース）</button>
+                    <button type="button" id="rm-type-single" onclick="setRenewContractType('single')" class="tap-target rounded-xl text-xs font-extrabold transition" data-i18n="contractSingle">都度利用（1回ごと）</button>
+                </div>
+            </div>
+
+            <!-- PACKAGE MODE PANEL -->
+            <div id="rm-package-panel" class="space-y-4">
+                <!-- Live Calculator Summary -->
+                <div class="grid grid-cols-3 gap-2 bg-slate-900 text-white rounded-2xl p-3.5 text-center">
+                    <div>
+                        <span class="block text-[10px] font-bold text-slate-400" data-i18n="lblTotalSessions">総契約回数</span>
+                        <span id="rm-calc-total" class="text-xl font-extrabold">10</span>
+                    </div>
+                    <div class="border-x border-white/10">
+                        <span class="block text-[10px] font-bold text-slate-400" data-i18n="lblDoneSessions">消化済み</span>
+                        <span id="rm-calc-done" class="text-xl font-extrabold text-blue-300">0</span>
+                    </div>
+                    <div>
+                        <span class="block text-[10px] font-bold text-emerald-300" data-i18n="lblRemSessions">残り回数</span>
+                        <span id="rm-calc-rem" class="text-xl font-extrabold text-emerald-400">10</span>
+                    </div>
+                </div>
+
+                <!-- Quick Add Buttons -->
+                <div class="space-y-2">
+                    <label class="block text-xs font-bold text-slate-600" data-i18n="lblQuickAddPt">PT回数を追加（延長・再契約）</label>
+                    <div class="grid grid-cols-4 gap-2">
+                        <button type="button" onclick="quickAddRenewSessions(1)" class="tap-target py-2.5 rounded-xl bg-slate-100 hover:bg-blue-600 text-slate-800 hover:text-white font-extrabold text-xs transition">+1</button>
+                        <button type="button" onclick="quickAddRenewSessions(5)" class="tap-target py-2.5 rounded-xl bg-blue-50 hover:bg-blue-600 text-blue-700 hover:text-white font-extrabold text-xs transition">+5</button>
+                        <button type="button" onclick="quickAddRenewSessions(10)" class="tap-target py-2.5 rounded-xl bg-blue-50 hover:bg-blue-600 text-blue-700 hover:text-white font-extrabold text-xs transition">+10</button>
+                        <button type="button" onclick="quickAddRenewSessions(20)" class="tap-target py-2.5 rounded-xl bg-emerald-50 hover:bg-emerald-600 text-emerald-700 hover:text-white font-extrabold text-xs transition">+20</button>
+                    </div>
+                    <div class="flex gap-2">
+                        <input type="number" min="1" max="200" id="renew-custom-val" data-i18n-placeholder="phRenewCustom" placeholder="直接入力（例：15）" class="tap-target flex-1 px-3.5 py-2 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white outline-none text-sm">
+                        <button type="button" onclick="handleCustomRenewAdd()" class="tap-target px-4 rounded-xl bg-slate-800 hover:bg-slate-900 text-white text-xs font-bold transition" data-i18n="btnAdd">追加</button>
+                    </div>
+                </div>
+
+                <!-- Direct Fine-Tune Controls -->
+                <div class="grid grid-cols-2 gap-3 pt-2 border-t border-slate-100">
+                    <div>
+                        <label class="block text-[11px] font-bold text-slate-500 mb-1" data-i18n="lblTotalSessions">総契約回数</label>
+                        <div class="flex items-center gap-1">
+                            <button type="button" onclick="stepRenewField('total', -1)" class="tap-target w-10 rounded-xl bg-slate-100 hover:bg-slate-200 font-extrabold text-slate-700">-</button>
+                            <input type="number" min="0" id="rm-input-total" oninput="syncRenewInputs()" class="tap-target w-full text-center rounded-xl border border-slate-200 bg-slate-50 font-extrabold outline-none">
+                            <button type="button" onclick="stepRenewField('total', 1)" class="tap-target w-10 rounded-xl bg-slate-100 hover:bg-slate-200 font-extrabold text-slate-700">+</button>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-[11px] font-bold text-slate-500 mb-1" data-i18n="lblDoneSessions">消化済み</label>
+                        <div class="flex items-center gap-1">
+                            <button type="button" onclick="stepRenewField('done', -1)" class="tap-target w-10 rounded-xl bg-slate-100 hover:bg-slate-200 font-extrabold text-slate-700">-</button>
+                            <input type="number" min="0" id="rm-input-done" oninput="syncRenewInputs()" class="tap-target w-full text-center rounded-xl border border-slate-200 bg-slate-50 font-extrabold outline-none">
+                            <button type="button" onclick="stepRenewField('done', 1)" class="tap-target w-10 rounded-xl bg-slate-100 hover:bg-slate-200 font-extrabold text-slate-700">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SINGLE / PAY-PER-SESSION MODE PANEL -->
+            <div id="rm-single-panel" class="hidden space-y-4">
+                <div class="p-4 rounded-2xl bg-indigo-50 border border-indigo-200 space-y-1.5">
+                    <div class="flex items-center gap-1.5 text-indigo-800 text-xs font-extrabold">
+                        <i data-lucide="repeat" class="w-4 h-4"></i>
+                        <span data-i18n="singleModeTitle">都度利用（1回ごとのセッション管理）</span>
+                    </div>
+                    <p class="text-xs text-indigo-700 leading-relaxed" data-i18n="singleModeDesc">回数券の残り回数や更新アラートは表示されず、これまでの累計PT実施回数のみをシンプルに記録・管理します。</p>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-slate-600 mb-1.5" data-i18n="lblCumulativeSessions">累計PT実施回数</label>
+                    <div class="flex items-center gap-2">
+                        <button type="button" onclick="stepRenewField('singleDone', -1)" class="tap-target w-12 rounded-xl bg-slate-100 hover:bg-slate-200 font-extrabold text-lg text-slate-700">-</button>
+                        <input type="number" min="0" id="rm-input-single-done" class="tap-target flex-1 text-center rounded-xl border border-slate-200 bg-slate-50 font-extrabold text-lg outline-none">
+                        <button type="button" onclick="stepRenewField('singleDone', 1)" class="tap-target w-12 rounded-xl bg-slate-100 hover:bg-slate-200 font-extrabold text-lg text-slate-700">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Actions -->
+            <div class="flex gap-2 pt-2">
+                <button type="button" onclick="closeRenewModal()" class="tap-target flex-1 py-3 rounded-2xl border border-slate-200 text-slate-600 text-sm font-bold" data-i18n="btnCancel">キャンセル</button>
+                <button type="button" onclick="saveRenewModalChanges()" class="tap-target flex-1 py-3 rounded-2xl bg-blue-600 hover:bg-blue-700 text-white text-sm font-extrabold shadow-md shadow-blue-600/20 transition" data-i18n="btnSaveChanges">設定を保存</button>
+            </div>
         </div>
     </div>
 
@@ -1099,7 +1185,7 @@
         let selectedMemberId = null;
         let activeDetailTab = 'info';
         let trainerGoalFilter = 'all';
-
+        let currentSignupStep = 1;
         // Calendar State
         function toDateStr(d) {
             return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
@@ -1132,6 +1218,7 @@
         let trainerChart = null;
         let actionModalCallback = null;
         let renewTargetId = null;
+        let renewDraftType = 'package';
         const translationCache = new Map();
 
         // ==========================================
@@ -1146,14 +1233,17 @@
                 heroFeat1Desc: '신체 스펙·통증 부위·잔여 횟수·갱신 알림을 대시보드에서 실시간 확인',
                 heroFeat2Title: '프라이버시 공유 PT 예약',
                 heroFeat2Desc: '타 회원 정보는 비공개 처리하면서 빈 시간만 간편하게 예약·관리',
-                heroFeat3Title: 'FLEEK 스타일 시각화 운동 일지',
+                heroFeat3Title: '시각화 트레이닝 기록',
                 heroFeat3Desc: '8개 부위 56종목 일러스트 가이드 + 세트 DONE 자동 휴식 타이머·알람음',
                 heroFeat4Title: '한·일 자동 번역 & LINE 요약',
                 heroFeat4Desc: '맞춤 루틴·식단 한↔일 자동 번역과 수업 후 LINE 리포트 1클릭 복사',
                 authTabMember: '회원 로그인', authTabSignup: '신규 회원가입', authTabTrainer: '트레이너',
                 memberLoginTitle: '회원 전용 로그인', memberLoginDesc: 'PT 예약 캘린더와 나만의 운동 일지를 관리하세요.',
-                lblPhone: '전화번호', lblPin4: '4자리 비밀번호 (PIN)', btnLogin: '로그인하기',
-                signupTitle: '회원가입 & 사전 문진표', lblName: '이름 (성함) *', lblAge: '나이 *', lblGender: '성별 *',
+                lblPhone: '전화번호', lblPhoneSignup: '전화번호 (로그인 ID로 사용) *', lblPin4: '4자리 비밀번호 (PIN)', btnLogin: '로그인하기',
+                phPhoneLogin: '(예) 010-1234-5678', phPhoneSignup: '(예) 010-9876-5432',
+                signupTitle: '회원가입 & 사전 문진표', lblName: '이름 (성함) *', phName: '(예) 홍길동',
+                signupStep1: 'Step 1 / 2 — 기본 계정 정보', signupStep2: 'Step 2 / 2 — 신체 정보 및 목표',
+                lblAge: '나이 *', lblGender: '성별 *',
                 lblPin4Set: '로그인용 4자리 숫자 PIN *', btnNextStep: '다음: 신체 정보 및 목표 입력',
                 lblHeight: '키(cm) *', lblWeightShort: '현재(kg) *', lblTargetWeightShort: '목표(kg)',
                 lblBfShort: '체지방률(%)', thGoal: '핵심 목표', lblExp: '운동 경력',
@@ -1164,12 +1254,20 @@
                 trainerLoginTitle: '트레이너 관리자 로그인', trainerLoginDesc: '전체 회원 관리, 스케줄 차단 및 운동 기록 모니터링',
                 lblTrainerPin: '관리자 4자리 PIN', btnTrainerEnter: '관리자 대시보드 입장',
                 demoQuickTitle: '포트폴리오 1클릭 데모 체험', btnDemoMember: '회원 데모 체험', btnDemoTrainer: '트레이너 데모',
-                memberWelcome: '오늘도 건강한 하루 되세요!', btnEditProfile: '정보 수정',
-                lblPtProgress: 'PT 잔여 횟수', mpRenewalMsg: '잔여 횟수가 2회 이하입니다. 트레이너에게 연장을 문의하세요!',
+                memberWelcome: '오늘도 건강한 하루 되세요!', btnEditProfile: '정보 수정', pmTitle: '내 정보 수정',
+                lblPtProgress: 'PT 진행 · 잔여 횟수', mpRenewalMsg: '잔여 횟수가 2회 이하입니다. 트레이너에게 연장을 문의하세요!',
                 lblNextPt: '다음 예정된 PT', btnGoCalendar: '예약하기', chartTitle: '체중 · 체지방률 변화',
-                btnLogBody: '오늘 체중 기록', btnSave: '저장', btnCancel: '취소', btnAdd: '추가',
+                btnLogBody: '오늘 체중 기록', btnSave: '저장', btnCancel: '취소', btnConfirm: '확인', btnAdd: '추가',
+                btnAdd10: '+10회 추가', btnAdd20: '+20회 추가', phRenewCustom: '직접 입력 (예: 30)',
+                phRepsShort: '회', phSetsShort: '세트', phAutoTransHint: '비워두면 회원이 JP 모드 전환 시 자동 번역됩니다.',
                 lblTrainerWorkoutPlan: '트레이너 맞춤 운동 루틴', lblTrainerDietPlan: '맞춤 식단 & 목표 영양소',
                 calTitle: 'PT 예약 캘린더', calMemberSubtitle: '비어있는 시간을 눌러 PT를 간편하게 예약하세요.',
+                tMasterCalTitle: '트레이너 전체 스케줄 관리', tMasterCalSub: '시간대를 눌러 수동 예약, 휴무 차단, 수업 완료를 처리하세요.',
+                phSearchMember: '회원 이름, 전화번호, 특이사항 검색...', filterRenewalOnly: '갱신 임박만',
+                settingsTitle: '트레이너 환경 설정', settingsSub: '예약 가능 시간대, 관리자 PIN, 회원 공유 링크를 관리합니다.',
+                lblOpenHour: '예약 시작 시간', lblCloseHour: '예약 마감 시간', lblChangePin: '관리자 4자리 PIN 변경 (변경 시에만 입력)',
+                btnSaveChanges: '설정 저장하기', shareTitle: '회원용 앱 링크 공유 (LINE 전송용)',
+                shareDesc: '신규 회원님께 아래 링크를 보내 회원가입, 사전 문진표 작성, PT 예약 및 운동 일지 기록을 안내하세요.',
                 slotOpen: '예약 가능', slotMine: '내 예약', slotClosed: '예약 마감',
                 calPrivacyNote: '타 회원 정보는 비공개 처리됩니다',
                 wlTitle: '오늘의 운동 일지', wlTotalVolume: '총 볼륨 (Total Volume)',
@@ -1183,18 +1281,18 @@
                 unitPeople: '명', unitCases: '건', unitSessionShort: '회',
                 tTodaySchedule: '오늘의 PT 스케줄', btnViewAll: '전체 보기',
                 tActivityFeed: '최근 회원 활동 피드 (운동 일지 · 예약)',
-                tMasterCalTitle: '트레이너 전체 스케줄 관리', tMasterCalSub: '시간대를 눌러 수동 예약, 휴무 차단, 수업 완료를 처리하세요.',
-                phSearchMember: '회원 이름, 전화번호, 특이사항 검색...', filterRenewalOnly: '갱신 임박만',
-                settingsTitle: '트레이너 환경 설정', settingsSub: '예약 가능 시간대, 관리자 PIN, 회원 공유 링크를 관리합니다.',
-                lblOpenHour: '예약 시작 시간', lblCloseHour: '예약 마감 시간',
-                lblChangePin: '관리자 4자리 PIN 변경 (변경 시에만 입력)', btnSaveChanges: '저장하기',
-                shareTitle: '회원용 앱 링크 공유 (LINE 전송용)',
-                shareDesc: '신규 회원님께 아래 링크를 보내 회원가입, 사전 문진표 작성, PT 예약 및 운동 일지 기록을 안내하세요.',
-                btnCopyShareLink: '회원 앱 링크 복사하기', btnRenewPackage: '패키지 연장',
+                btnCopyShareLink: '회원 앱 링크 복사하기', btnRenewPackage: '횟수·계약 관리',
+                ptMgrTitle: 'PT 횟수 · 계약 관리', lblContractType: '계약 방식 선택',
+                contractPackage: '횟수권 (패키지)', contractSingle: '단발 이용 (1회 결제)',
+                lblTotalSessions: '총 계약 횟수', lblDoneSessions: '진행 완료', lblRemSessions: '잔여 횟수',
+                lblQuickAddPt: 'PT 횟수 빠른 추가 (연장 · 재등록)',
+                singleModeTitle: '단발 이용 (그때그때 1회씩 진행)',
+                singleModeDesc: '횟수권 잔여 횟수나 갱신 임박 알림 없이, 지금까지 함께 진행한 누적 PT 횟수만 깔끔하게 관리합니다.',
+                lblCumulativeSessions: '누적 PT 진행 횟수',
                 btnInstallApp: '홈 화면에 앱으로 설치하기',
                 pwaCardTitle: '스마트폰 앱으로 설치 (PWA)',
                 pwaCardDesc: '홈 화면에 추가하면 앱스토어 설치 없이 주소창 없는 전체화면 앱으로 1초 만에 실행할 수 있습니다.',
-                dtabInfo: '기본·문진', dtabWorkouts: '운동 기록 (FLEEK)', dtabMetrics: '체성분 그래프', dtabPlan: '루틴·식단',
+                dtabInfo: '기본·문진', dtabWorkouts: '트레이닝 기록', dtabMetrics: '체성분 그래프', dtabPlan: '루틴·식단',
                 lblTrainerPrivateMemo: '트레이너 전용 메모', tQuickLogPt: 'PT 수업 빠른 기록 & LINE 요약 생성',
                 exNamePh: '종목 (예: 스쿼트)', phFeedback: '오늘의 피드백 / 다음 예약 안내', btnSaveSession: 'PT 기록 저장 (+1회)',
                 btnCopyForLine: 'LINE 복사', tMemberLogsTitle: '회원의 전체 운동 일지 (개인 운동 포함)', btnSavePlan: '루틴·식단 저장',
@@ -1219,14 +1317,17 @@
                 heroFeat1Desc: '身体データ・痛み部位・残回数・更新アラートをダッシュボードで即確認',
                 heroFeat2Title: 'プライバシー保護 共有予約カレンダー',
                 heroFeat2Desc: '他会員の情報は非公開のまま、空き枠だけをシンプルに予約・調整',
-                heroFeat3Title: 'FLEEK風 56種目図解ワークアウトログ',
+                heroFeat3Title: '56種目図解トレーニング記録',
                 heroFeat3Desc: '8部位56種目の筋肉イラストガイド＋DONE自動休憩タイマー＆アラーム音',
                 heroFeat4Title: '韓日自動翻訳 & LINEレポート作成',
                 heroFeat4Desc: 'カスタムメニュー・食事の韓日自動翻訳とレッスン後LINE要約1クリックコピー',
                 authTabMember: '会員ログイン', authTabSignup: '新規会員登録', authTabTrainer: 'トレーナー',
                 memberLoginTitle: '会員専用ログイン', memberLoginDesc: 'PT予約カレンダーとトレーニング記録を管理できます。',
-                lblPhone: '電話番号', lblPin4: '4桁パスコード (PIN)', btnLogin: 'ログイン',
-                signupTitle: '新規登録 & 事前カウンセリング', lblName: 'お名前 *', lblAge: '年齢 *', lblGender: '性別 *',
+                lblPhone: '電話番号', lblPhoneSignup: '電話番号（ログインID） *', lblPin4: '4桁パスコード (PIN)', btnLogin: 'ログイン',
+                phPhoneLogin: '（例）090-1234-5678', phPhoneSignup: '（例）090-9876-5432',
+                signupTitle: '新規登録 & 事前カウンセリング', lblName: 'お名前 *', phName: '（例）山田 太郎',
+                signupStep1: 'Step 1 / 2 — 基本アカウント情報', signupStep2: 'Step 2 / 2 — 身体情報・目標・同意',
+                lblAge: '年齢 *', lblGender: '性別 *',
                 lblPin4Set: 'ログイン用4桁数字PIN *', btnNextStep: '次へ：身体情報・目標入力',
                 lblHeight: '身長(cm) *', lblWeightShort: '現在(kg) *', lblTargetWeightShort: '目標(kg)',
                 lblBfShort: '体脂肪率(%)', thGoal: '主な目標', lblExp: '運動歴',
@@ -1237,12 +1338,20 @@
                 trainerLoginTitle: 'トレーナー管理者ログイン', trainerLoginDesc: '全会員管理・スケジュール調整・運動ログ確認',
                 lblTrainerPin: '管理者4桁PIN', btnTrainerEnter: '管理ダッシュボードへ',
                 demoQuickTitle: 'ポートフォリオ 1クリック体験', btnDemoMember: '会員デモ体験', btnDemoTrainer: 'トレーナーデモ',
-                memberWelcome: '今日も良いトレーニングを！', btnEditProfile: '情報編集',
-                lblPtProgress: 'PT残回数', mpRenewalMsg: '残り2回以下です。トレーナーに更新をご相談ください！',
+                memberWelcome: '今日も良いトレーニングを！', btnEditProfile: '情報編集', pmTitle: 'プロフィール編集',
+                lblPtProgress: 'PT消化・残り回数', mpRenewalMsg: '残り回数が2回以下です。トレーナーへ更新をご相談ください！',
                 lblNextPt: '次回のPT予約', btnGoCalendar: '予約する', chartTitle: '体重・体脂肪率の推移',
-                btnLogBody: '今日の体重記録', btnSave: '保存', btnCancel: 'キャンセル', btnAdd: '追加',
+                btnLogBody: '今日の体重記録', btnSave: '保存', btnCancel: 'キャンセル', btnConfirm: '確認', btnAdd: '追加',
+                btnAdd10: '+10回追加', btnAdd20: '+20回追加', phRenewCustom: '直接入力（例：30）',
+                phRepsShort: '回', phSetsShort: 'セット', phAutoTransHint: '空欄の場合、会員がJPモードに切り替えると自動翻訳されます。',
                 lblTrainerWorkoutPlan: 'カスタムトレーニングメニュー', lblTrainerDietPlan: '食事ガイド & 目標栄養素',
                 calTitle: 'PT予約カレンダー', calMemberSubtitle: '空き枠をタップして簡単にPTを予約できます。',
+                tMasterCalTitle: 'トレーナー全体スケジュール管理', tMasterCalSub: '時間帯をタップして手動予約・休み設定・完了処理を行えます。',
+                phSearchMember: '会員名・電話番号・特記事項で検索...', filterRenewalOnly: '更新間近のみ',
+                settingsTitle: 'トレーナー環境設定', settingsSub: '予約受付時間、管理者PIN、会員共有リンクを管理します。',
+                lblOpenHour: '予約開始時間', lblCloseHour: '予約終了時間', lblChangePin: '管理者4桁PIN変更（変更時のみ入力）',
+                btnSaveChanges: '設定を保存', shareTitle: '会員用アプリリンク共有（LINE送信用）',
+                shareDesc: '新規会員へ以下のリンクを送り、会員登録・事前カウンセリング・PT予約・運動ログ記録を案内しましょう。',
                 slotOpen: '予約可能', slotMine: '自分の予約', slotClosed: '予約不可',
                 calPrivacyNote: '他の会員の情報は非公開です',
                 wlTitle: '今日のトレーニング記録', wlTotalVolume: '総ボリューム (Total Volume)',
@@ -1256,18 +1365,18 @@
                 unitPeople: '名', unitCases: '件', unitSessionShort: '回',
                 tTodaySchedule: '本日のPTスケジュール', btnViewAll: 'すべて見る',
                 tActivityFeed: '最近の会員アクティビティ（運動ログ・予約）',
-                tMasterCalTitle: 'トレーナー全体スケジュール管理', tMasterCalSub: '時間枠をタップして手動予約・休み設定・完了処理を行えます。',
-                phSearchMember: '名前・電話番号・特記事項で検索...', filterRenewalOnly: '更新間近のみ',
-                settingsTitle: 'トレーナー環境設定', settingsSub: '予約可能時間・管理者PIN・共有リンクを管理します。',
-                lblOpenHour: '予約開始時間', lblCloseHour: '予約終了時間',
-                lblChangePin: '管理者4桁PIN変更（変更時のみ入力）', btnSaveChanges: '設定を保存',
-                shareTitle: '会員用アプリリンク共有 (LINE送信用)',
-                shareDesc: '新規会員様へ下記リンクを送り、会員登録・事前問診・予約・運動記録をご案内ください。',
-                btnCopyShareLink: '会員アプリリンクをコピー', btnRenewPackage: '回数延長',
+                btnCopyShareLink: '会員アプリリンクをコピー', btnRenewPackage: '回数・契約管理',
+                ptMgrTitle: 'PT回数・契約管理', lblContractType: '契約タイプ',
+                contractPackage: '回数券（コース）', contractSingle: '都度利用（1回ごと）',
+                lblTotalSessions: '総契約回数', lblDoneSessions: '消化済み', lblRemSessions: '残り回数',
+                lblQuickAddPt: 'PT回数を追加（延長・再契約）',
+                singleModeTitle: '都度利用（1回ごとのセッション管理）',
+                singleModeDesc: '回数券の残り回数や更新アラートは表示されず、これまでの累計PT実施回数のみをシンプルに記録・管理します。',
+                lblCumulativeSessions: '累計PT実施回数',
                 btnInstallApp: 'ホーム画面にアプリとして追加',
                 pwaCardTitle: 'スマホアプリとしてインストール (PWA)',
                 pwaCardDesc: 'ホーム画面に追加すると、ストア不要でアドレスバーのない全画面アプリとして起動できます。',
-                dtabInfo: '基本・問診', dtabWorkouts: '運動記録 (FLEEK)', dtabMetrics: '体組成グラフ', dtabPlan: 'プラン・食事',
+                dtabInfo: '基本・問診', dtabWorkouts: 'トレーニング記録', dtabMetrics: '体組成グラフ', dtabPlan: 'プラン・食事',
                 lblTrainerPrivateMemo: 'トレーナー専用メモ', tQuickLogPt: 'PTクイック記録 & LINE要約作成',
                 exNamePh: '種目（例：スクワット）', phFeedback: '今日のフィードバック / 次回予約案内', btnSaveSession: 'PT記録保存 (+1回)',
                 btnCopyForLine: 'LINEコピー', tMemberLogsTitle: '会員の全トレーニング記録（個人トレ含む）', btnSavePlan: 'プランを保存',
@@ -1408,6 +1517,38 @@
             return lang === 'ja' ? ex.ja : ex.ko;
         }
 
+        // Localized getters for seed/bilingual member & workout records
+        function getMemberDisplayName(m) {
+            if (!m) return '-';
+            return (lang === 'ja' && m.nameJa) ? m.nameJa : m.name;
+        }
+        function getMemberInjuryText(m) {
+            if (!m) return '-';
+            return (lang === 'ja' && m.injuryDetailJa) ? m.injuryDetailJa : (m.injuryDetail || '-');
+        }
+        function getMemberMemoText(m) {
+            if (!m) return '';
+            return (lang === 'ja' && m.trainerMemoJa) ? m.trainerMemoJa : (m.trainerMemo || '');
+        }
+        function getBookingMemberName(b) {
+            if (b.memberId) {
+                const m = members.find(x => x.id === b.memberId);
+                if (m) return getMemberDisplayName(m);
+            }
+            return b.memberName || '-';
+        }
+        function getWorkoutExDisplayName(ex) {
+            if (ex && ex.exId) {
+                const lib = EXERCISE_LIBRARY.find(e => e.id === ex.exId);
+                if (lib) return getExName(lib);
+            }
+            return (lang === 'ja' && ex.nameJa) ? ex.nameJa : (ex.name || '');
+        }
+        function getWorkoutMemoText(w) {
+            if (!w) return '';
+            return (lang === 'ja' && w.memoJa) ? w.memoJa : (w.memo || '');
+        }
+
         // ==========================================
         // SEED DATA & STORAGE ENGINE (FIRESTORE / LOCALSTORAGE)
         // ==========================================
@@ -1422,12 +1563,15 @@
 
             const seedMembers = [
                 {
-                    id: 'mem-1', name: '김지민 (Jimin)', phone: '010-1234-5678', pin: '1234',
+                    id: 'mem-1', name: '김지민 (Jimin)', nameJa: '高橋 美咲 (Misaki)', phone: '090-1234-5678', pin: '1234',
                     age: 27, gender: 'female', height: 164, currentWeight: 56.2, targetWeight: 52.0,
                     currentBodyFat: 25.4, targetBodyFat: 21.0, goal: 'diet', experience: 'beginner',
-                    painAreas: ['shoulder', 'neck'], injuryDetail: '사무직 라운드숄더, 유당불내증 있음',
+                    painAreas: ['shoulder', 'neck'],
+                    injuryDetail: '사무직 라운드숄더, 유당불내증 있음',
+                    injuryDetailJa: 'デスクワークによる巻き肩、乳糖不耐症あり',
                     trainerMemo: '스쿼트 가동성 많이 개선됨. 상체 당기기 위주로 거북목 교정 병행 중.',
-                    totalSessions: 10, completedSessions: 8, isNew: false,
+                    trainerMemoJa: 'スクワットの可動域が大幅改善。引く種目中心で猫背改善を並行中。',
+                    contractType: 'package', totalSessions: 10, completedSessions: 8, isNew: false,
                     bodyMetrics: [
                         { id: 'bm-1', date: twoWeeksAgo, weight: 58.1, bodyFat: 27.0 },
                         { id: 'bm-2', date: oneWeekAgo, weight: 57.0, bodyFat: 26.2 },
@@ -1441,12 +1585,15 @@
                     createdAt: Date.now() - 100000
                 },
                 {
-                    id: 'mem-2', name: '사토 켄지 (Kenji)', phone: '080-5555-7777', pin: '1234',
+                    id: 'mem-2', name: '사토 켄지 (Kenji)', nameJa: '佐藤 健司 (Kenji)', phone: '080-5555-7777', pin: '1234',
                     age: 33, gender: 'male', height: 177, currentWeight: 74.5, targetWeight: 78.0,
                     currentBodyFat: 15.8, targetBodyFat: 13.0, goal: 'hypertrophy', experience: 'intermediate',
-                    painAreas: ['back'], injuryDetail: '과거 허리 디스크 경미, 고중량 데드리프트 시 벨트 필수',
+                    painAreas: ['back'],
+                    injuryDetail: '과거 허리 디스크 경미, 고중량 데드리프트 시 벨트 필수',
+                    injuryDetailJa: '過去に軽度の腰椎ヘルニアあり、高重量デッドリフト時はベルト必須',
                     trainerMemo: '벤치프레스 75kg 5x5 안정적. 다음 달 20회 재등록 예정.',
-                    totalSessions: 20, completedSessions: 19, isNew: false,
+                    trainerMemoJa: 'ベンチプレス75kg 5x5安定。来月20回コース更新予定。',
+                    contractType: 'package', totalSessions: 20, completedSessions: 19, isNew: false,
                     bodyMetrics: [
                         { id: 'bm-4', date: twoWeeksAgo, weight: 73.2, bodyFat: 16.4 },
                         { id: 'bm-5', date: today, weight: 74.5, bodyFat: 15.8 }
@@ -1459,12 +1606,15 @@
                     createdAt: Date.now() - 200000
                 },
                 {
-                    id: 'mem-3', name: '박수아 (Sua)', phone: '010-9999-1111', pin: '1234',
+                    id: 'mem-3', name: '박수아 (Sua)', nameJa: '鈴木 結衣 (Yui)', phone: '070-9999-1111', pin: '1234',
                     age: 35, gender: 'female', height: 160, currentWeight: 54.0, targetWeight: 51.0,
                     currentBodyFat: 28.0, targetBodyFat: 24.0, goal: 'rehab', experience: 'beginner',
-                    painAreas: ['knee', 'back'], injuryDetail: '계단 오를 때 무릎 앞쪽 불편감, 출산 후 코어 약화',
+                    painAreas: ['knee', 'back'],
+                    injuryDetail: '계단 오를 때 무릎 앞쪽 불편감, 출산 후 코어 약화',
+                    injuryDetailJa: '階段昇降時に膝前面に違和感あり、産後の体幹低下',
                     trainerMemo: '신규 회원! 첫 수업 시 코어 호흡 및 글루트 브릿지 위주 평가.',
-                    totalSessions: 10, completedSessions: 1, isNew: true,
+                    trainerMemoJa: '新規会員！初回セッションでは体幹呼吸とグルートブリッジを中心に評価。',
+                    contractType: 'single', totalSessions: 0, completedSessions: 3, isNew: true,
                     bodyMetrics: [
                         { id: 'bm-6', date: today, weight: 54.0, bodyFat: 28.0 }
                     ],
@@ -1478,28 +1628,32 @@
             ];
 
             const seedBookings = [
-                { id: 'bk-1', date: today, time: '14:00', memberId: 'mem-1', memberName: '김지민 (Jimin)', status: 'booked', createdAt: Date.now() - 40000 },
-                { id: 'bk-2', date: today, time: '18:00', memberId: 'mem-2', memberName: '사토 켄지 (Kenji)', status: 'booked', createdAt: Date.now() - 30000 },
-                { id: 'bk-3', date: tomorrow, time: '11:00', memberId: 'mem-3', memberName: '박수아 (Sua)', status: 'booked', createdAt: Date.now() - 20000 },
-                { id: 'bk-4', date: today, time: '12:00', memberId: null, memberName: '점심 휴식', status: 'blocked', createdAt: Date.now() - 10000 }
+                { id: 'bk-1', date: today, time: '14:00', memberId: 'mem-1', memberName: '高橋 美咲 (Misaki)', status: 'booked', createdAt: Date.now() - 40000 },
+                { id: 'bk-2', date: today, time: '18:00', memberId: 'mem-2', memberName: '佐藤 健司 (Kenji)', status: 'booked', createdAt: Date.now() - 30000 },
+                { id: 'bk-3', date: tomorrow, time: '11:00', memberId: 'mem-3', memberName: '鈴木 結衣 (Yui)', status: 'booked', createdAt: Date.now() - 20000 },
+                { id: 'bk-4', date: today, time: '12:00', memberId: null, memberName: 'Blocked', status: 'blocked', createdAt: Date.now() - 10000 }
             ];
 
             const seedWorkouts = [
                 {
-                    id: 'wk-1', memberId: 'mem-1', memberName: '김지민 (Jimin)', date: oneWeekAgo, type: 'personal',
-                    totalVolume: 2180, memo: '트레이너님이 알려주신 대로 레그프레스 뒤꿈치에 힘 주고 했더니 자극 최고!',
+                    id: 'wk-1', memberId: 'mem-1', memberName: '高橋 美咲 (Misaki)', date: oneWeekAgo, type: 'personal',
+                    totalVolume: 2180,
+                    memo: '트레이너님이 알려주신 대로 레그프레스 뒤꿈치에 힘 주고 했더니 자극 최고!',
+                    memoJa: 'トレーナーのアドバイス通り、レッグプレスで踵を意識したら効きが最高でした！',
                     exercises: [
-                        { exId: 'lf1', part: 'legs_front', name: '레그 프레스', sets: [{ w: 50, r: 12, done: true }, { w: 50, r: 12, done: true }, { w: 55, r: 10, done: true }] },
-                        { exId: 'lb4', part: 'legs_back', name: '힙 어브덕션 머신', sets: [{ w: 25, r: 15, done: true }, { w: 25, r: 15, done: true }] }
+                        { exId: 'lf1', part: 'legs_front', name: '레그 프레스', nameJa: 'レッグプレス', sets: [{ w: 50, r: 12, done: true }, { w: 50, r: 12, done: true }, { w: 55, r: 10, done: true }] },
+                        { exId: 'lb4', part: 'legs_back', name: '힙 어브덕션 머신', nameJa: 'ヒップアブダクション', sets: [{ w: 25, r: 15, done: true }, { w: 25, r: 15, done: true }] }
                     ],
                     createdAt: Date.now() - 80000
                 },
                 {
-                    id: 'wk-2', memberId: 'mem-2', memberName: '사토 켄지 (Kenji)', date: today, type: 'pt',
-                    totalVolume: 3650, memo: '벤치프레스 75kg PR 달성! 다음 주 77.5kg 도전 예정.',
+                    id: 'wk-2', memberId: 'mem-2', memberName: '佐藤 健司 (Kenji)', date: today, type: 'pt',
+                    totalVolume: 3650,
+                    memo: '벤치프레스 75kg PR 달성! 다음 주 77.5kg 도전 예정.',
+                    memoJa: 'ベンチプレス75kg自己ベスト達成！来週は77.5kgに挑戦予定。',
                     exercises: [
-                        { exId: 'ch2', part: 'chest', name: '바벨 벤치프레스', sets: [{ w: 70, r: 8, done: true }, { w: 75, r: 5, done: true }, { w: 75, r: 5, done: true }] },
-                        { exId: 'bk1', part: 'back', name: '랫풀다운', sets: [{ w: 55, r: 12, done: true }, { w: 55, r: 12, done: true }, { w: 60, r: 10, done: true }] }
+                        { exId: 'ch2', part: 'chest', name: '바벨 벤치프레스', nameJa: 'バーベルベンチプレス', sets: [{ w: 70, r: 8, done: true }, { w: 75, r: 5, done: true }, { w: 75, r: 5, done: true }] },
+                        { exId: 'bk1', part: 'back', name: '랫풀다운', nameJa: 'ラットプルダウン', sets: [{ w: 55, r: 12, done: true }, { w: 55, r: 12, done: true }, { w: 60, r: 10, done: true }] }
                     ],
                     createdAt: Date.now() - 15000
                 }
@@ -1720,7 +1874,7 @@
                     const manifest = {
                         name: 'PT Mate Pro',
                         short_name: 'PT Mate',
-                        description: 'Personal Training CRM & FLEEK-style Workout Logger',
+                        description: 'Personal Training CRM & Workout Logger',
                         start_url: window.location.href.split('#')[0],
                         display: 'standalone',
                         orientation: 'portrait',
@@ -1849,14 +2003,16 @@
                     showToast(lang === 'ja' ? 'お名前・電話番号・4桁PINを入力してください' : '이름, 전화번호, 4자리 PIN을 입력해주세요.', 'error');
                     return;
                 }
+                currentSignupStep = 2;
                 s1.classList.add('hidden');
                 s2.classList.remove('hidden');
-                lbl.textContent = lang === 'ja' ? 'Step 2 / 2 — 身体情報・目標・同意' : 'Step 2 / 2 — 신체 정보 및 목표';
+                lbl.textContent = t('signupStep2');
                 pill.textContent = '2 / 2';
             } else {
+                currentSignupStep = 1;
                 s2.classList.add('hidden');
                 s1.classList.remove('hidden');
-                lbl.textContent = lang === 'ja' ? 'Step 1 / 2 — 基本アカウント情報' : 'Step 1 / 2 — 기본 계정 정보';
+                lbl.textContent = t('signupStep1');
                 pill.textContent = '1 / 2';
             }
         };
@@ -1902,6 +2058,7 @@
                 painAreas: fd.getAll('painAreas'),
                 injuryDetail: (fd.get('injuryDetail') || '').trim(),
                 trainerMemo: '',
+                contractType: 'package',
                 totalSessions: 10,
                 completedSessions: 0,
                 isNew: true,
@@ -1934,7 +2091,8 @@
                 const first = members[0];
                 if (!first) return;
                 enterApp('member', first.id);
-                showToast(lang === 'ja' ? `${first.name}様としてデモ体験中` : `${first.name} 회원으로 데모 체험 시작!`);
+                const dispName = getMemberDisplayName(first);
+                showToast(lang === 'ja' ? `${dispName}様としてデモ体験中` : `${dispName} 회원으로 데모 체험 시작!`);
             } else {
                 enterApp('trainer', null);
                 showToast(lang === 'ja' ? 'トレーナー管理者モードでログインしました' : '트레이너 관리자 모드로 입장했습니다!');
@@ -2039,130 +2197,76 @@
         }
 
         // ==========================================
-        // MEMBER PORTAL: MY PAGE
+        // MEMBER PORTAL: MY PAGE & BODY METRICS
         // ==========================================
         function getLoggedInMember() {
-            return members.find(m => m.id === loggedInMemberId);
+            return members.find(m => m.id === loggedInMemberId) || null;
         }
 
         function renderMemberMyPage() {
             const m = getLoggedInMember();
             if (!m) return;
 
-            document.getElementById('mp-name').textContent = m.name;
-            const goalLabel = DICT[lang].goals[m.goal] || m.goal;
-            document.getElementById('mp-goal-meta').textContent = `${goalLabel} · ${m.height}cm · ${m.currentWeight}kg → ${m.targetWeight || '-'}kg`;
+            document.getElementById('mp-name').textContent = getMemberDisplayName(m);
+            document.getElementById('mp-goal-meta').textContent = `${DICT[lang].goals[m.goal] || m.goal} · ${m.currentWeight}kg → ${m.targetWeight || '-'}kg`;
 
+            const isSingle = m.contractType === 'single';
             const total = m.totalSessions || 10;
             const done = m.completedSessions || 0;
             const rem = Math.max(0, total - done);
-            const pct = Math.min(100, Math.round((done / total) * 100));
-            document.getElementById('mp-sessions-text').textContent = lang === 'ja'
-                ? `残 ${rem}回 (${done}/${total}回 完了)`
-                : `잔여 ${rem}회 (${done}/${total}회 진행)`;
-            document.getElementById('mp-sessions-bar').style.width = `${pct}%`;
-            document.getElementById('mp-renewal-alert').classList.toggle('hidden', rem > 2);
+            const pct = isSingle ? 100 : Math.min(100, Math.round((done / Math.max(1, total)) * 100));
 
+            const lblEl = document.getElementById('mp-sessions-label');
+            const barWrap = document.getElementById('mp-sessions-bar-wrap');
+            if (isSingle) {
+                if (lblEl) lblEl.textContent = lang === 'ja' ? '都度利用（累計PT回数）' : '단발 이용 (누적 PT 횟수)';
+                document.getElementById('mp-sessions-text').textContent = `${done}${t('unitSessionShort')}`;
+                if (barWrap) barWrap.classList.add('hidden');
+                document.getElementById('mp-renewal-alert').classList.add('hidden');
+            } else {
+                if (lblEl) lblEl.textContent = t('lblPtProgress');
+                document.getElementById('mp-sessions-text').textContent = `${done} / ${total}${t('unitSessionShort')} (${lang === 'ja' ? '残' : '잔여'} ${rem}${t('unitSessionShort')})`;
+                if (barWrap) barWrap.classList.remove('hidden');
+                document.getElementById('mp-sessions-bar').style.width = `${pct}%`;
+                document.getElementById('mp-renewal-alert').classList.toggle('hidden', rem > 2);
+            }
+
+            // Next Confirmed PT Booking
             const todayStr = toDateStr(new Date());
             const upcoming = bookings
                 .filter(b => b.memberId === m.id && b.status === 'booked' && b.date >= todayStr)
-                .sort((a, b) => (a.date + a.time).localeCompare(b.date + b.time))[0];
+                .sort((a, b) => `${a.date} ${a.time}`.localeCompare(`${b.date} ${b.time}`))[0];
             document.getElementById('mp-next-booking-text').textContent = upcoming
-                ? `${upcoming.date} · ${upcoming.time}`
-                : (lang === 'ja' ? '予定されている予約はありません' : '예정된 PT 예약이 없습니다');
+                ? `${upcoming.date} ${upcoming.time}`
+                : (lang === 'ja' ? '予定された予約はありません' : '예정된 PT 예약이 없습니다');
 
-            // Custom Plan (Auto-translates KO <-> JA seamlessly)
-            renderLocalizedPlanText(
-                m.workoutPlan,
-                m.workoutPlanJa,
-                'mp-workout-plan',
-                'mp-workout-trans-badge',
-                lang === 'ja' ? 'トレーナーが準備中です。' : '트레이너가 맞춤 루틴을 준비 중입니다.'
-            );
-            renderLocalizedPlanText(
-                m.dietPlan,
-                m.dietPlanJa,
-                'mp-diet-plan',
-                'mp-diet-trans-badge',
-                lang === 'ja' ? 'トレーナーが準備中です。' : '트레이너가 맞춤 식단을 준비 중입니다.'
-            );
-
-            const mac = m.macros || {};
-            const macroEl = document.getElementById('mp-macros-bar');
-            if (mac.calories || mac.protein) {
-                macroEl.innerHTML = [
-                    mac.calories ? `<span class="px-2.5 py-1 rounded-lg bg-slate-100 text-slate-700 text-xs font-bold">${mac.calories} kcal</span>` : '',
-                    mac.protein ? `<span class="px-2.5 py-1 rounded-lg bg-blue-50 text-blue-700 text-xs font-bold">P ${mac.protein}g</span>` : '',
-                    mac.fat ? `<span class="px-2.5 py-1 rounded-lg bg-amber-50 text-amber-700 text-xs font-bold">F ${mac.fat}g</span>` : '',
-                    mac.carbs ? `<span class="px-2.5 py-1 rounded-lg bg-emerald-50 text-emerald-700 text-xs font-bold">C ${mac.carbs}g</span>` : ''
-                ].join('');
-            } else {
-                macroEl.innerHTML = '';
-            }
-
-            // Body delta & Chart
-            const metrics = [...(m.bodyMetrics || [])].sort((a, b) => a.date.localeCompare(b.date));
-            if (metrics.length >= 2) {
-                const diff = (metrics[metrics.length - 1].weight - metrics[0].weight).toFixed(1);
+            // Body Composition Delta & Chart
+            const sorted = [...(m.bodyMetrics || [])].sort((a, b) => a.date.localeCompare(b.date));
+            const deltaEl = document.getElementById('mp-body-delta');
+            if (sorted.length >= 2) {
+                const diff = (sorted[sorted.length - 1].weight - sorted[0].weight).toFixed(1);
                 const sign = Number(diff) > 0 ? '+' : '';
-                document.getElementById('mp-body-delta').textContent = lang === 'ja'
-                    ? `開始時比 ${sign}${diff}kg (目標まであと ${Math.abs((m.currentWeight - (m.targetWeight || m.currentWeight))).toFixed(1)}kg)`
-                    : `시작 대비 ${sign}${diff}kg (목표까지 ${Math.abs((m.currentWeight - (m.targetWeight || m.currentWeight))).toFixed(1)}kg)`;
+                deltaEl.textContent = lang === 'ja'
+                    ? `開始比 ${sign}${diff}kg (現在 ${m.currentWeight}kg)`
+                    : `시작 대비 ${sign}${diff}kg (현재 ${m.currentWeight}kg)`;
             } else {
-                document.getElementById('mp-body-delta').textContent = lang === 'ja' ? '現在体重 ' + m.currentWeight + 'kg' : '현재 체중 ' + m.currentWeight + 'kg';
+                deltaEl.textContent = `${lang === 'ja' ? '現在体重' : '현재 체중'}: ${m.currentWeight}kg`;
             }
+            memberChart = renderDualAxisChart('member-metrics-chart', sorted, memberChart);
 
-            memberChart = renderDualAxisChart('member-metrics-chart', metrics, memberChart);
-        }
+            // Macros Bar
+            const mc = m.macros || {};
+            const macroBadges = [];
+            if (mc.calories) macroBadges.push(`<span class="px-2.5 py-1 rounded-xl bg-slate-100 text-slate-800 text-[11px] font-bold">${mc.calories} kcal</span>`);
+            if (mc.protein) macroBadges.push(`<span class="px-2.5 py-1 rounded-xl bg-blue-50 text-blue-700 text-[11px] font-bold">P ${mc.protein}g</span>`);
+            if (mc.fat) macroBadges.push(`<span class="px-2.5 py-1 rounded-xl bg-amber-50 text-amber-700 text-[11px] font-bold">F ${mc.fat}g</span>`);
+            if (mc.carbs) macroBadges.push(`<span class="px-2.5 py-1 rounded-xl bg-emerald-50 text-emerald-700 text-[11px] font-bold">C ${mc.carbs}g</span>`);
+            document.getElementById('mp-macros-bar').innerHTML = macroBadges.join('');
 
-        function renderDualAxisChart(canvasId, metrics, existingChart) {
-            const canvas = document.getElementById(canvasId);
-            if (!canvas) return existingChart;
-            if (existingChart) existingChart.destroy();
-
-            const labels = metrics.map(x => x.date.slice(5));
-            const weights = metrics.map(x => x.weight);
-            const bfs = metrics.map(x => x.bodyFat);
-
-            return new Chart(canvas.getContext('2d'), {
-                type: 'line',
-                data: {
-                    labels: labels.length ? labels : ['-'],
-                    datasets: [
-                        {
-                            label: lang === 'ja' ? '体重 (kg)' : '체중 (kg)',
-                            data: weights.length ? weights : [0],
-                            borderColor: '#2563eb',
-                            backgroundColor: 'rgba(37,99,235,0.1)',
-                            borderWidth: 2.5,
-                            tension: 0.35,
-                            fill: true,
-                            yAxisID: 'y'
-                        },
-                        {
-                            label: lang === 'ja' ? '体脂肪率 (%)' : '체지방률 (%)',
-                            data: bfs,
-                            borderColor: '#10b981',
-                            backgroundColor: 'transparent',
-                            borderDash: [5, 4],
-                            borderWidth: 2,
-                            tension: 0.35,
-                            spanGaps: true,
-                            yAxisID: 'y1'
-                        }
-                    ]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    interaction: { mode: 'index', intersect: false },
-                    plugins: { legend: { position: 'bottom', labels: { boxWidth: 10, font: { size: 11, weight: 'bold' } } } },
-                    scales: {
-                        y: { type: 'linear', position: 'left', grid: { color: '#f1f5f9' } },
-                        y1: { type: 'linear', position: 'right', grid: { drawOnChartArea: false } }
-                    }
-                }
-            });
+            // Trainer Custom Workout & Diet Plans (with Auto-Translation)
+            const emptyMsg = lang === 'ja' ? 'トレーナーがプランを準備中です。' : '트레이너가 맞춤 플랜을 작성 중입니다.';
+            renderLocalizedPlanText(m.workoutPlan, m.workoutPlanJa, 'mp-workout-plan', 'mp-workout-trans-badge', emptyMsg);
+            renderLocalizedPlanText(m.dietPlan, m.dietPlanJa, 'mp-diet-plan', 'mp-diet-trans-badge', emptyMsg);
         }
 
         window.toggleMemberMetricForm = function() {
@@ -2176,12 +2280,12 @@
             const w = Number(document.getElementById('mp-new-weight').value);
             const bfVal = document.getElementById('mp-new-bf').value;
             const bf = bfVal ? Number(bfVal) : null;
-            const entry = { id: 'bm-' + Date.now(), date: toDateStr(new Date()), weight: w, bodyFat: bf };
-            const updated = [...(m.bodyMetrics || []), entry];
+            if (!w) return;
+            const updated = [...(m.bodyMetrics || []), { id: 'bm-' + Date.now(), date: toDateStr(new Date()), weight: w, bodyFat: bf }];
             await dbUpdate('pt_members', m.id, { currentWeight: w, currentBodyFat: bf ?? m.currentBodyFat, bodyMetrics: updated });
             e.target.reset();
             document.getElementById('mp-metric-form').classList.add('hidden');
-            showToast(lang === 'ja' ? '体組成を記録しました！' : '오늘의 체중 기록이 저장되었습니다!');
+            showToast(lang === 'ja' ? '体重を記録しました！' : '오늘 체중이 기록되었습니다!');
         };
 
         window.openMemberProfileModal = function() {
@@ -2189,32 +2293,83 @@
             if (!m) return;
             document.getElementById('pm-target-w').value = m.targetWeight || '';
             document.getElementById('pm-goal').value = m.goal || 'diet';
-            document.getElementById('pm-injury').value = m.injuryDetail || '';
+            document.getElementById('pm-injury').value = getMemberInjuryText(m) === '-' ? '' : getMemberInjuryText(m);
             document.getElementById('profile-modal').classList.remove('hidden');
+            if (window.lucide) lucide.createIcons();
         };
+
         window.closeMemberProfileModal = function() {
             document.getElementById('profile-modal').classList.add('hidden');
         };
+
         window.handleSaveMemberProfile = async function(e) {
             e.preventDefault();
             const m = getLoggedInMember();
             if (!m) return;
-            await dbUpdate('pt_members', m.id, {
+            const injuryText = document.getElementById('pm-injury').value.trim();
+            const patch = {
                 targetWeight: Number(document.getElementById('pm-target-w').value) || m.targetWeight,
-                goal: document.getElementById('pm-goal').value,
-                injuryDetail: document.getElementById('pm-injury').value.trim()
-            });
+                goal: document.getElementById('pm-goal').value
+            };
+            if (lang === 'ja') patch.injuryDetailJa = injuryText;
+            else patch.injuryDetail = injuryText;
+            await dbUpdate('pt_members', m.id, patch);
             closeMemberProfileModal();
             showToast(lang === 'ja' ? 'プロフィールを更新しました' : '내 정보가 수정되었습니다.');
         };
 
+        function renderDualAxisChart(canvasId, metrics, existingChart) {
+            const canvas = document.getElementById(canvasId);
+            if (!canvas || typeof Chart === 'undefined') return existingChart;
+            if (existingChart) existingChart.destroy();
+            const labels = metrics.map(x => x.date.slice(5));
+            const weights = metrics.map(x => x.weight);
+            const fats = metrics.map(x => x.bodyFat);
+            return new Chart(canvas.getContext('2d'), {
+                type: 'line',
+                data: {
+                    labels,
+                    datasets: [
+                        {
+                            label: lang === 'ja' ? '体重 (kg)' : '체중 (kg)',
+                            data: weights,
+                            borderColor: '#2563eb',
+                            backgroundColor: 'rgba(37,99,235,0.08)',
+                            tension: 0.35,
+                            fill: true,
+                            yAxisID: 'y'
+                        },
+                        {
+                            label: lang === 'ja' ? '体脂肪率 (%)' : '체지방률 (%)',
+                            data: fats,
+                            borderColor: '#10b981',
+                            backgroundColor: 'rgba(16,185,129,0.08)',
+                            borderDash: [4, 4],
+                            tension: 0.35,
+                            spanGaps: true,
+                            yAxisID: 'y1'
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { position: 'bottom', labels: { boxWidth: 12, font: { size: 11 } } } },
+                    scales: {
+                        y: { position: 'left', grid: { color: '#f1f5f9' } },
+                        y1: { position: 'right', grid: { drawOnChartArea: false } }
+                    }
+                }
+            });
+        }
+
         // ==========================================
-        // SHARED CALENDAR (PRIVACY-PROTECTED FOR MEMBER / MASTER FOR TRAINER)
+        // SHARED PT RESERVATION CALENDAR ENGINE
         // ==========================================
         window.changeCalMonth = function(delta) {
             calMonth += delta;
             if (calMonth < 0) { calMonth = 11; calYear--; }
-            if (calMonth > 11) { calMonth = 0; calYear++; }
+            else if (calMonth > 11) { calMonth = 0; calYear++; }
             renderCurrentView();
         };
 
@@ -2223,483 +2378,555 @@
             renderCurrentView();
         };
 
-        function getDailyHours() {
-            const hours = [];
-            const start = Number(appConfig.openHour) || 9;
-            const end = Number(appConfig.closeHour) || 21;
+        function getTimeSlots() {
+            const start = Math.max(6, Number(appConfig.openHour) || 9);
+            const end = Math.min(23, Number(appConfig.closeHour) || 21);
+            const slots = [];
             for (let h = start; h <= end; h++) {
-                hours.push(String(h).padStart(2, '0') + ':00');
+                slots.push(`${String(h).padStart(2, '0')}:00`);
             }
-            return hours;
+            return slots;
         }
 
-        function buildCalendarGridHtml(isTrainer) {
+        function renderCalendarGrid(gridId, labelId, isTrainer) {
+            document.getElementById(labelId).textContent = `${calYear}.${String(calMonth + 1).padStart(2, '0')}`;
             const firstDay = new Date(calYear, calMonth, 1).getDay();
             const daysInMonth = new Date(calYear, calMonth + 1, 0).getDate();
             const todayStr = toDateStr(new Date());
-            let html = '';
 
+            let html = '';
             for (let i = 0; i < firstDay; i++) html += `<div></div>`;
             for (let d = 1; d <= daysInMonth; d++) {
                 const ds = `${calYear}-${String(calMonth + 1).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
-                const dayBookings = bookings.filter(b => b.date === ds);
-                const hasMine = !isTrainer && dayBookings.some(b => b.memberId === loggedInMemberId && b.status === 'booked');
-                const countBooked = dayBookings.filter(b => b.status === 'booked').length;
+                const dayBks = bookings.filter(b => b.date === ds);
+                const hasMine = !isTrainer && dayBks.some(b => b.memberId === loggedInMemberId && b.status === 'booked');
+                const bookedCount = dayBks.filter(b => b.status === 'booked').length;
                 const isSelected = ds === selectedCalDate;
                 const isToday = ds === todayStr;
 
-                html += `
-                    <button type="button" onclick="selectCalDate('${ds}')" class="tap-target rounded-2xl flex flex-col items-center justify-center py-1.5 border transition ${isSelected ? 'bg-slate-900 text-white border-slate-900 shadow-sm' : isToday ? 'bg-blue-50 text-blue-700 border-blue-200' : 'bg-white text-slate-700 border-slate-100 hover:bg-slate-50'}">
-                        <span class="text-xs font-extrabold">${d}</span>
-                        <div class="flex gap-0.5 mt-1 h-1.5">
-                            ${hasMine ? `<span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>` : ''}
-                            ${isTrainer && countBooked > 0 ? `<span class="px-1 rounded-full text-[8px] font-extrabold leading-none ${isSelected ? 'bg-emerald-400 text-slate-900' : 'bg-blue-100 text-blue-700'}">${countBooked}</span>` : ''}
-                        </div>
-                    </button>
-                `;
+                let cls = 'tap-target rounded-2xl flex flex-col items-center justify-center text-xs font-bold transition relative ';
+                if (isSelected) cls += 'bg-slate-900 text-white shadow-md';
+                else if (isToday) cls += 'bg-blue-50 text-blue-700 border border-blue-200';
+                else cls += 'bg-slate-50 hover:bg-slate-100 text-slate-700';
+
+                let dot = '';
+                if (isTrainer && bookedCount > 0) {
+                    dot = `<span class="mt-0.5 px-1.5 rounded-full text-[9px] font-extrabold ${isSelected ? 'bg-emerald-400 text-slate-950' : 'bg-blue-100 text-blue-700'}">${bookedCount}</span>`;
+                } else if (hasMine) {
+                    dot = `<span class="w-1.5 h-1.5 rounded-full mt-0.5 ${isSelected ? 'bg-blue-400' : 'bg-blue-600'}"></span>`;
+                } else if (dayBks.length > 0) {
+                    dot = `<span class="w-1.5 h-1.5 rounded-full mt-0.5 ${isSelected ? 'bg-slate-400' : 'bg-slate-300'}"></span>`;
+                }
+
+                html += `<button type="button" onclick="selectCalDate('${ds}')" class="${cls}"><span>${d}</span>${dot}</button>`;
             }
-            return html;
+            document.getElementById(gridId).innerHTML = html;
         }
 
         function renderMemberCalendar() {
-            document.getElementById('m-cal-month-label').textContent = `${calYear}.${String(calMonth + 1).padStart(2, '0')}`;
-            document.getElementById('m-cal-grid').innerHTML = buildCalendarGridHtml(false);
+            renderCalendarGrid('m-cal-grid', 'm-cal-month-label', false);
             document.getElementById('m-selected-date-label').textContent = selectedCalDate;
+            const slots = getTimeSlots();
+            const dayBks = bookings.filter(b => b.date === selectedCalDate);
 
-            const hours = getDailyHours();
-            const slotsEl = document.getElementById('m-slots-grid');
-            slotsEl.innerHTML = hours.map(time => {
-                const slot = bookings.find(b => b.date === selectedCalDate && b.time === time);
-                if (slot && slot.memberId === loggedInMemberId && slot.status === 'booked') {
-                    return `
-                        <button type="button" onclick="memberCancelBooking('${slot.id}')" class="tap-target p-3 rounded-2xl bg-blue-600 text-white text-left shadow-sm transition active:scale-[0.98]">
-                            <div class="text-sm font-extrabold">${time}</div>
-                            <div class="text-[11px] font-bold text-blue-100 mt-0.5">${t('slotMine')} · ${lang === 'ja' ? 'キャンセル可' : '취소 가능'}</div>
-                        </button>
-                    `;
+            document.getElementById('m-slots-grid').innerHTML = slots.map(time => {
+                const bk = dayBks.find(b => b.time === time);
+                if (!bk) {
+                    return `<button type="button" onclick="handleMemberSlotClick('${time}')" class="tap-target p-3 rounded-2xl border border-emerald-200 bg-emerald-50/70 hover:bg-emerald-100 text-emerald-800 flex flex-col items-center justify-center transition">
+                        <span class="text-sm font-extrabold">${time}</span>
+                        <span class="text-[11px] font-bold">${t('slotOpen')}</span>
+                    </button>`;
                 }
-                if (slot) {
-                    // Privacy protected: never reveal other member name or reason
-                    return `
-                        <div class="tap-target p-3 rounded-2xl bg-slate-100 border border-slate-200 text-slate-400 cursor-not-allowed">
-                            <div class="text-sm font-extrabold line-through">${time}</div>
-                            <div class="text-[11px] font-bold mt-0.5">${t('slotClosed')}</div>
-                        </div>
-                    `;
+                if (bk.memberId === loggedInMemberId && bk.status === 'booked') {
+                    return `<button type="button" onclick="handleMemberSlotClick('${time}', '${bk.id}')" class="tap-target p-3 rounded-2xl border-2 border-blue-600 bg-blue-600 text-white flex flex-col items-center justify-center shadow-sm transition">
+                        <span class="text-sm font-extrabold">${time}</span>
+                        <span class="text-[11px] font-bold">${t('slotMine')}</span>
+                    </button>`;
                 }
-                return `
-                    <button type="button" onclick="memberBookSlot('${selectedCalDate}', '${time}')" class="tap-target p-3 rounded-2xl bg-white hover:bg-emerald-50 border border-emerald-200 text-left transition active:scale-[0.98]">
-                        <div class="text-sm font-extrabold text-slate-900">${time}</div>
-                        <div class="text-[11px] font-bold text-emerald-600 mt-0.5">${t('slotOpen')}</div>
-                    </button>
-                `;
+                return `<div class="tap-target p-3 rounded-2xl border border-slate-200 bg-slate-100 text-slate-400 flex flex-col items-center justify-center cursor-not-allowed">
+                    <span class="text-sm font-bold line-through">${time}</span>
+                    <span class="text-[11px] font-semibold">${t('slotClosed')}</span>
+                </div>`;
             }).join('');
         }
 
-        window.memberBookSlot = function(dateStr, time) {
+        window.handleMemberSlotClick = function(time, existingBookingId) {
             const m = getLoggedInMember();
             if (!m) return;
-            openActionModal(
-                lang === 'ja' ? 'PT予約の確認' : 'PT 예약 확인',
-                lang === 'ja' ? `${dateStr} ${time} にPTを予約しますか？` : `${dateStr} ${time} 시간으로 PT를 예약하시겠습니까?`,
-                null,
-                async () => {
-                    const id = 'bk-' + Date.now();
-                    await dbSet('pt_bookings', id, { id, date: dateStr, time, memberId: m.id, memberName: m.name, status: 'booked', createdAt: Date.now() });
-                    showToast(lang === 'ja' ? 'PT予約が完了しました！' : 'PT 예약이 확정되었습니다!');
-                }
-            );
-        };
-
-        window.memberCancelBooking = function(bookingId) {
-            openActionModal(
-                lang === 'ja' ? '予約キャンセル' : '예약 취소 확인',
-                lang === 'ja' ? 'このPT予約をキャンセルしますか？' : '선택한 PT 예약을 취소하시겠습니까?',
-                null,
-                async () => {
-                    await dbDelete('pt_bookings', bookingId);
-                    showToast(lang === 'ja' ? '予約をキャンセルしました' : '예약이 취소되었습니다.');
-                }
-            );
-        };
-
-        // ==========================================
-        // FLEEK-STYLE WORKOUT LOGGER + 56 VISUALIZED EXERCISES + AUTO REST TIMER
-        // ==========================================
-        function renderWorkoutBuilder() {
-            // Render body-part quick launcher pills
-            const shortcutEl = document.getElementById('wl-part-shortcuts');
-            if (shortcutEl) {
-                shortcutEl.innerHTML = BODY_PARTS.map(p => `
-                    <button type="button" onclick="openExercisePicker('${p.id}')" class="px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-blue-50 hover:text-blue-700 text-slate-700 text-xs font-bold whitespace-nowrap transition flex items-center gap-1.5 shrink-0">
-                        <span class="w-2 h-2 rounded-full" style="background:${p.color}"></span>
-                        <span>${lang === 'ja' ? p.ja : p.ko}</span>
-                    </button>
-                `).join('');
+            if (existingBookingId) {
+                openActionModal(
+                    lang === 'ja' ? 'PT予約をキャンセルしますか？' : 'PT 예약을 취소할까요?',
+                    `${selectedCalDate} ${time}`,
+                    null,
+                    async () => {
+                        await dbDelete('pt_bookings', existingBookingId);
+                        showToast(lang === 'ja' ? '予約をキャンセルしました' : 'PT 예약이 취소되었습니다.');
+                    }
+                );
+            } else {
+                openActionModal(
+                    lang === 'ja' ? 'この時間帯でPTを予約しますか？' : '이 시간에 PT를 예약할까요?',
+                    `${selectedCalDate} ${time}`,
+                    null,
+                    async () => {
+                        const id = 'bk-' + Date.now();
+                        await dbSet('pt_bookings', id, {
+                            id, date: selectedCalDate, time,
+                            memberId: m.id, memberName: m.name,
+                            status: 'booked', createdAt: Date.now()
+                        });
+                        showToast(lang === 'ja' ? 'PT予約が完了しました！' : 'PT 예약이 확정되었습니다!');
+                    }
+                );
             }
+        };
 
+        function renderTrainerCalendar() {
+            renderCalendarGrid('t-cal-grid', 't-cal-month-label', true);
+            document.getElementById('t-selected-date-label').textContent = selectedCalDate;
+            const slots = getTimeSlots();
+            const dayBks = bookings.filter(b => b.date === selectedCalDate);
+
+            document.getElementById('t-slots-list').innerHTML = slots.map(time => {
+                const bk = dayBks.find(b => b.time === time);
+                if (!bk) {
+                    return `<div class="p-3 rounded-2xl border border-slate-200 bg-slate-50 flex items-center justify-between gap-2">
+                        <div class="flex items-center gap-3">
+                            <span class="font-mono text-sm font-extrabold text-slate-700">${time}</span>
+                            <span class="text-xs font-semibold text-emerald-600">${t('slotOpen')}</span>
+                        </div>
+                        <div class="flex items-center gap-1.5">
+                            <button type="button" onclick="openTrainerSlotAction('${time}', 'book')" class="px-3 py-1.5 rounded-xl bg-blue-600 text-white text-xs font-bold">${lang === 'ja' ? '手動予約' : '수동 예약'}</button>
+                            <button type="button" onclick="openTrainerSlotAction('${time}', 'block')" class="px-3 py-1.5 rounded-xl bg-slate-200 text-slate-700 text-xs font-bold">${lang === 'ja' ? '休み設定' : '휴무 차단'}</button>
+                        </div>
+                    </div>`;
+                }
+                if (bk.status === 'blocked') {
+                    return `<div class="p-3 rounded-2xl border border-slate-200 bg-slate-100 flex items-center justify-between gap-2">
+                        <div class="flex items-center gap-3">
+                            <span class="font-mono text-sm font-extrabold text-slate-500">${time}</span>
+                            <span class="px-2 py-0.5 rounded-lg bg-slate-200 text-slate-600 text-xs font-bold">${lang === 'ja' ? '休み・ブロック中' : '휴무 차단됨'}</span>
+                        </div>
+                        <button type="button" onclick="openTrainerSlotAction('${time}', 'unblock', '${bk.id}')" class="px-3 py-1.5 rounded-xl bg-white border border-slate-300 text-slate-700 text-xs font-bold">${lang === 'ja' ? '解除' : '차단 해제'}</button>
+                    </div>`;
+                }
+                const mName = getBookingMemberName(bk);
+                const isDone = bk.status === 'completed';
+                return `<div class="p-3 rounded-2xl border ${isDone ? 'border-emerald-200 bg-emerald-50/50' : 'border-blue-200 bg-blue-50/50'} flex items-center justify-between gap-2 flex-wrap">
+                    <div class="flex items-center gap-3">
+                        <span class="font-mono text-sm font-extrabold ${isDone ? 'text-emerald-700' : 'text-blue-700'}">${time}</span>
+                        <div>
+                            <button type="button" onclick="openMemberDetail('${bk.memberId}')" class="text-sm font-extrabold text-slate-900 hover:underline">${escapeHtml(mName)}</button>
+                            <span class="ml-1.5 px-2 py-0.5 rounded-md text-[10px] font-bold ${isDone ? 'bg-emerald-200 text-emerald-800' : 'bg-blue-200 text-blue-800'}">${isDone ? (lang === 'ja' ? '完了済' : '수업 완료') : (lang === 'ja' ? '予約確定' : '예약 확정')}</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-1.5">
+                        ${!isDone ? `<button type="button" onclick="completeBookingSession('${bk.id}')" class="px-3 py-1.5 rounded-xl bg-emerald-600 text-white text-xs font-bold">${lang === 'ja' ? '完了 (+1回)' : '수업 완료 (+1회)'}</button>` : ''}
+                        <button type="button" onclick="openTrainerSlotAction('${time}', 'cancel', '${bk.id}')" class="px-2.5 py-1.5 rounded-xl bg-white border border-rose-200 text-rose-600 text-xs font-bold">${t('btnCancel')}</button>
+                    </div>
+                </div>`;
+            }).join('');
+        }
+
+        window.openTrainerSlotAction = async function(time, action, bkId) {
+            if (action === 'block') {
+                const id = 'bk-' + Date.now();
+                await dbSet('pt_bookings', id, { id, date: selectedCalDate, time, memberId: null, memberName: 'Blocked', status: 'blocked', createdAt: Date.now() });
+                showToast(lang === 'ja' ? `${time} をブロックしました` : `${time} 휴무 차단 완료`);
+            } else if (action === 'unblock' || action === 'cancel') {
+                await dbDelete('pt_bookings', bkId);
+                showToast(lang === 'ja' ? 'スケジュールを更新しました' : '스케줄이 업데이트되었습니다.');
+            } else if (action === 'book') {
+                if (!members.length) {
+                    showToast(lang === 'ja' ? '登録会員がいません' : '등록된 회원이 없습니다.', 'error');
+                    return;
+                }
+                const opts = members.map(m => `<option value="${m.id}">${escapeHtml(getMemberDisplayName(m))}</option>`).join('');
+                openActionModal(
+                    lang === 'ja' ? '手動PT予約を登録' : '수동 PT 예약 등록',
+                    `${selectedCalDate} ${time}`,
+                    `<select id="am-member-select" class="tap-target w-full px-3.5 py-2.5 rounded-2xl border border-slate-200 bg-slate-50 font-bold outline-none">${opts}</select>`,
+                    async () => {
+                        const sel = document.getElementById('am-member-select');
+                        const mid = sel ? sel.value : members[0].id;
+                        const m = members.find(x => x.id === mid);
+                        if (!m) return;
+                        const id = 'bk-' + Date.now();
+                        await dbSet('pt_bookings', id, { id, date: selectedCalDate, time, memberId: m.id, memberName: m.name, status: 'booked', createdAt: Date.now() });
+                        showToast(lang === 'ja' ? '予約を登録しました' : '수동 예약이 등록되었습니다.');
+                    }
+                );
+            }
+        };
+
+        window.completeBookingSession = async function(bkId) {
+            const bk = bookings.find(b => b.id === bkId);
+            if (!bk || bk.status === 'completed') return;
+            await dbUpdate('pt_bookings', bkId, { status: 'completed' });
+            if (bk.memberId) {
+                const m = members.find(x => x.id === bk.memberId);
+                if (m) await dbUpdate('pt_members', m.id, { completedSessions: (m.completedSessions || 0) + 1 });
+            }
+            showToast(lang === 'ja' ? 'セッション完了 (+1回) を記録しました！' : 'PT 수업 완료 (+1회) 처리되었습니다!');
+        };
+
+        // ==========================================
+        // FLEEK-STYLE WORKOUT BUILDER & VISUAL PICKER
+        // ==========================================
+        function findMemberLastExerciseRecord(memberId, exNameOrId) {
+            if (!memberId || !exNameOrId) return '';
+            const query = String(exNameOrId).trim().toLowerCase();
+            if (!query) return '';
+            const logs = workouts.filter(w => w.memberId === memberId).sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0));
+            for (const w of logs) {
+                for (const ex of (w.exercises || [])) {
+                    const matchId = ex.exId && ex.exId === exNameOrId;
+                    const matchName = (ex.name && ex.name.toLowerCase().includes(query)) || (ex.nameJa && ex.nameJa.toLowerCase().includes(query));
+                    if (matchId || matchName) {
+                        const best = (ex.sets || []).reduce((acc, s) => ((s.w || 0) >= (acc.w || 0) ? s : acc), ex.sets?.[0] || { w: 0, r: 0 });
+                        return `${w.date} · ${best.w || 0}kg × ${best.r || 0}${t('phRepsShort')} (${(ex.sets || []).length}${t('phSetsShort')})`;
+                    }
+                }
+            }
+            return '';
+        }
+
+        function renderWorkoutBuilder() {
+            renderPartShortcuts();
             const container = document.getElementById('wl-exercises-container');
             if (!activeWorkoutExercises.length) {
-                container.innerHTML = `
-                    <div class="bg-white rounded-3xl p-8 border border-dashed border-slate-300 text-center space-y-2">
-                        <div class="w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center mx-auto"><i data-lucide="dumbbell" class="w-6 h-6"></i></div>
-                        <p class="text-sm font-extrabold text-slate-800">${lang === 'ja' ? '上のボタンから今日の種目を追加してください' : '상단 버튼으로 오늘 할 운동 종목을 추가해보세요'}</p>
-                        <p class="text-xs text-slate-400">${lang === 'ja' ? 'セット完了(DONE)をチェックすると自動で休憩タイマーがスタートします' : '세트 완료(DONE)를 체크하면 자동으로 휴식 타이머가 시작됩니다'}</p>
-                    </div>
-                `;
+                container.innerHTML = `<div class="bg-white rounded-3xl p-8 border border-dashed border-slate-300 text-center space-y-2">
+                    <div class="w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center mx-auto"><i data-lucide="dumbbell" class="w-6 h-6"></i></div>
+                    <p class="text-sm font-extrabold text-slate-700">${lang === 'ja' ? '上のボタンから今日の種目を追加しましょう' : '위 버튼을 눌러 오늘의 운동 종목을 추가해보세요'}</p>
+                    <p class="text-xs text-slate-400">${lang === 'ja' ? 'セット完了(DONE)を押すと休憩タイマーが自動スタートします' : '세트 완료(DONE)를 누르면 휴식 타이머가 자동으로 시작됩니다'}</p>
+                </div>`;
             } else {
                 container.innerHTML = activeWorkoutExercises.map((ex, exIdx) => {
-                    const prevHint = findMemberLastExerciseRecord(loggedInMemberId, ex.name);
-                    const partObj = BODY_PARTS.find(p => p.id === ex.part);
-                    const libEx = EXERCISE_LIBRARY.find(e => e.id === ex.exId);
-                    const tip = libEx ? (lang === 'ja' ? libEx.tipJa : libEx.tipKo) : '';
-
+                    const lib = EXERCISE_LIBRARY.find(e => e.id === ex.exId);
+                    const dispName = lib ? getExName(lib) : ex.name;
+                    const tip = lib ? (lang === 'ja' ? lib.tipJa : lib.tipKo) : '';
+                    const prev = findMemberLastExerciseRecord(loggedInMemberId, ex.exId || ex.name);
                     return `
                         <div class="bg-white rounded-3xl p-4 sm:p-5 border border-slate-200/80 shadow-xs space-y-3">
-                            <div class="flex items-start justify-between gap-3">
-                                <div class="flex items-center gap-3 min-w-0">
+                            <div class="flex items-start justify-between gap-2.5">
+                                <div class="flex items-start gap-3 min-w-0">
                                     ${getMuscleSvg(ex.part || 'chest')}
                                     <div class="min-w-0">
-                                        <div class="flex items-center gap-1.5 flex-wrap">
-                                            ${partObj ? `<span class="px-2 py-0.5 rounded-md text-[10px] font-extrabold text-white" style="background:${partObj.color}">${lang === 'ja' ? partObj.ja : partObj.ko}</span>` : ''}
-                                            <h4 class="text-sm sm:text-base font-extrabold text-slate-900 truncate">${escapeHtml(ex.name)}</h4>
-                                        </div>
-                                        ${tip ? `<p class="text-[11px] text-slate-500 mt-0.5 line-clamp-2">${escapeHtml(tip)}</p>` : ''}
-                                        ${prevHint ? `<p class="text-[11px] font-bold text-blue-600 mt-1">PREV: ${escapeHtml(prevHint)}</p>` : ''}
+                                        <h4 class="text-sm sm:text-base font-extrabold text-slate-900 truncate">${escapeHtml(dispName)}</h4>
+                                        ${tip ? `<p class="text-[11px] text-slate-500 mt-0.5 leading-snug">${escapeHtml(tip)}</p>` : ''}
+                                        ${prev ? `<p class="text-[11px] font-bold text-blue-600 mt-1">${lang === 'ja' ? '前回' : '직전'}: ${escapeHtml(prev)}</p>` : ''}
                                     </div>
                                 </div>
-                                <button type="button" onclick="removeActiveExercise(${exIdx})" class="p-2 rounded-xl text-slate-400 hover:bg-rose-50 hover:text-rose-600 transition shrink-0">
+                                <button type="button" onclick="removeWorkoutExercise(${exIdx})" class="p-2 rounded-xl bg-slate-100 hover:bg-rose-50 text-slate-400 hover:text-rose-600 transition shrink-0">
                                     <i data-lucide="trash-2" class="w-4 h-4"></i>
                                 </button>
                             </div>
-
-                            <!-- Set Rows -->
                             <div class="space-y-2">
                                 <div class="grid grid-cols-12 gap-1.5 text-[10px] font-extrabold text-slate-400 uppercase px-1">
-                                    <div class="col-span-2 text-center">SET</div>
-                                    <div class="col-span-3 text-center">KG</div>
-                                    <div class="col-span-3 text-center">${lang === 'ja' ? '回数' : '횟수'}</div>
-                                    <div class="col-span-3 text-center">DONE</div>
-                                    <div class="col-span-1"></div>
+                                    <span class="col-span-2 text-center">SET</span>
+                                    <span class="col-span-3 text-center">KG</span>
+                                    <span class="col-span-3 text-center">REPS</span>
+                                    <span class="col-span-3 text-center">DONE</span>
+                                    <span class="col-span-1"></span>
                                 </div>
                                 ${ex.sets.map((s, sIdx) => `
-                                    <div class="grid grid-cols-12 gap-1.5 items-center p-1.5 rounded-2xl transition ${s.done ? 'bg-emerald-50 border border-emerald-200' : 'bg-slate-50 border border-slate-100'}">
-                                        <div class="col-span-2 text-center text-xs font-extrabold ${s.done ? 'text-emerald-700' : 'text-slate-500'}">${sIdx + 1}</div>
-                                        <div class="col-span-3">
-                                            <input type="number" step="0.5" value="${s.w}" oninput="updateSetField(${exIdx}, ${sIdx}, 'w', this.value)" class="w-full py-2 text-center rounded-xl border border-slate-200 bg-white font-bold outline-none">
-                                        </div>
-                                        <div class="col-span-3">
-                                            <input type="number" value="${s.r}" oninput="updateSetField(${exIdx}, ${sIdx}, 'r', this.value)" class="w-full py-2 text-center rounded-xl border border-slate-200 bg-white font-bold outline-none">
-                                        </div>
-                                        <div class="col-span-3 flex justify-center">
-                                            <button type="button" onclick="toggleSetDone(${exIdx}, ${sIdx})" class="tap-target w-full rounded-xl font-extrabold text-xs flex items-center justify-center gap-1 transition ${s.done ? 'bg-emerald-600 text-white shadow-xs' : 'bg-white border border-slate-300 text-slate-500 hover:border-emerald-400'}">
-                                                <i data-lucide="check" class="w-4 h-4"></i>
-                                                <span>${s.done ? 'DONE' : 'CHECK'}</span>
-                                            </button>
-                                        </div>
-                                        <div class="col-span-1 flex justify-center">
-                                            <button type="button" onclick="removeSetRow(${exIdx}, ${sIdx})" class="text-slate-300 hover:text-rose-500 p-1"><i data-lucide="minus-circle" class="w-4 h-4"></i></button>
-                                        </div>
+                                    <div class="grid grid-cols-12 gap-1.5 items-center p-1.5 rounded-2xl ${s.done ? 'bg-emerald-50 border border-emerald-200' : 'bg-slate-50 border border-slate-100'} transition">
+                                        <span class="col-span-2 text-center text-xs font-extrabold ${s.done ? 'text-emerald-700' : 'text-slate-500'}">${sIdx + 1}</span>
+                                        <input type="number" step="0.5" value="${s.w}" oninput="updateSetField(${exIdx}, ${sIdx}, 'w', this.value)" class="col-span-3 tap-target text-center rounded-xl border border-slate-200 bg-white font-bold outline-none">
+                                        <input type="number" value="${s.r}" oninput="updateSetField(${exIdx}, ${sIdx}, 'r', this.value)" class="col-span-3 tap-target text-center rounded-xl border border-slate-200 bg-white font-bold outline-none">
+                                        <button type="button" onclick="toggleSetDone(${exIdx}, ${sIdx})" class="col-span-3 tap-target rounded-xl font-extrabold text-xs transition flex items-center justify-center gap-1 ${s.done ? 'bg-emerald-600 text-white shadow-xs' : 'bg-white border border-slate-200 text-slate-500 hover:border-emerald-400'}">
+                                            <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                                            <span>DONE</span>
+                                        </button>
+                                        <button type="button" onclick="removeWorkoutSet(${exIdx}, ${sIdx})" class="col-span-1 flex items-center justify-center text-slate-300 hover:text-rose-500">
+                                            <i data-lucide="x" class="w-3.5 h-3.5"></i>
+                                        </button>
                                     </div>
                                 `).join('')}
                             </div>
-
-                            <button type="button" onclick="addSetRow(${exIdx})" class="w-full py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-extrabold transition flex items-center justify-center gap-1">
-                                <i data-lucide="plus" class="w-3.5 h-3.5"></i>
-                                <span>${lang === 'ja' ? 'セット追加' : '세트 추가'}</span>
-                            </button>
+                            <button type="button" onclick="addWorkoutSet(${exIdx})" class="w-full py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-extrabold transition">+ ${lang === 'ja' ? 'セット追加' : '세트 추가'}</button>
                         </div>
                     `;
                 }).join('');
             }
-
             updateLiveVolume();
-            renderMemberWorkoutHistory();
+
+            // Render Member History
+            const myLogs = workouts.filter(w => w.memberId === loggedInMemberId);
+            document.getElementById('wl-history-list').innerHTML = myLogs.length
+                ? myLogs.map(w => renderWorkoutLogCardHtml(w)).join('')
+                : `<p class="text-xs text-slate-400 text-center py-6">${lang === 'ja' ? 'まだトレーニング記録がありません' : '아직 저장된 운동 기록이 없습니다.'}</p>`;
+
             if (window.lucide) lucide.createIcons();
         }
 
-        function findMemberLastExerciseRecord(memberId, exName) {
-            const norm = (exName || '').trim().toLowerCase();
-            if (!norm) return null;
-            const myLogs = workouts.filter(w => w.memberId === memberId);
-            for (const log of myLogs) {
-                const match = (log.exercises || []).find(e => (e.name || '').trim().toLowerCase().includes(norm) || norm.includes((e.name || '').trim().toLowerCase()));
-                if (match && match.sets && match.sets.length) {
-                    const best = match.sets[match.sets.length - 1];
-                    return `${best.w}kg × ${best.r}${lang === 'ja' ? '回' : '회'} (${match.sets.length}sets · ${log.date})`;
-                }
-            }
-            return null;
+        function renderPartShortcuts() {
+            const el = document.getElementById('wl-part-shortcuts');
+            if (!el) return;
+            el.innerHTML = BODY_PARTS.map(p => `
+                <button type="button" onclick="openExercisePicker('${p.id}')" class="px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-900 hover:text-white text-slate-700 text-xs font-bold whitespace-nowrap transition shrink-0">
+                    ${lang === 'ja' ? p.ja : p.ko}
+                </button>
+            `).join('');
         }
 
-        function updateLiveVolume() {
-            let vol = 0;
-            activeWorkoutExercises.forEach(ex => {
-                ex.sets.forEach(s => {
-                    if (s.done) vol += (Number(s.w) || 0) * (Number(s.r) || 0);
-                });
-            });
-            const el = document.getElementById('wl-live-volume');
-            if (el) el.textContent = vol.toLocaleString();
-        }
-
-        window.removeActiveExercise = function(idx) {
-            activeWorkoutExercises.splice(idx, 1);
-            renderWorkoutBuilder();
-        };
-        window.addSetRow = function(exIdx) {
-            const ex = activeWorkoutExercises[exIdx];
-            const last = ex.sets[ex.sets.length - 1] || { w: 20, r: 12 };
-            ex.sets.push({ w: last.w, r: last.r, done: false });
-            renderWorkoutBuilder();
-        };
-        window.removeSetRow = function(exIdx, setIdx) {
-            activeWorkoutExercises[exIdx].sets.splice(setIdx, 1);
-            if (!activeWorkoutExercises[exIdx].sets.length) activeWorkoutExercises.splice(exIdx, 1);
-            renderWorkoutBuilder();
-        };
-        window.updateSetField = function(exIdx, setIdx, field, val) {
-            activeWorkoutExercises[exIdx].sets[setIdx][field] = Number(val) || 0;
-            updateLiveVolume();
-        };
-        window.toggleSetDone = function(exIdx, setIdx) {
-            const s = activeWorkoutExercises[exIdx].sets[setIdx];
-            s.done = !s.done;
-            renderWorkoutBuilder();
-            if (s.done) {
-                unlockAudioContext();
-                startRestTimer(defaultRestSec);
-            }
-        };
-
-        // Visual Exercise Picker Modal
         window.openExercisePicker = function(partId) {
             pickerPart = partId || 'chest';
             pickerEquip = 'all';
-            pickerSelectedIds.clear();
+            pickerSelectedIds = new Set();
             document.getElementById('picker-search-input').value = '';
             document.getElementById('exercise-picker-modal').classList.remove('hidden');
             renderExercisePickerList();
+            if (window.lucide) lucide.createIcons();
         };
+
         window.closeExercisePicker = function() {
             document.getElementById('exercise-picker-modal').classList.add('hidden');
         };
+
         window.selectPickerPart = function(partId) {
             pickerPart = partId;
             renderExercisePickerList();
         };
-        window.selectPickerEquip = function(equip) {
-            pickerEquip = equip;
-            renderExercisePickerList();
-        };
-        window.togglePickerExercise = function(exId) {
-            if (pickerSelectedIds.has(exId)) pickerSelectedIds.delete(exId);
-            else pickerSelectedIds.add(exId);
+
+        window.selectPickerEquip = function(eq) {
+            pickerEquip = eq;
             renderExercisePickerList();
         };
 
         window.renderExercisePickerList = function() {
-            const q = (document.getElementById('picker-search-input').value || '').trim().toLowerCase();
-
             document.getElementById('picker-part-tabs').innerHTML = BODY_PARTS.map(p => `
-                <button type="button" onclick="selectPickerPart('${p.id}')" class="px-3 py-1.5 rounded-xl text-xs font-extrabold whitespace-nowrap transition shrink-0 ${pickerPart === p.id && !q ? 'bg-slate-900 text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}">
+                <button type="button" onclick="selectPickerPart('${p.id}')" class="px-3 py-1.5 rounded-xl text-xs font-extrabold whitespace-nowrap transition shrink-0 ${pickerPart === p.id ? 'bg-slate-900 text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}">
                     ${lang === 'ja' ? p.ja : p.ko}
                 </button>
             `).join('');
 
-            const equips = ['all', 'machine', 'dumbbell', 'barbell', 'cable', 'bodyweight'];
-            document.getElementById('picker-equip-pills').innerHTML = equips.map(eq => `
-                <button type="button" onclick="selectPickerEquip('${eq}')" class="px-2.5 py-1 rounded-lg text-[11px] font-bold whitespace-nowrap transition shrink-0 ${pickerEquip === eq ? 'bg-blue-600 text-white' : 'bg-slate-100 text-slate-500'}">
-                    ${DICT[lang].equips[eq]}
+            document.getElementById('picker-equip-pills').innerHTML = Object.entries(DICT[lang].equips).map(([k, v]) => `
+                <button type="button" onclick="selectPickerEquip('${k}')" class="px-2.5 py-1 rounded-lg text-[11px] font-bold whitespace-nowrap transition shrink-0 ${pickerEquip === k ? 'bg-blue-600 text-white' : 'bg-white border border-slate-200 text-slate-500'}">
+                    ${v}
                 </button>
             `).join('');
 
+            const q = (document.getElementById('picker-search-input').value || '').trim().toLowerCase();
             const filtered = EXERCISE_LIBRARY.filter(ex => {
-                const matchSearch = !q || ex.ko.toLowerCase().includes(q) || ex.ja.toLowerCase().includes(q);
-                const matchPart = q ? true : ex.part === pickerPart;
-                const matchEquip = pickerEquip === 'all' || ex.equip === pickerEquip;
-                return matchSearch && matchPart && matchEquip;
+                if (q) return ex.ko.toLowerCase().includes(q) || ex.ja.toLowerCase().includes(q);
+                const matchPart = ex.part === pickerPart;
+                const matchEq = pickerEquip === 'all' || ex.equip === pickerEquip;
+                return matchPart && matchEq;
             });
 
-            document.getElementById('picker-list').innerHTML = filtered.map(ex => {
+            document.getElementById('picker-list').innerHTML = filtered.length ? filtered.map(ex => {
                 const selected = pickerSelectedIds.has(ex.id);
-                const partObj = BODY_PARTS.find(p => p.id === ex.part);
                 return `
-                    <button type="button" onclick="togglePickerExercise('${ex.id}')" class="w-full text-left p-3.5 rounded-2xl border transition flex items-center gap-3 ${selected ? 'bg-blue-50 border-blue-500 ring-2 ring-blue-500/20' : 'bg-white border-slate-200 hover:border-slate-300'}">
+                    <button type="button" onclick="togglePickerSelect('${ex.id}')" class="w-full text-left p-3 rounded-2xl border-2 transition flex items-center gap-3 ${selected ? 'border-blue-600 bg-blue-50/70' : 'border-slate-200/80 bg-white hover:border-slate-300'}">
                         ${getMuscleSvg(ex.part)}
                         <div class="flex-1 min-w-0">
                             <div class="flex items-center gap-1.5 flex-wrap">
                                 <span class="text-sm font-extrabold text-slate-900">${escapeHtml(getExName(ex))}</span>
                                 ${ex.beginner ? `<span class="px-1.5 py-0.5 rounded-md bg-emerald-100 text-emerald-700 text-[10px] font-extrabold">${lang === 'ja' ? '初心者おすすめ' : '초보자 추천'}</span>` : ''}
-                            </div>
-                            <div class="flex items-center gap-1.5 mt-1">
-                                <span class="px-1.5 py-0.5 rounded text-[10px] font-bold text-white" style="background:${partObj.color}">${lang === 'ja' ? partObj.ja : partObj.ko}</span>
-                                <span class="px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 text-[10px] font-bold">${DICT[lang].equips[ex.equip]}</span>
+                                <span class="px-1.5 py-0.5 rounded-md bg-slate-100 text-slate-500 text-[10px] font-bold">${DICT[lang].equips[ex.equip] || ex.equip}</span>
                             </div>
                             <p class="text-[11px] text-slate-500 mt-1 leading-snug">${escapeHtml(lang === 'ja' ? ex.tipJa : ex.tipKo)}</p>
                         </div>
-                        <div class="w-6 h-6 rounded-full border-2 flex items-center justify-center shrink-0 ${selected ? 'bg-blue-600 border-blue-600 text-white' : 'border-slate-300'}">
+                        <div class="w-6 h-6 rounded-full flex items-center justify-center shrink-0 ${selected ? 'bg-blue-600 text-white' : 'border-2 border-slate-300'}">
                             ${selected ? '<i data-lucide="check" class="w-3.5 h-3.5"></i>' : ''}
                         </div>
                     </button>
                 `;
-            }).join('') || `<p class="text-center text-xs text-slate-400 py-8">${lang === 'ja' ? '該当する種目がありません' : '검색 결과가 없습니다'}</p>`;
+            }).join('') : `<p class="text-xs text-slate-400 text-center py-8">${lang === 'ja' ? '該当する種目がありません' : '검색된 종목이 없습니다.'}</p>`;
 
-            const count = pickerSelectedIds.size;
             const confirmBtn = document.getElementById('picker-confirm-btn');
-            const confirmLbl = document.getElementById('picker-confirm-label');
+            const count = pickerSelectedIds.size;
             confirmBtn.disabled = count === 0;
-            confirmLbl.textContent = count > 0
-                ? (lang === 'ja' ? `${count}種目を追加する` : `선택한 ${count}개 종목 추가하기`)
-                : (lang === 'ja' ? '種目を選択してください' : '추가할 종목을 선택하세요');
+            document.getElementById('picker-confirm-label').textContent = count > 0
+                ? (lang === 'ja' ? `選択した ${count}種目を追加` : `선택한 ${count}개 종목 추가하기`)
+                : (lang === 'ja' ? '種目を選択してください' : '선택한 종목 추가하기');
 
             if (window.lucide) lucide.createIcons();
         };
 
+        window.togglePickerSelect = function(exId) {
+            if (pickerSelectedIds.has(exId)) pickerSelectedIds.delete(exId);
+            else pickerSelectedIds.add(exId);
+            renderExercisePickerList();
+        };
+
+        window.addCustomExerciseFromPicker = function() {
+            const inp = document.getElementById('picker-custom-input');
+            const name = inp.value.trim();
+            if (!name) return;
+            activeWorkoutExercises.push({
+                exId: null, part: pickerPart || 'chest', name, nameJa: name,
+                sets: [{ w: 20, r: 12, done: false }, { w: 20, r: 12, done: false }, { w: 20, r: 12, done: false }]
+            });
+            inp.value = '';
+            closeExercisePicker();
+            renderWorkoutBuilder();
+        };
+
         window.confirmAddSelectedExercises = function() {
             pickerSelectedIds.forEach(id => {
-                const ex = EXERCISE_LIBRARY.find(x => x.id === id);
-                if (ex) {
-                    activeWorkoutExercises.push({
-                        exId: ex.id,
-                        part: ex.part,
-                        name: getExName(ex),
-                        sets: [{ w: 20, r: 12, done: false }, { w: 20, r: 12, done: false }, { w: 20, r: 12, done: false }]
-                    });
-                }
+                const ex = EXERCISE_LIBRARY.find(e => e.id === id);
+                if (!ex) return;
+                const defaultW = ex.equip === 'bodyweight' ? 0 : 20;
+                activeWorkoutExercises.push({
+                    exId: ex.id, part: ex.part, name: ex.ko, nameJa: ex.ja,
+                    sets: [{ w: defaultW, r: 12, done: false }, { w: defaultW, r: 12, done: false }, { w: defaultW, r: 12, done: false }]
+                });
             });
             closeExercisePicker();
             renderWorkoutBuilder();
         };
 
-        window.addCustomExerciseFromPicker = function() {
-            const input = document.getElementById('picker-custom-input');
-            const name = input.value.trim();
-            if (!name) return;
-            activeWorkoutExercises.push({
-                exId: null,
-                part: pickerPart,
-                name,
-                sets: [{ w: 15, r: 12, done: false }, { w: 15, r: 12, done: false }]
-            });
-            input.value = '';
-            closeExercisePicker();
+        window.addWorkoutSet = function(exIdx) {
+            const ex = activeWorkoutExercises[exIdx];
+            if (!ex) return;
+            const last = ex.sets[ex.sets.length - 1] || { w: 20, r: 12 };
+            ex.sets.push({ w: last.w, r: last.r, done: false });
             renderWorkoutBuilder();
         };
+
+        window.removeWorkoutSet = function(exIdx, sIdx) {
+            const ex = activeWorkoutExercises[exIdx];
+            if (!ex || ex.sets.length <= 1) return;
+            ex.sets.splice(sIdx, 1);
+            renderWorkoutBuilder();
+        };
+
+        window.removeWorkoutExercise = function(exIdx) {
+            activeWorkoutExercises.splice(exIdx, 1);
+            renderWorkoutBuilder();
+        };
+
+        window.updateSetField = function(exIdx, sIdx, field, val) {
+            if (!activeWorkoutExercises[exIdx] || !activeWorkoutExercises[exIdx].sets[sIdx]) return;
+            activeWorkoutExercises[exIdx].sets[sIdx][field] = Number(val) || 0;
+            updateLiveVolume();
+        };
+
+        window.toggleSetDone = function(exIdx, sIdx) {
+            const set = activeWorkoutExercises[exIdx]?.sets[sIdx];
+            if (!set) return;
+            set.done = !set.done;
+            if (set.done) {
+                unlockAudioContext();
+                startRestTimer(defaultRestSec);
+            }
+            renderWorkoutBuilder();
+        };
+
+        function updateLiveVolume() {
+            let vol = 0;
+            activeWorkoutExercises.forEach(ex => {
+                (ex.sets || []).forEach(s => {
+                    if (s.done) vol += (Number(s.w) || 0) * (Number(s.r) || 0);
+                });
+            });
+            const el = document.getElementById('wl-live-volume');
+            if (el) el.textContent = vol.toLocaleString();
+            return vol;
+        }
 
         window.saveMemberWorkoutLog = async function() {
             const m = getLoggedInMember();
             if (!m) return;
             if (!activeWorkoutExercises.length) {
-                showToast(lang === 'ja' ? '先に種目を追加してください' : '먼저 운동 종목을 추가해주세요.', 'error');
+                showToast(lang === 'ja' ? '種目を1つ以上追加してください' : '종목을 1개 이상 추가해주세요.', 'error');
                 return;
             }
-            let totalVolume = 0;
-            activeWorkoutExercises.forEach(ex => ex.sets.forEach(s => { totalVolume += (Number(s.w) || 0) * (Number(s.r) || 0); }));
+            const date = document.getElementById('wl-date').value || toDateStr(new Date());
+            const type = document.getElementById('wl-type').value || 'personal';
+            const memo = document.getElementById('wl-memo').value.trim();
+            const totalVolume = activeWorkoutExercises.reduce((sum, ex) => sum + ex.sets.reduce((s2, s) => s2 + (Number(s.w) || 0) * (Number(s.r) || 0), 0), 0);
 
             const id = 'wk-' + Date.now();
-            const log = {
-                id,
-                memberId: m.id,
-                memberName: m.name,
-                date: document.getElementById('wl-date').value || toDateStr(new Date()),
-                type: document.getElementById('wl-type').value || 'personal',
-                totalVolume,
-                memo: document.getElementById('wl-memo').value.trim(),
+            await dbSet('pt_workouts', id, {
+                id, memberId: m.id, memberName: m.name, date, type, totalVolume,
+                memo, memoJa: lang === 'ja' ? memo : '',
                 exercises: JSON.parse(JSON.stringify(activeWorkoutExercises)),
                 createdAt: Date.now()
-            };
-            await dbSet('pt_workouts', id, log);
+            });
             activeWorkoutExercises = [];
             document.getElementById('wl-memo').value = '';
             stopRestTimer();
             renderWorkoutBuilder();
-            showToast(lang === 'ja' ? '運動ログを保存しました！トレーナーに共有されました' : '운동 기록 저장 완료! 트레이너에게 실시간 공유되었습니다.');
+            showToast(lang === 'ja' ? 'トレーニング記録を保存しました！（トレーナーに共有済）' : '운동 기록이 저장되었습니다! (트레이너 실시간 공유)');
         };
 
-        function renderMemberWorkoutHistory() {
-            const list = workouts.filter(w => w.memberId === loggedInMemberId);
-            const el = document.getElementById('wl-history-list');
-            if (!list.length) {
-                el.innerHTML = `<p class="text-center text-xs text-slate-400 py-6">${lang === 'ja' ? 'まだ記録がありません' : '아직 저장된 운동 기록이 없습니다.'}</p>`;
-                return;
-            }
-            el.innerHTML = list.map(w => renderWorkoutLogCardHtml(w)).join('');
-        }
-
         function renderWorkoutLogCardHtml(w) {
+            const isPt = w.type === 'pt';
+            const memo = getWorkoutMemoText(w);
             return `
                 <div class="bg-white rounded-2xl p-4 border border-slate-200/80 shadow-xs space-y-2.5">
                     <div class="flex items-center justify-between gap-2">
                         <div class="flex items-center gap-2">
-                            <span class="px-2 py-0.5 rounded-md text-[10px] font-extrabold ${w.type === 'pt' ? 'bg-blue-100 text-blue-700' : 'bg-emerald-100 text-emerald-700'}">${w.type === 'pt' ? 'PT' : (lang === 'ja' ? '個人トレ' : '개인운동')}</span>
+                            <span class="px-2 py-0.5 rounded-lg text-[10px] font-extrabold ${isPt ? 'bg-blue-100 text-blue-700' : 'bg-emerald-100 text-emerald-700'}">${isPt ? t('wlTypePt') : t('wlTypePersonal')}</span>
                             <span class="text-xs font-extrabold text-slate-900">${w.date}</span>
                         </div>
-                        <span class="text-xs font-extrabold text-emerald-600">${(w.totalVolume || 0).toLocaleString()} kg</span>
+                        <span class="text-xs font-extrabold text-slate-600">${(w.totalVolume || 0).toLocaleString()} kg</span>
                     </div>
                     <div class="space-y-1">
                         ${(w.exercises || []).map(ex => `
                             <div class="text-xs text-slate-700 flex items-center justify-between gap-2 bg-slate-50 px-2.5 py-1.5 rounded-xl">
-                                <span class="font-bold truncate">${escapeHtml(ex.name)}</span>
-                                <span class="text-[11px] text-slate-500 shrink-0">${(ex.sets || []).map(s => `${s.w}kg×${s.r}`).join(', ')}</span>
+                                <span class="font-bold truncate">${escapeHtml(getWorkoutExDisplayName(ex))}</span>
+                                <span class="text-[11px] font-mono text-slate-500 shrink-0">${(ex.sets || []).map(s => `${s.w}×${s.r}`).join(' / ')}</span>
                             </div>
                         `).join('')}
                     </div>
-                    ${w.memo ? `<p class="text-xs text-slate-500 bg-amber-50/70 px-3 py-2 rounded-xl">${escapeHtml(w.memo)}</p>` : ''}
+                    ${memo ? `<p class="text-xs text-slate-500 bg-amber-50/60 border border-amber-100 rounded-xl p-2.5">${escapeHtml(memo)}</p>` : ''}
                 </div>
             `;
         }
 
         // ==========================================
-        // AUTO REST TIMER & WEB AUDIO API ALARM SOUND
+        // AUTO REST TIMER & WEB AUDIO ALARM SOUND
         // ==========================================
         function unlockAudioContext() {
             try {
-                const AC = window.AudioContext || window.webkitAudioContext;
-                if (!AC) return;
-                if (!audioCtx) audioCtx = new AC();
+                const AudioCtx = window.AudioContext || window.webkitAudioContext;
+                if (!AudioCtx) return;
+                if (!audioCtx) audioCtx = new AudioCtx();
                 if (audioCtx.state === 'suspended') audioCtx.resume();
             } catch (e) { /* ignore */ }
         }
 
-        function playRestAlarmBeep() {
+        function playAlarmBeep() {
             if (!restSoundEnabled) return;
-            unlockAudioContext();
             try {
+                unlockAudioContext();
                 if (!audioCtx) return;
-                const base = audioCtx.currentTime;
+                const startTime = audioCtx.currentTime;
                 [0, 0.22, 0.44].forEach((offset, idx) => {
                     const osc = audioCtx.createOscillator();
                     const gain = audioCtx.createGain();
                     osc.type = 'sine';
-                    osc.frequency.setValueAtTime(idx === 2 ? 1046.5 : 880, base + offset);
-                    gain.gain.setValueAtTime(0.001, base + offset);
-                    gain.gain.exponentialRampToValueAtTime(0.28, base + offset + 0.02);
-                    gain.gain.exponentialRampToValueAtTime(0.001, base + offset + 0.18);
+                    osc.frequency.setValueAtTime(idx === 2 ? 1175 : 880, startTime + offset);
+                    gain.gain.setValueAtTime(0.001, startTime + offset);
+                    gain.gain.exponentialRampToValueAtTime(0.28, startTime + offset + 0.02);
+                    gain.gain.exponentialRampToValueAtTime(0.001, startTime + offset + 0.16);
                     osc.connect(gain);
                     gain.connect(audioCtx.destination);
-                    osc.start(base + offset);
-                    osc.stop(base + offset + 0.19);
+                    osc.start(startTime + offset);
+                    osc.stop(startTime + offset + 0.18);
                 });
+                if (navigator.vibrate) navigator.vibrate([180, 100, 180]);
             } catch (e) { /* ignore */ }
-            if (navigator.vibrate) navigator.vibrate([180, 100, 180, 100, 250]);
         }
 
         window.testAlarmSound = function() {
-            unlockAudioContext();
-            const prev = restSoundEnabled;
-            restSoundEnabled = true;
-            playRestAlarmBeep();
-            restSoundEnabled = prev;
-            showToast(lang === 'ja' ? 'アラーム音を再生しました 🔔' : '휴식 종료 알람음을 재생했습니다 🔔');
+            playAlarmBeep();
+            showToast(lang === 'ja' ? 'アラーム音をテスト再生しました 🔔' : '휴식 종료 알람음을 재생했습니다 🔔');
         };
 
         window.toggleRestSound = function() {
             restSoundEnabled = !restSoundEnabled;
             const lbl = document.getElementById('wl-sound-label');
-            const frtBtn = document.getElementById('frt-sound-btn');
             if (lbl) lbl.textContent = restSoundEnabled ? 'ON' : 'OFF';
-            if (frtBtn) frtBtn.querySelector('span').textContent = restSoundEnabled ? 'ON' : 'OFF';
+            const frtBtn = document.getElementById('frt-sound-btn');
+            if (frtBtn) {
+                frtBtn.innerHTML = `<i data-lucide="${restSoundEnabled ? 'volume-2' : 'volume-x'}" class="w-3.5 h-3.5 ${restSoundEnabled ? 'text-emerald-400' : 'text-slate-400'}"></i><span>${restSoundEnabled ? 'ON' : 'OFF'}</span>`;
+                if (window.lucide) lucide.createIcons();
+            }
         };
 
         window.setDefaultRestSec = function(sec) {
@@ -2708,273 +2935,214 @@
         };
 
         function updateDefaultRestPillsUI() {
-            document.querySelectorAll('.rest-def-btn').forEach(b => {
-                const active = Number(b.getAttribute('data-sec')) === defaultRestSec;
-                b.className = `rest-def-btn py-1.5 rounded-xl text-xs font-extrabold transition ${active ? 'bg-emerald-500 text-slate-950 shadow-sm' : 'bg-white/10 text-slate-200 hover:bg-white/20'}`;
+            document.querySelectorAll('.rest-def-btn').forEach(btn => {
+                const s = Number(btn.getAttribute('data-sec'));
+                btn.className = `rest-def-btn py-1.5 rounded-xl text-xs font-extrabold transition ${s === defaultRestSec ? 'bg-emerald-500 text-slate-950 shadow-xs' : 'bg-white/10 text-slate-300 hover:bg-white/20'}`;
             });
         }
 
-        window.startRestTimer = function(sec) {
-            clearInterval(restTimerInterval);
-            restTotalSec = sec;
-            restSecondsLeft = sec;
+        window.startRestTimer = function(seconds) {
+            dismissRestFinishedBanner();
+            if (restTimerInterval) clearInterval(restTimerInterval);
+            restTotalSec = Math.max(5, Number(seconds) || defaultRestSec);
+            restSecondsLeft = restTotalSec;
             restTimerPaused = false;
             document.getElementById('floating-rest-bar').classList.remove('hidden');
-            dismissRestFinishedBanner();
-            updateRestTimerUI();
+            updateFloatingRestUI();
 
             restTimerInterval = setInterval(() => {
                 if (restTimerPaused) return;
                 restSecondsLeft--;
                 if (restSecondsLeft <= 0) {
                     clearInterval(restTimerInterval);
+                    restTimerInterval = null;
                     restSecondsLeft = 0;
-                    updateRestTimerUI();
-                    playRestAlarmBeep();
-                    showRestFinishedBanner();
-                    setTimeout(() => {
-                        if (restSecondsLeft === 0) document.getElementById('floating-rest-bar').classList.add('hidden');
-                    }, 1800);
-                } else {
-                    updateRestTimerUI();
+                    document.getElementById('floating-rest-bar').classList.add('hidden');
+                    playAlarmBeep();
+                    const banner = document.getElementById('rest-finished-banner');
+                    document.getElementById('rest-finished-text').textContent = lang === 'ja'
+                        ? '休憩終了！次のセットを始めましょう 💪'
+                        : '휴식 종료! 다음 세트를 시작하세요 💪';
+                    banner.classList.remove('hidden');
+                    setTimeout(() => dismissRestFinishedBanner(), 6000);
+                    return;
                 }
+                updateFloatingRestUI();
             }, 1000);
         };
 
         window.adjustRestTimer = function(delta) {
             restSecondsLeft = Math.max(5, restSecondsLeft + delta);
             if (restSecondsLeft > restTotalSec) restTotalSec = restSecondsLeft;
-            updateRestTimerUI();
+            updateFloatingRestUI();
         };
 
         window.toggleRestTimerPause = function() {
             restTimerPaused = !restTimerPaused;
             const btn = document.getElementById('frt-pause-btn');
-            btn.innerHTML = restTimerPaused ? '<i data-lucide="play" class="w-4 h-4"></i>' : '<i data-lucide="pause" class="w-4 h-4"></i>';
-            if (window.lucide) lucide.createIcons();
+            if (btn) {
+                btn.innerHTML = `<i data-lucide="${restTimerPaused ? 'play' : 'pause'}" class="w-4 h-4"></i>`;
+                if (window.lucide) lucide.createIcons();
+            }
         };
 
         window.stopRestTimer = function() {
-            clearInterval(restTimerInterval);
+            if (restTimerInterval) clearInterval(restTimerInterval);
             restTimerInterval = null;
-            restSecondsLeft = 0;
+            restTimerPaused = false;
             const bar = document.getElementById('floating-rest-bar');
             if (bar) bar.classList.add('hidden');
         };
 
-        function updateRestTimerUI() {
-            const mm = String(Math.floor(restSecondsLeft / 60)).padStart(2, '0');
-            const ss = String(restSecondsLeft % 60).padStart(2, '0');
-            document.getElementById('frt-display').textContent = `${mm}:${ss}`;
-            const pct = restTotalSec > 0 ? Math.max(0, Math.min(100, (restSecondsLeft / restTotalSec) * 100)) : 0;
+        window.dismissRestFinishedBanner = function() {
+            const b = document.getElementById('rest-finished-banner');
+            if (b) b.classList.add('hidden');
+        };
+
+        function updateFloatingRestUI() {
+            const m = String(Math.floor(restSecondsLeft / 60)).padStart(2, '0');
+            const s = String(restSecondsLeft % 60).padStart(2, '0');
+            document.getElementById('frt-display').textContent = `${m}:${s}`;
+            const pct = Math.max(0, Math.min(100, Math.round((restSecondsLeft / Math.max(1, restTotalSec)) * 100)));
             document.getElementById('frt-progress').style.width = `${pct}%`;
         }
 
-        function showRestFinishedBanner() {
-            const b = document.getElementById('rest-finished-banner');
-            document.getElementById('rest-finished-text').textContent = lang === 'ja'
-                ? '休憩終了！次のセットを始めましょう 💪'
-                : '휴식 종료! 다음 세트를 시작하세요 💪';
-            b.classList.remove('hidden');
-            setTimeout(dismissRestFinishedBanner, 5000);
-        }
-        window.dismissRestFinishedBanner = function() {
-            document.getElementById('rest-finished-banner').classList.add('hidden');
-        };
-
         // ==========================================
-        // TRAINER ADMIN PORTAL: DASHBOARD, SCHEDULE, MEMBERS, DETAIL, SETTINGS
+        // TRAINER PORTAL: DASHBOARD, DIRECTORY & DETAIL
         // ==========================================
         function renderTrainerDashboard() {
             const todayStr = toDateStr(new Date());
-            const todayBookings = bookings.filter(b => b.date === todayStr && b.status === 'booked').sort((a, b) => a.time.localeCompare(b.time));
-            const renewalCount = members.filter(m => ((m.totalSessions || 10) - (m.completedSessions || 0)) <= 2).length;
+            const todayBks = bookings.filter(b => b.date === todayStr && b.status !== 'blocked').sort((a, b) => a.time.localeCompare(b.time));
+            const renewalCount = members.filter(m => m.contractType !== 'single' && Math.max(0, (m.totalSessions || 10) - (m.completedSessions || 0)) <= 2).length;
             const newCount = members.filter(m => m.isNew).length;
 
             document.getElementById('t-kpi-members').textContent = members.length;
-            document.getElementById('t-kpi-today').textContent = todayBookings.length;
+            document.getElementById('t-kpi-today').textContent = todayBks.length;
             document.getElementById('t-kpi-renewal').textContent = renewalCount;
             document.getElementById('t-kpi-new').textContent = newCount;
 
-            const todayEl = document.getElementById('t-today-list');
-            todayEl.innerHTML = todayBookings.length
-                ? todayBookings.map(b => `
-                    <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200/80 flex items-center justify-between gap-2">
-                        <div class="flex items-center gap-3 min-w-0">
-                            <span class="px-2.5 py-1.5 rounded-xl bg-blue-600 text-white text-xs font-extrabold shrink-0">${b.time}</span>
-                            <button type="button" onclick="openMemberDetail('${b.memberId}')" class="text-sm font-extrabold text-slate-900 hover:text-blue-600 truncate">${escapeHtml(b.memberName)}</button>
-                        </div>
-                        <button type="button" onclick="trainerCompleteBooking('${b.id}')" class="px-3 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold shrink-0">
-                            ${lang === 'ja' ? '完了 (+1回)' : '수업 완료 (+1회)'}
-                        </button>
+            document.getElementById('t-today-list').innerHTML = todayBks.length ? todayBks.map(bk => {
+                const isDone = bk.status === 'completed';
+                return `<div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200/80 flex items-center justify-between gap-2">
+                    <div class="flex items-center gap-3 min-w-0">
+                        <span class="px-2.5 py-1 rounded-xl bg-white border border-slate-200 font-mono text-xs font-extrabold text-slate-900">${bk.time}</span>
+                        <button type="button" onclick="openMemberDetail('${bk.memberId}')" class="text-sm font-extrabold text-slate-900 hover:text-blue-600 truncate">${escapeHtml(getBookingMemberName(bk))}</button>
                     </div>
-                `).join('')
-                : `<p class="text-xs text-slate-400 text-center py-4">${lang === 'ja' ? '本日のPT予約はありません' : '오늘 예정된 PT 예약이 없습니다.'}</p>`;
+                    ${isDone
+                        ? `<span class="px-2.5 py-1 rounded-xl bg-emerald-100 text-emerald-700 text-xs font-extrabold">${lang === 'ja' ? '完了' : '완료'}</span>`
+                        : `<button type="button" onclick="completeBookingSession('${bk.id}')" class="px-3 py-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold shrink-0">${lang === 'ja' ? '完了 (+1回)' : '수업 완료 (+1회)'}</button>`}
+                </div>`;
+            }).join('') : `<p class="text-xs text-slate-400 text-center py-6">${lang === 'ja' ? '本日のPT予約はありません' : '오늘 예정된 PT 예약이 없습니다.'}</p>`;
 
-            const feedEl = document.getElementById('t-activity-feed');
-            const recentLogs = workouts.slice(0, 6);
-            feedEl.innerHTML = recentLogs.length
-                ? recentLogs.map(w => `
-                    <div onclick="openMemberDetail('${w.memberId}')" class="py-3 flex items-center justify-between gap-3 cursor-pointer hover:bg-slate-50 px-2 rounded-xl transition">
-                        <div class="min-w-0">
-                            <div class="flex items-center gap-1.5">
-                                <span class="text-xs font-extrabold text-slate-900">${escapeHtml(w.memberName)}</span>
-                                <span class="px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-700 text-[10px] font-bold">${w.type === 'pt' ? 'PT' : (lang === 'ja' ? '個人トレ' : '개인운동')}</span>
-                            </div>
-                            <p class="text-xs text-slate-500 truncate mt-0.5">${(w.exercises || []).map(e => e.name).join(', ')} · ${(w.totalVolume || 0).toLocaleString()}kg</p>
-                        </div>
-                        <span class="text-[11px] font-bold text-slate-400 shrink-0">${w.date}</span>
+            // Activity Feed
+            const feed = [
+                ...workouts.slice(0, 6).map(w => ({
+                    ts: w.createdAt || 0,
+                    memberId: w.memberId,
+                    icon: 'dumbbell',
+                    color: 'bg-emerald-50 text-emerald-600',
+                    title: `${getMemberDisplayName(members.find(m => m.id === w.memberId)) || w.memberName}`,
+                    desc: lang === 'ja'
+                        ? `${w.date} 運動ログ記録 (${(w.totalVolume || 0).toLocaleString()}kg)`
+                        : `${w.date} 운동 일지 기록 (${(w.totalVolume || 0).toLocaleString()}kg)`
+                })),
+                ...bookings.filter(b => b.status === 'booked').slice(0, 5).map(b => ({
+                    ts: b.createdAt || 0,
+                    memberId: b.memberId,
+                    icon: 'calendar-check',
+                    color: 'bg-blue-50 text-blue-600',
+                    title: getBookingMemberName(b),
+                    desc: lang === 'ja' ? `${b.date} ${b.time} PT予約` : `${b.date} ${b.time} PT 예약`
+                }))
+            ].sort((a, b) => b.ts - a.ts).slice(0, 8);
+
+            document.getElementById('t-activity-feed').innerHTML = feed.length ? feed.map(f => `
+                <button type="button" onclick="openMemberDetail('${f.memberId}')" class="w-full py-3 flex items-center gap-3 text-left hover:bg-slate-50 px-2 rounded-xl transition">
+                    <div class="w-9 h-9 rounded-xl ${f.color} flex items-center justify-center shrink-0"><i data-lucide="${f.icon}" class="w-4 h-4"></i></div>
+                    <div class="min-w-0 flex-1">
+                        <p class="text-sm font-extrabold text-slate-900 truncate">${escapeHtml(f.title)}</p>
+                        <p class="text-xs text-slate-500 truncate">${escapeHtml(f.desc)}</p>
                     </div>
-                `).join('')
-                : `<p class="text-xs text-slate-400 text-center py-4">${lang === 'ja' ? '最近のアクティビティはありません' : '최근 활동 기록이 없습니다.'}</p>`;
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-slate-300 shrink-0"></i>
+                </button>
+            `).join('') : `<p class="text-xs text-slate-400 text-center py-6">${lang === 'ja' ? 'アクティビティはまだありません' : '최근 회원 활동이 없습니다.'}</p>`;
         }
 
         window.jumpToRenewalMembers = function() {
-            document.getElementById('t-renewal-filter').checked = true;
+            const cb = document.getElementById('t-renewal-filter');
+            if (cb) cb.checked = true;
             switchAppTab('t-members');
         };
 
-        function renderTrainerCalendar() {
-            document.getElementById('t-cal-month-label').textContent = `${calYear}.${String(calMonth + 1).padStart(2, '0')}`;
-            document.getElementById('t-cal-grid').innerHTML = buildCalendarGridHtml(true);
-            document.getElementById('t-selected-date-label').textContent = selectedCalDate;
-
-            const hours = getDailyHours();
-            document.getElementById('t-slots-list').innerHTML = hours.map(time => {
-                const slot = bookings.find(b => b.date === selectedCalDate && b.time === time);
-                if (slot && slot.status === 'booked') {
-                    return `
-                        <div class="p-3.5 rounded-2xl bg-blue-50 border border-blue-200 flex items-center justify-between gap-2 flex-wrap">
-                            <div class="flex items-center gap-2.5">
-                                <span class="px-2.5 py-1 rounded-xl bg-blue-600 text-white text-xs font-extrabold">${time}</span>
-                                <button type="button" onclick="openMemberDetail('${slot.memberId}')" class="text-sm font-extrabold text-slate-900 hover:underline">${escapeHtml(slot.memberName)}</button>
-                            </div>
-                            <div class="flex items-center gap-1.5">
-                                <button type="button" onclick="trainerCompleteBooking('${slot.id}')" class="px-3 py-1.5 rounded-xl bg-emerald-600 text-white text-xs font-bold">${lang === 'ja' ? '完了+1' : '완료 +1'}</button>
-                                <button type="button" onclick="trainerDeleteBooking('${slot.id}')" class="px-2.5 py-1.5 rounded-xl bg-white border border-rose-200 text-rose-600 text-xs font-bold">${lang === 'ja' ? '削除' : '취소'}</button>
-                            </div>
-                        </div>
-                    `;
-                }
-                if (slot && slot.status === 'blocked') {
-                    return `
-                        <div class="p-3.5 rounded-2xl bg-slate-100 border border-slate-200 flex items-center justify-between gap-2">
-                            <div class="flex items-center gap-2.5">
-                                <span class="px-2.5 py-1 rounded-xl bg-slate-500 text-white text-xs font-extrabold">${time}</span>
-                                <span class="text-xs font-bold text-slate-500">${lang === 'ja' ? '予約ブロック中（休み）' : '예약 차단됨 (휴무)'}</span>
-                            </div>
-                            <button type="button" onclick="trainerDeleteBooking('${slot.id}')" class="px-3 py-1.5 rounded-xl bg-white border border-slate-300 text-slate-700 text-xs font-bold">${lang === 'ja' ? '解除' : '차단 해제'}</button>
-                        </div>
-                    `;
-                }
-                return `
-                    <div class="p-3 rounded-2xl bg-white border border-slate-200 flex items-center justify-between gap-2">
-                        <span class="text-sm font-extrabold text-slate-700 px-1">${time}</span>
-                        <div class="flex items-center gap-1.5">
-                            <button type="button" onclick="trainerSlotAction('${selectedCalDate}', '${time}')" class="px-3 py-1.5 rounded-xl bg-blue-50 hover:bg-blue-100 text-blue-700 text-xs font-bold">${lang === 'ja' ? '手動予約' : '수동 예약'}</button>
-                            <button type="button" onclick="trainerBlockSlot('${selectedCalDate}', '${time}')" class="px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-600 text-xs font-bold">${lang === 'ja' ? '休み設定' : '휴무 차단'}</button>
-                        </div>
-                    </div>
-                `;
-            }).join('');
-        }
-
-        window.trainerSlotAction = function(dateStr, time) {
-            const opts = members.map(m => `<option value="${m.id}">${escapeHtml(m.name)}</option>`).join('');
-            openActionModal(
-                `${dateStr} ${time} ${lang === 'ja' ? '手動予約' : '수동 PT 예약'}`,
-                lang === 'ja' ? '予約する会員を選択してください。' : '예약을 등록할 회원을 선택하세요.',
-                `<select id="am-member-select" class="tap-target w-full px-3.5 py-2.5 rounded-2xl border border-slate-200 bg-slate-50 outline-none">${opts}</select>`,
-                async () => {
-                    const sel = document.getElementById('am-member-select');
-                    const m = members.find(x => x.id === sel.value);
-                    if (!m) return;
-                    const id = 'bk-' + Date.now();
-                    await dbSet('pt_bookings', id, { id, date: dateStr, time, memberId: m.id, memberName: m.name, status: 'booked', createdAt: Date.now() });
-                    showToast(lang === 'ja' ? '予約を登録しました' : '수동 예약이 등록되었습니다.');
-                }
-            );
-        };
-
-        window.trainerBlockSlot = async function(dateStr, time) {
-            const id = 'bk-' + Date.now();
-            await dbSet('pt_bookings', id, { id, date: dateStr, time, memberId: null, memberName: 'Blocked', status: 'blocked', createdAt: Date.now() });
-            showToast(lang === 'ja' ? '時間枠をブロックしました' : '해당 시간 예약이 차단되었습니다.');
-        };
-
-        window.trainerCompleteBooking = async function(bookingId) {
-            const b = bookings.find(x => x.id === bookingId);
-            if (!b) return;
-            if (b.memberId) await trainerIncrementSession(b.memberId);
-            await dbUpdate('pt_bookings', bookingId, { status: 'completed' });
-        };
-
-        window.trainerDeleteBooking = async function(bookingId) {
-            await dbDelete('pt_bookings', bookingId);
-            showToast(lang === 'ja' ? '削除しました' : '처리되었습니다.');
-        };
-
-        // Trainer Members Directory
         window.setTrainerGoalFilter = function(g) {
             trainerGoalFilter = g;
             renderTrainerMembersList();
         };
 
-        window.renderTrainerMembersList = function() {
-            const goalKeys = ['all', 'diet', 'hypertrophy', 'rehab', 'contest'];
-            document.getElementById('t-goal-filters').innerHTML = goalKeys.map(g => `
-                <button type="button" onclick="setTrainerGoalFilter('${g}')" class="px-3 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition shrink-0 ${trainerGoalFilter === g ? 'bg-slate-900 text-white' : 'bg-slate-100 text-slate-600'}">
-                    ${DICT[lang].goals[g]}
-                </button>
+        function renderTrainerMembersList() {
+            document.getElementById('t-goal-filters').innerHTML = Object.entries(DICT[lang].goals).map(([k, v]) => `
+                <button type="button" onclick="setTrainerGoalFilter('${k}')" class="px-3 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition ${trainerGoalFilter === k ? 'bg-slate-900 text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}">${v}</button>
             `).join('');
 
-            const q = (document.getElementById('t-member-search').value || '').trim().toLowerCase();
-            const renewalOnly = document.getElementById('t-renewal-filter').checked;
+            const q = (document.getElementById('t-member-search')?.value || '').trim().toLowerCase();
+            const renewalOnly = document.getElementById('t-renewal-filter')?.checked;
 
             const filtered = members.filter(m => {
-                const rem = (m.totalSessions || 10) - (m.completedSessions || 0);
-                if (renewalOnly && rem > 2) return false;
                 if (trainerGoalFilter !== 'all' && m.goal !== trainerGoalFilter) return false;
+                const isSingle = m.contractType === 'single';
+                const rem = Math.max(0, (m.totalSessions || 10) - (m.completedSessions || 0));
+                if (renewalOnly && (isSingle || rem > 2)) return false;
                 if (q) {
-                    const hay = `${m.name} ${m.phone} ${m.injuryDetail || ''}`.toLowerCase();
-                    if (!hay.includes(q)) return false;
+                    const hay = `${m.name || ''} ${m.nameJa || ''} ${m.phone || ''} ${m.injuryDetail || ''} ${m.injuryDetailJa || ''}`.toLowerCase();
+                    return hay.includes(q);
                 }
                 return true;
             });
 
-            document.getElementById('t-members-list').innerHTML = filtered.map(m => {
+            document.getElementById('t-members-list').innerHTML = filtered.length ? filtered.map(m => {
+                const isSingle = m.contractType === 'single';
                 const total = m.totalSessions || 10;
                 const done = m.completedSessions || 0;
                 const rem = Math.max(0, total - done);
-                const isRenewal = rem <= 2;
+                const isRenewal = !isSingle && rem <= 2;
+
                 return `
-                    <div onclick="openMemberDetail('${m.id}')" class="cursor-pointer bg-white hover:border-blue-300 rounded-3xl p-4 border border-slate-200/80 shadow-xs transition space-y-3">
+                    <div class="bg-white rounded-3xl p-4 sm:p-5 border ${isRenewal ? 'border-amber-300 ring-2 ring-amber-100' : 'border-slate-200/80'} shadow-xs space-y-3">
                         <div class="flex items-start justify-between gap-2">
-                            <div class="min-w-0">
+                            <button type="button" onclick="openMemberDetail('${m.id}')" class="text-left min-w-0 flex-1">
                                 <div class="flex items-center gap-1.5 flex-wrap">
-                                    <h3 class="text-base font-extrabold text-slate-900 truncate">${escapeHtml(m.name)}</h3>
+                                    <h3 class="text-base font-extrabold text-slate-900 truncate">${escapeHtml(getMemberDisplayName(m))}</h3>
                                     ${m.isNew ? `<span class="px-1.5 py-0.5 rounded-md bg-emerald-100 text-emerald-700 text-[10px] font-extrabold">NEW</span>` : ''}
-                                    ${isRenewal ? `<span class="px-1.5 py-0.5 rounded-md bg-amber-100 text-amber-800 text-[10px] font-extrabold">${lang === 'ja' ? '更新間近' : '갱신 임박'}</span>` : ''}
+                                    ${isSingle ? `<span class="px-2 py-0.5 rounded-md bg-indigo-100 text-indigo-700 text-[10px] font-extrabold">${lang === 'ja' ? '都度利用' : '단발 이용'}</span>` : ''}
+                                    ${isRenewal ? `<span class="px-2 py-0.5 rounded-md bg-amber-100 text-amber-800 text-[10px] font-extrabold">${lang === 'ja' ? '更新間近' : '갱신 임박'}</span>` : ''}
                                 </div>
                                 <p class="text-xs text-slate-500 mt-0.5">${DICT[lang].goals[m.goal] || m.goal} · ${m.currentWeight}kg → ${m.targetWeight || '-'}kg</p>
-                            </div>
-                            <button type="button" onclick="event.stopPropagation(); trainerIncrementSession('${m.id}')" class="px-3 py-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-extrabold shrink-0">+1${t('unitSessionShort')}</button>
+                            </button>
+                            <button type="button" onclick="openMemberDetail('${m.id}')" class="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-600 shrink-0"><i data-lucide="chevron-right" class="w-4 h-4"></i></button>
                         </div>
-                        <div class="flex items-center justify-between text-xs pt-2 border-t border-slate-100">
-                            <span class="font-bold text-slate-500">${lang === 'ja' ? '進行状況' : 'PT 진행'}: <strong class="text-slate-900">${done}/${total}</strong> (${lang === 'ja' ? '残' : '잔여'} ${rem})</span>
-                            <span class="text-blue-600 font-bold">${lang === 'ja' ? '詳細を見る →' : '상세 관리 →'}</span>
+                        <div class="flex items-center justify-between gap-2 pt-2 border-t border-slate-100">
+                            <span class="text-xs font-extrabold ${isSingle ? 'text-indigo-700' : isRenewal ? 'text-amber-700' : 'text-slate-700'}">
+                                ${isSingle
+                                    ? (lang === 'ja' ? `累計 ${done}回` : `누적 ${done}회`)
+                                    : `${done} / ${total}${t('unitSessionShort')} (${lang === 'ja' ? '残' : '잔여'} ${rem}${t('unitSessionShort')})`}
+                            </span>
+                            <div class="flex items-center gap-1.5">
+                                <button type="button" onclick="openRenewModal('${m.id}')" class="px-2.5 py-1.5 rounded-xl bg-amber-50 hover:bg-amber-100 text-amber-800 border border-amber-200 text-xs font-bold">${lang === 'ja' ? '回数管理' : '횟수 관리'}</button>
+                                <button type="button" onclick="trainerIncrementSession('${m.id}')" class="px-2.5 py-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold">+1${t('unitSessionShort')}</button>
+                            </div>
                         </div>
                     </div>
                 `;
-            }).join('') || `<p class="col-span-full text-center text-xs text-slate-400 py-10">${lang === 'ja' ? '該当する会員がいません' : '조건에 맞는 회원이 없습니다.'}</p>`;
-        };
+            }).join('') : `<p class="col-span-full text-xs text-slate-400 text-center py-10">${lang === 'ja' ? '条件に一致する会員がいません' : '조건에 맞는 회원이 없습니다.'}</p>`;
 
-        // Trainer Member Detail Drawer
+            if (window.lucide) lucide.createIcons();
+        }
+
         window.openMemberDetail = async function(memberId) {
-            selectedMemberId = memberId;
             const m = members.find(x => x.id === memberId);
-            if (m && m.isNew) await dbUpdate('pt_members', memberId, { isNew: false });
-
+            if (!m) return;
+            selectedMemberId = memberId;
+            if (m.isNew) await dbUpdate('pt_members', memberId, { isNew: false });
             document.getElementById('member-detail-backdrop').classList.remove('hidden');
             document.getElementById('member-detail-drawer').classList.remove('translate-x-full');
             switchDetailTab('info');
@@ -2991,8 +3159,14 @@
             ['info', 'workouts', 'metrics', 'plan'].forEach(k => {
                 const btn = document.getElementById(`tdtab-${k}`);
                 const pnl = document.getElementById(`tdpanel-${k}`);
-                if (btn) btn.className = `py-3 text-xs sm:text-sm font-bold border-b-2 whitespace-nowrap ${k === tab ? 'border-blue-600 text-blue-600' : 'border-transparent text-slate-400'}`;
-                if (pnl) pnl.classList.toggle('hidden', k !== tab);
+                if (!btn || !pnl) return;
+                if (k === tab) {
+                    btn.className = 'py-3 text-xs sm:text-sm font-extrabold border-b-2 border-slate-900 text-slate-900 whitespace-nowrap';
+                    pnl.classList.remove('hidden');
+                } else {
+                    btn.className = 'py-3 text-xs sm:text-sm font-bold border-b-2 border-transparent text-slate-400 hover:text-slate-700 whitespace-nowrap';
+                    pnl.classList.add('hidden');
+                }
             });
             renderMemberDetailContent();
         };
@@ -3001,16 +3175,19 @@
             const m = members.find(x => x.id === selectedMemberId);
             if (!m) return;
 
-            document.getElementById('td-name').textContent = m.name;
+            document.getElementById('td-name').textContent = getMemberDisplayName(m);
             const gb = document.getElementById('td-goal-badge');
             gb.textContent = DICT[lang].goals[m.goal] || m.goal;
             gb.className = 'px-2 py-0.5 rounded-full text-[11px] font-bold bg-blue-100 text-blue-700';
-            document.getElementById('td-meta').textContent = `${m.phone} · ${m.age}${lang === 'ja' ? '歳' : '세'} · ${m.height}cm · ${m.currentWeight}kg`;
+            document.getElementById('td-meta').textContent = `${m.age || '-'}${lang === 'ja' ? '歳' : '세'} · ${DICT[lang].genders[m.gender] || m.gender} · ${m.height || '-'}cm · ${m.phone || '-'}`;
 
+            const isSingle = m.contractType === 'single';
             const total = m.totalSessions || 10;
             const done = m.completedSessions || 0;
             const rem = Math.max(0, total - done);
-            document.getElementById('td-sessions-text').textContent = `${done} / ${total}${t('unitSessionShort')} (${lang === 'ja' ? '残' : '잔여'} ${rem}${t('unitSessionShort')})`;
+            document.getElementById('td-sessions-text').textContent = isSingle
+                ? (lang === 'ja' ? `都度利用 · 累計 ${done}回` : `단발 이용 · 누적 ${done}회`)
+                : `${done} / ${total}${t('unitSessionShort')} (${lang === 'ja' ? '残' : '잔여'} ${rem}${t('unitSessionShort')})`;
 
             // Tab 1: Info
             const pains = (m.painAreas || []).map(p => DICT[lang].pains[p] || p).join(', ') || '-';
@@ -3023,10 +3200,10 @@
                 </div>
                 <div class="bg-white rounded-2xl p-4 border border-slate-200 space-y-1">
                     <span class="text-xs font-extrabold text-slate-700">${t('lblInjuryDetail')}</span>
-                    <p class="text-sm text-slate-600 whitespace-pre-line">${escapeHtml(m.injuryDetail || '-')}</p>
+                    <p class="text-sm text-slate-600 whitespace-pre-line">${escapeHtml(getMemberInjuryText(m))}</p>
                 </div>
             `;
-            document.getElementById('td-trainer-memo').value = m.trainerMemo || '';
+            document.getElementById('td-trainer-memo').value = getMemberMemoText(m);
 
             // Tab 2: Workouts
             const mLogs = workouts.filter(w => w.memberId === m.id);
@@ -3054,33 +3231,110 @@
             const m = members.find(x => x.id === memberId);
             if (!m) return;
             await dbUpdate('pt_members', memberId, { completedSessions: (m.completedSessions || 0) + 1 });
-            showToast(lang === 'ja' ? `${m.name}様 PT+1回 記録完了` : `${m.name} PT +1회 기록 완료!`);
+            const dispName = getMemberDisplayName(m);
+            showToast(lang === 'ja' ? `${dispName}様 PT+1回 記録完了` : `${dispName} PT +1회 기록 완료!`);
         };
 
         window.openRenewModal = function(memberId) {
+            const m = members.find(x => x.id === memberId);
+            if (!m) return;
             renewTargetId = memberId;
+            renewDraftType = m.contractType === 'single' ? 'single' : 'package';
+
+            document.getElementById('rm-member-name').textContent = getMemberDisplayName(m);
+            document.getElementById('rm-input-total').value = m.totalSessions || 10;
+            document.getElementById('rm-input-done').value = m.completedSessions || 0;
+            document.getElementById('rm-input-single-done').value = m.completedSessions || 0;
+            document.getElementById('renew-custom-val').value = '';
+
+            setRenewContractType(renewDraftType);
             document.getElementById('renew-modal').classList.remove('hidden');
+            if (window.lucide) lucide.createIcons();
         };
+
         window.closeRenewModal = function() {
             document.getElementById('renew-modal').classList.add('hidden');
             renewTargetId = null;
         };
-        window.applyRenew = async function(addCount) {
+
+        window.setRenewContractType = function(type) {
+            renewDraftType = type;
+            const pkgBtn = document.getElementById('rm-type-package');
+            const sngBtn = document.getElementById('rm-type-single');
+            const pkgPanel = document.getElementById('rm-package-panel');
+            const sngPanel = document.getElementById('rm-single-panel');
+
+            if (type === 'single') {
+                sngBtn.className = 'tap-target rounded-xl text-xs font-extrabold bg-indigo-600 text-white shadow-xs transition';
+                pkgBtn.className = 'tap-target rounded-xl text-xs font-bold text-slate-500 hover:text-slate-800 transition';
+                pkgPanel.classList.add('hidden');
+                sngPanel.classList.remove('hidden');
+                // Sync done count when toggling
+                document.getElementById('rm-input-single-done').value = document.getElementById('rm-input-done').value || 0;
+            } else {
+                pkgBtn.className = 'tap-target rounded-xl text-xs font-extrabold bg-white text-slate-900 shadow-xs transition';
+                sngBtn.className = 'tap-target rounded-xl text-xs font-bold text-slate-500 hover:text-slate-800 transition';
+                sngPanel.classList.add('hidden');
+                pkgPanel.classList.remove('hidden');
+                document.getElementById('rm-input-done').value = document.getElementById('rm-input-single-done').value || 0;
+                const totalEl = document.getElementById('rm-input-total');
+                if (Number(totalEl.value) <= 0) totalEl.value = 10;
+                syncRenewInputs();
+            }
+        };
+
+        window.syncRenewInputs = function() {
+            const total = Math.max(0, Number(document.getElementById('rm-input-total').value) || 0);
+            const done = Math.max(0, Number(document.getElementById('rm-input-done').value) || 0);
+            const rem = Math.max(0, total - done);
+            document.getElementById('rm-calc-total').textContent = total;
+            document.getElementById('rm-calc-done').textContent = done;
+            document.getElementById('rm-calc-rem').textContent = rem;
+        };
+
+        window.quickAddRenewSessions = function(addCount) {
+            const totalEl = document.getElementById('rm-input-total');
+            totalEl.value = Math.max(0, (Number(totalEl.value) || 0) + addCount);
+            syncRenewInputs();
+            showToast(lang === 'ja' ? `総回数に +${addCount}回 を加算しました（保存を押してください）` : `총 횟수에 +${addCount}회 반영됨 (저장 버튼을 눌러주세요)`);
+        };
+
+        window.handleCustomRenewAdd = function() {
+            const inp = document.getElementById('renew-custom-val');
+            const val = Number(inp.value);
+            if (!val || val <= 0) return;
+            quickAddRenewSessions(val);
+            inp.value = '';
+        };
+
+        window.stepRenewField = function(field, delta) {
+            const id = field === 'total' ? 'rm-input-total' : field === 'done' ? 'rm-input-done' : 'rm-input-single-done';
+            const el = document.getElementById(id);
+            el.value = Math.max(0, (Number(el.value) || 0) + delta);
+            if (field !== 'singleDone') syncRenewInputs();
+        };
+
+        window.saveRenewModalChanges = async function() {
             const m = members.find(x => x.id === renewTargetId);
             if (!m) return;
-            await dbUpdate('pt_members', m.id, { totalSessions: (m.totalSessions || 10) + addCount });
+            const patch = { contractType: renewDraftType };
+            if (renewDraftType === 'single') {
+                patch.completedSessions = Math.max(0, Number(document.getElementById('rm-input-single-done').value) || 0);
+                patch.totalSessions = 0;
+            } else {
+                patch.totalSessions = Math.max(0, Number(document.getElementById('rm-input-total').value) || 0);
+                patch.completedSessions = Math.max(0, Number(document.getElementById('rm-input-done').value) || 0);
+            }
+            await dbUpdate('pt_members', m.id, patch);
             closeRenewModal();
-            showToast(lang === 'ja' ? `+${addCount}回 延長しました！` : `PT +${addCount}회 연장 완료!`);
-        };
-        window.handleCustomRenew = function(e) {
-            e.preventDefault();
-            const val = Number(document.getElementById('renew-custom-val').value);
-            if (val > 0) applyRenew(val);
+            showToast(lang === 'ja' ? 'PT回数・契約タイプを保存しました！' : 'PT 횟수 및 계약 정보가 저장되었습니다!');
         };
 
         window.saveTrainerMemberMemo = async function() {
             if (!selectedMemberId) return;
-            await dbUpdate('pt_members', selectedMemberId, { trainerMemo: document.getElementById('td-trainer-memo').value });
+            const val = document.getElementById('td-trainer-memo').value;
+            const patch = lang === 'ja' ? { trainerMemoJa: val } : { trainerMemo: val };
+            await dbUpdate('pt_members', selectedMemberId, patch);
             showToast(lang === 'ja' ? 'メモを保存しました' : '트레이너 메모가 저장되었습니다.');
         };
 
@@ -3131,16 +3385,22 @@
         window.copyTrainerLineSummary = function() {
             const m = members.find(x => x.id === selectedMemberId);
             if (!m) return;
-            const ex = document.getElementById('tpt-ex-name').value.trim() || '-';
-            const w = document.getElementById('tpt-ex-w').value || '-';
-            const r = document.getElementById('tpt-ex-r').value || '-';
-            const s = document.getElementById('tpt-ex-s').value || '-';
-            const fb = document.getElementById('tpt-feedback').value.trim() || '-';
-            const rem = Math.max(0, (m.totalSessions || 10) - (m.completedSessions || 0));
+            const ex = document.getElementById('tpt-ex-name').value.trim() || (lang === 'ja' ? '全身トレーニング' : '전신 트레이닝');
+            const w = document.getElementById('tpt-ex-w').value || '0';
+            const r = document.getElementById('tpt-ex-r').value || '10';
+            const s = document.getElementById('tpt-ex-s').value || '3';
+            const fb = document.getElementById('tpt-feedback').value.trim() || (lang === 'ja' ? 'フォームがとても綺麗でした！' : '자세가 아주 안정적이었습니다!');
+            const isSingle = m.contractType === 'single';
+            const done = m.completedSessions || 0;
+            const rem = Math.max(0, (m.totalSessions || 10) - done);
+            const dispName = getMemberDisplayName(m);
+
+            const countLineJa = isSingle ? `📊 累計PT回数: ${done}回（都度利用）` : `📊 残りPT回数: ${rem}回`;
+            const countLineKo = isSingle ? `📊 누적 PT 횟수: ${done}회 (단발 이용)` : `📊 잔여 PT 횟수: ${rem}회`;
 
             const text = lang === 'ja'
-                ? `【本日のPTレポート】${m.name}様\nお疲れ様でした！\n\n🏋️ 本日のメイン種目: ${ex} (${w}kg × ${r}回 × ${s}セット)\n💬 フィードバック: ${fb}\n📊 残りPT回数: ${rem}回\n\n次回もよろしくお願いいたします！`
-                : `[오늘의 PT 요약] ${m.name}님\n오늘도 고생 많으셨습니다!\n\n🏋️ 주요 운동: ${ex} (${w}kg × ${r}회 × ${s}세트)\n💬 피드백: ${fb}\n📊 잔여 PT 횟수: ${rem}회\n\n다음 수업 때 뵙겠습니다!`;
+                ? `【本日のPTレポート】${dispName}様\nお疲れ様でした！\n\n🏋️ 本日のメイン種目: ${ex} (${w}kg × ${r}回 × ${s}セット)\n💬 フィードバック: ${fb}\n${countLineJa}\n\n次回もよろしくお願いいたします！`
+                : `[오늘의 PT 요약] ${dispName}님\n오늘도 고생 많으셨습니다!\n\n🏋️ 주요 운동: ${ex} (${w}kg × ${r}회 × ${s}세트)\n💬 피드백: ${fb}\n${countLineKo}\n\n다음 수업 때 뵙겠습니다!`;
             copyToClipboard(text, lang === 'ja' ? 'LINE用レポートをコピーしました！' : 'LINE 전송용 PT 요약이 복사되었습니다!');
         };
 
@@ -3198,16 +3458,16 @@
             if (!m) return;
             let wp = document.getElementById('td-workout-plan').value.trim();
             let dp = document.getElementById('td-diet-plan').value.trim();
-
+            const dispName = getMemberDisplayName(m);
             if (lang === 'ja') {
                 const wpJa = document.getElementById('td-workout-plan-ja').value.trim();
                 const dpJa = document.getElementById('td-diet-plan-ja').value.trim();
                 wp = wpJa || (wp ? await autoTranslateText(wp, 'ja') : '-');
                 dp = dpJa || (dp ? await autoTranslateText(dp, 'ja') : '-');
-                const text = `${m.name}様 カスタムプラン\n\n🏋️ トレーニングメニュー:\n${wp}\n\n🥗 食事ガイド:\n${dp}`;
+                const text = `${dispName}様 カスタムプラン\n\n🏋️ トレーニングメニュー:\n${wp}\n\n🥗 食事ガイド:\n${dp}`;
                 copyToClipboard(text, '日本語プランをコピーしました！');
             } else {
-                const text = `${m.name}님 맞춤 플랜\n\n🏋️ 루틴:\n${wp || '-'}\n\n🥗 식단:\n${dp || '-'}`;
+                const text = `${dispName}님 맞춤 플랜\n\n🏋️ 루틴:\n${wp || '-'}\n\n🥗 식단:\n${dp || '-'}`;
                 copyToClipboard(text, '루틴·식단이 LINE용으로 복사되었습니다');
             }
         };
@@ -3408,6 +3668,18 @@
                 if (DICT[lang][k]) el.placeholder = DICT[lang][k];
             });
 
+            // Sync Signup Step Label immediately on language switch
+            const stepLbl = document.getElementById('signup-step-label');
+            if (stepLbl) {
+                stepLbl.textContent = currentSignupStep === 2 ? t('signupStep2') : t('signupStep1');
+            }
+
+            // Populate exercise datalist in active language
+            const dl = document.getElementById('ex-datalist');
+            if (dl) {
+                dl.innerHTML = EXERCISE_LIBRARY.slice(0, 16).map(ex => `<option value="${escapeHtml(getExName(ex))}">`).join('');
+            }
+
             document.querySelectorAll('.lang-btn-ko').forEach(b => b.className = `lang-btn-ko px-2 py-1 rounded-lg text-[11px] font-bold transition ${lang === 'ko' ? 'bg-white text-slate-900 shadow-xs' : 'text-slate-500'}`);
             document.querySelectorAll('.lang-btn-ja').forEach(b => b.className = `lang-btn-ja px-2 py-1 rounded-lg text-[11px] font-bold transition ${lang === 'ja' ? 'bg-white text-slate-900 shadow-xs' : 'text-slate-500'}`);
             document.querySelectorAll('.lang-btn-ko-dark').forEach(b => b.className = `lang-btn-ko-dark px-2.5 py-1.5 rounded-lg text-xs font-bold transition ${lang === 'ko' ? 'bg-white text-slate-900' : 'text-slate-300'}`);
@@ -3431,6 +3703,12 @@
                         <span>${v}</span>
                     </label>
                 `).join('');
+            }
+
+            // Refresh open Exercise Picker modal if visible
+            const pickerModal = document.getElementById('exercise-picker-modal');
+            if (pickerModal && !pickerModal.classList.contains('hidden')) {
+                renderExercisePickerList();
             }
         }
 
@@ -3465,7 +3743,7 @@
             ta.style.left = '-9999px';
             document.body.appendChild(ta);
             ta.select();
-            try { document.execCommand('copy'); showToast(msg); } catch (e) { showToast('Copy failed', 'error'); }
+            try { document.execCommand('copy'); showToast(msg); } catch (e) { showToast(lang === 'ja' ? 'コピーに失敗しました' : '복사에 실패했습니다', 'error'); }
             document.body.removeChild(ta);
         }
 
